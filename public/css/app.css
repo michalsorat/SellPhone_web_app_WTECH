@@ -1,7 +1,41 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+#main-header
+{
+    margin-top: 5px;
+    margin-left: calc(10px + 1vw);
+}
 #nav-icons i
 {
     font-size: calc(1rem + 0.5vw);
-    padding-left: 20px;
-    margin-right: 20px;
+    padding-left: calc(10px + 0.5vw);
+    margin-right: calc(10px + 0.5vw);
     /*padding-right: 20px;*/
+}
+#navbarNav ul li
+{
+    font-size: 1.2em;
+}
+/*.carousel-inner img*/
+/*{*/
+/*    !*height: 65vh;*!*/
+/*}*/
+.jumbotron {
+    /*padding: calc(1rem + 0.5vw) 1rem;*/
+    /*margin-bottom: 10px;*/
+    /*padding: 2rem 1rem;*/
+    margin-bottom: 3rem;
+    background-color: #e9ecef;
+    border-radius: .3rem;
+}
+.jumbotron img {
+    /*width: 10px;*/
+    /*height: 10px;*/
+    width: calc(20px + 5vw);
+    height: calc(20px + 5vw);
 }
