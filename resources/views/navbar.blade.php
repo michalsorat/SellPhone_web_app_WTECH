@@ -1,38 +1,11 @@
-{{--<div class="d-flex justify-content-between">--}}
-{{--    <h1>SellPhone.sk</h1>--}}
-{{--    <div>--}}
-{{--        <input id="search" type="search" placeholder="Search" aria-label="Search" size="10" autocomplete="off">--}}
-{{--    </div>--}}
-{{--    <div class="col-2 d-flex justify-content-end mt-3" id="nav-icons">--}}
-{{--        <i class="far fa-user"></i>--}}
-{{--        <i class="fas fa-shopping-cart"></i>--}}
-{{--    </div>--}}
-{{--</div>--}}
-{{--<div class="row">--}}
-{{--    <div class="col-4">--}}
-{{--        <h1>SellPhone.sk</h1>--}}
-{{--    </div>--}}
-{{--    <div class="col-4 mt-2">--}}
-{{--        <form class="d-flex ">--}}
-{{--            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">--}}
-{{--            </span>--}}
-{{--            <span class="input-group-append">--}}
-{{--                    <button class="btn btn-outline-secondary" type="button">--}}
-{{--                        <i class="fa fa-search"></i>--}}
-{{--                    </button>--}}
-{{--                </span>--}}
-{{--        </form>--}}
-{{--    </div>--}}
-{{--    <div class="col-4 d-flex justify-content-end mt-3" id="nav-icons">--}}
-{{--        <i class="far fa-user"></i>--}}
-{{--        <i class="fas fa-shopping-cart"></i>--}}
-{{--    </div>--}}
-{{--</div>--}}
-<div class="d-flex justify-content-between">
-    <h1 id="main-header">SellPhone.sk</h1>
-    <div>
+<div class="row g-0">
+    <div class="col-4">
+        <h1 id="main-header">SellPhone.sk</h1>
+    </div>
+    <div class="col-md-4 col-5">
         <form class="d-sm-flex d-none my-2">
-            <input class="form-control" type="search" placeholder="Search" aria-label="Search" size="25">
+            <input class="form-control" type="search" placeholder="Zadajte názov hľadaného produktu" aria-label="Search">
+            </span>
             <span class="input-group-append">
                 <button class="btn btn-outline-secondary" type="button">
                     <i class="fa fa-search"></i>
@@ -40,7 +13,7 @@
             </span>
         </form>
     </div>
-    <div class="col-2 d-flex justify-content-end mt-3" id="nav-icons">
+    <div class="col-md-4 col-3 d-flex justify-content-end mt-3" id="nav-icons">
         <i class="far fa-user"></i>
         <i class="fas fa-shopping-cart"></i>
     </div>

@@ -19,7 +19,12 @@
 }
 #navbarNav ul li
 {
-    font-size: 1.2em;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+#navbarNav ul li a:hover
+{
+    color: #e9ecef;
 }
 /*.carousel-inner img*/
 /*{*/
