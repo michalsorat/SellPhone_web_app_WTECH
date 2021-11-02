@@ -5,7 +5,6 @@
     <div class="col-md-4 col-5">
         <form class="d-sm-flex d-none my-2">
             <input class="form-control" type="search" placeholder="Zadajte názov produktu" aria-label="Search">
-            </span>
             <span class="input-group-append">
                 <button class="btn btn-outline-secondary" type="button">
                     <i class="fa fa-search"></i>
@@ -35,7 +34,7 @@
             </ul>
         </div>
         <div>
-            <form class="d-sm-none d-flex">
+            <form class="d-sm-none d-flex w-75">
                 <input class="form-control" type="search" placeholder="Zadajte názov produktu" aria-label="Search">
                 <span class="input-group-append">
                 <button class="btn btn-outline-secondary" type="button">
