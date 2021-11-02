@@ -46,25 +46,25 @@
     <div class="row m-3">
         <div class="col-lg-3 col-6">
             <div class="jumbotron d-flex my-auto">
-                <img src="https://cdn-icons.flaticon.com/png/512/969/premium/969088.png?token=exp=1635803620~hmac=e6c3f7cfcd1db4ce67a06dc8acf57223"/>
+                <img src="{{ asset('img/good-reviews.png') }}" alt=""/>
                 <h6>Viac ako 20 000 spokojných zákazníkov</h6>
             </div>
         </div>
         <div class="col-lg-3 col-6">
             <div class="jumbotron d-flex my-auto">
-                <img src="https://cdn-icons-png.flaticon.com/512/1428/1428459.png"/>
+                <img src="{{ asset('img/free-return.png') }}" alt=""/>
                 <h6>Bezplatné vrátenie tovaru do 30 dní</h6>
             </div>
         </div>
         <div class="col-lg-3 col-6">
             <div class="jumbotron d-flex my-auto">
-                <img src="https://cdn-icons.flaticon.com/png/512/4014/premium/4014357.png?token=exp=1635803044~hmac=ac94c3c9a874e6919c3f9efba2a0c7a1"/>
+                <img src="{{ asset('img/new-product.png') }}" alt=""/>
                 <h6>Záruka dodania nového zapečateného tovaru</h6>
             </div>
         </div>
         <div class="col-lg-3 col-6">
             <div class="jumbotron d-flex my-auto">
-                <img src="https://cdn-icons-png.flaticon.com/512/869/869121.png"/>
+                <img src="{{ asset('img/fast-delivery.png') }}" alt=""/>
                 <h6>Expresné doručenie do 24 hodín</h6>
             </div>
         </div>
