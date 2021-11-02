@@ -21,26 +21,34 @@
 {
     font-size: 1.1em;
     font-weight: bold;
+    border-radius: .3rem;
+}
+#navbarNav ul li:hover
+{
+    background-color: #8c8886;
 }
 #navbarNav ul li a:hover
 {
-    color: #e9ecef;
+    color: #ffffff;
 }
 /*.carousel-inner img*/
 /*{*/
 /*    !*height: 65vh;*!*/
 /*}*/
 .jumbotron {
-    /*padding: calc(1rem + 0.5vw) 1rem;*/
-    /*margin-bottom: 10px;*/
-    /*padding: 2rem 1rem;*/
-    margin-bottom: 3rem;
+    height: calc(50px + 2vw);
+    cursor: default;
+    padding: calc(0.5rem + 0.5vw) 5px;
+    margin: 1.5vw 0;
     background-color: #e9ecef;
     border-radius: .3rem;
+    font-size: calc(0.5rem + 0.5vw);
+}
+.jumbotron:hover {
+    background-color: #ffbc37;
+    transition: 0.5s ease-in-out;
 }
 .jumbotron img {
-    /*width: 10px;*/
-    /*height: 10px;*/
-    width: calc(20px + 5vw);
-    height: calc(20px + 5vw);
+    width: calc(20px + 3vw);
+    height: calc(20px + 3vw);
 }
