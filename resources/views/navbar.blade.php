@@ -3,7 +3,7 @@
         <h1 id="main-header">SellPhone.sk</h1>
     </div>
     <div class="col-md-4 col-5">
-        <form class="d-sm-flex d-none my-2">
+        <form class="d-sm-flex d-none my-2 my-lg-3">
             <input class="form-control" type="search" placeholder="Zadajte názov produktu" aria-label="Search">
             <span class="input-group-append">
                 <button class="btn btn-outline-secondary" type="button">
@@ -17,6 +17,7 @@
         <i class="fas fa-shopping-cart"></i>
     </div>
 </div>
+
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
     <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
