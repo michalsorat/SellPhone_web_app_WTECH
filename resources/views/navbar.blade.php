@@ -34,15 +34,16 @@
             </ul>
         </div>
         <div>
-            <form class="d-sm-none d-flex w-75">
+            <form class="d-sm-none d-flex">
                 <input class="form-control" type="search" placeholder="Zadajte názov produktu" aria-label="Search">
                 <span class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button">
-                    <i class="fa fa-search"></i>
-                </button>
-            </span>
+                    <button class="btn btn-outline-secondary" type="button">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
             </form>
         </div>
     </div>
+
 </nav>
 
