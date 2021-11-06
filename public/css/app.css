@@ -55,6 +55,10 @@ body {
     height: 30px;
 }
 
+.card-body {
+    background-color: #e9ecef;
+}
+
 .card-title {
     font-size: 0.8rem;
     font-weight: bold;
@@ -62,6 +66,44 @@ body {
 
 .card-text {
     font-size: 0.7rem;
+}
+
+.shopping-cart .btn i {
+    font-size: 1.8rem;
+}
+.list-items-homepage .list-item {
+    margin-top: 15px;
+}
+
+.list-items .list-item {
+    margin-top: 30px;
+}
+
+.list-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
+    transition: 0.2s ease-in-out;
+}
+.header-holder:first-child {
+    margin-top: 30px;
+}
+
+.header-holder {
+    margin-top: 60px;
+}
+
+.price {
+    margin-top: 5px;
+    font-size: 1.3rem;
+}
+.pagination {
+    margin: 40px 0;
+}
+.top-bar-filter {
+    height: 50px;
+    padding-top: 10px;
+    background-color: #e9ecef;
+    border-radius: .3rem;
 }
 
 /* small */
@@ -256,25 +298,5 @@ body {
 
     .card-text {
         font-size: 1.1rem;
-    }
-
-    .shopping-cart .btn i
-    {
-        font-size: 1.8rem;
-    }
-    .list-item {
-        margin-top: 30px;
-    }
-    .list-item:hover {
-        transform: scale(1.05);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
-        transition: 0.2s ease-in-out;
-    }
-    .header-holder {
-        margin-top: 60px;
-    }
-    .price {
-        margin-top: 5px;
-        font-size: 1.3rem;
     }
 }
