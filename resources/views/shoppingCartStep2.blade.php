@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container sumarization mt-5 px-5 pt-2 pb-4">
+    <div class="container sumarization my-5 px-5 pt-2 pb-4">
         <div class="row d-flex justify-content-center">
             <div class="progress-holder col-10 mt-5">
                 <div class="progress">
-                    <div id="progress-bar-1" class="progress-bar" role="progressbar" aria-valuenow="50"
+                    <div id="progress-bar-2" class="progress-bar" role="progressbar" aria-valuenow="50"
                          aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
-                <button type="button" class="top-0 start-0 translate-middle btn btn-sm btn-secondary rounded-pill">1
+                <button type="button" class="top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill">1
                 </button>
                 <button type="button" class="top-0 start-50 translate-middle btn btn-sm btn-primary rounded-pill">2
                 </button>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container sumarization mt-5 px-5 pt-2 pb-4">
+    <div class="container sumarization my-5 px-5 pt-2 pb-4">
         <div class="row d-flex justify-content-center">
             <div class="progress-holder col-10 mt-5">
                 <div class="progress">

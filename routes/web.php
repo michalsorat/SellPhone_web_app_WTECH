@@ -22,9 +22,6 @@ Route::get('/iphone', function () {
 Route::get('/product-detail', function () {
     return view('productDetailPage');
 });
-Route::get('/homepage', function () {
-    return view('homePage');
-});
 Route::get('/register', function () {
     return view('registerPage');
 });
@@ -35,6 +32,9 @@ Route::get('/shipping-payment', function () {
     return view('shoppingCartStep2');
 });
 Route::get('/shipping-address', function () {
-    return view('shoppingCartStep3');
+    return view('CartStep3');
+});
+Route::get('/order-confirmation', function () {
+    return view('orderConfirmation');
 });
 

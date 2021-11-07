@@ -225,7 +225,6 @@ body {
 .footer {
     padding:10px;
     color:#f0f9ff;
-    margin-top: -10px;
 }
 
 .footer ul {
@@ -256,12 +255,20 @@ body {
 }
 
 .progress-holder .progress {
-    height: 1px;
+    height: 2px;
     background-color: #5d5d5d;
 }
 
 #progress-bar-1 {
     width: 0;
+}
+
+#progress-bar-2 {
+    width: 50%;
+}
+
+#progress-bar-3 {
+    width: 100%;
 }
 
 .progress-holder .btn {
@@ -346,6 +353,16 @@ body {
 
 .table-small i {
     font-size: 1.4rem;
+}
+
+#order-final-holder {
+    margin-top: 15vh;
+    margin-bottom: 20vh;
+}
+
+#order-final-text {
+    padding: 20px;
+    font-size: 1rem;
 }
 
 /* small */
@@ -437,6 +454,11 @@ body {
     .register-holder {
         padding: 20px 0;
     }
+
+    #order-final-text {
+        padding: 40px;
+        font-size: 1.5rem;
+    }
 }
 
 /* medium */
@@ -479,6 +501,11 @@ body {
 
     .register-holder {
         padding: 30px 0;
+    }
+
+    #order-final-text {
+        padding: 60px;
+        font-size: 2rem;
     }
 }
 
@@ -571,6 +598,11 @@ body {
     .register-holder {
         padding: 40px 0;
     }
+
+    #order-final-text {
+        padding: 60px;
+        font-size: 2.5rem;
+    }
 }
 
 /* extra large */
@@ -662,6 +694,11 @@ body {
     .register-holder {
         padding: 50px 0;
     }
+
+    #order-final-text {
+        padding: 80px;
+        font-size: 2.7rem;
+    }
 }
 
 /* extra extra large */
@@ -736,5 +773,10 @@ body {
 
     .register-holder {
         padding: 60px 0;
+    }
+
+    #order-final-text {
+        padding: 100px;
+        font-size: 3rem;
     }
 }
