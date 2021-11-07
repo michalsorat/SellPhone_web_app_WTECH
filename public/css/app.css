@@ -69,6 +69,81 @@ body {
     font-size: 0.7rem;
 }
 
+.product.card-body {
+    background-color: #ffffff;
+}
+
+.product.card-title {
+    font-size: 1.2rem;
+}
+
+.product.card-text {
+    font-size: 0.7rem;
+}
+
+.product.prop.card-body {
+    background-color: #e9ecef;
+    border-radius: 0.3rem;
+}
+
+.product.prop.card-title {
+    font-size: 0.7rem;
+}
+
+.product.prop.card-text {
+    font-size: 0.7rem;
+}
+
+.product.price.card-body {
+    background-color: #ffffff;
+}
+
+.product.price.card-title {
+    font-size: 1rem;
+}
+
+.product.btn {
+    border-radius: 0.5rem;
+    font-size: 0.7rem;
+}
+
+.product-specification-placeholder {
+    background-color: #e9ecef;
+    border-radius: 0.5rem;
+}
+
+.specifications-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.specifications h4 {
+    font-size: 1rem;
+}
+
+.specifications p {
+    font-size: 0.7rem;
+}
+
+.params-title {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.params-category {
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.params-value {
+    font-size: 0.7rem;
+}
+
+.tech-parameters-placeholder {
+    background-color: #b8cce0;
+    border-radius: 0.5rem;
+}
+
 .shopping-cart .btn i {
     font-size: 1.8rem;
 }
@@ -216,6 +291,54 @@ body {
         font-size: 0.7rem;
     }
 
+    .product.card-title {
+        font-size: 1.4rem;
+    }
+
+    .product.card-text {
+        font-size: 0.8rem;
+    }
+
+    .product.prop.card-title {
+        font-size: 0.8rem;
+    }
+
+    .product.prop.card-text {
+        font-size: 0.8rem;
+    }
+
+    .product.price.card-title {
+        font-size: 1.1rem;
+    }
+
+    .product.btn {
+        font-size: 0.8rem;
+    }
+
+    .specifications-title {
+        font-size: 1.4rem;
+    }
+
+    .specifications h4 {
+        font-size: 1.2rem;
+    }
+
+    .specifications p {
+        font-size: 0.8rem;
+    }
+
+    .params-title {
+        font-size: 1.2rem;
+    }
+
+    .params-category {
+        font-size: 1.0rem;
+    }
+
+    .params-value {
+        font-size: 0.8rem;
+    }
+
     .register-holder {
         padding: 20px 0;
     }
@@ -302,6 +425,54 @@ body {
         font-size: 0.9rem;
     }
 
+    .product.card-title {
+        font-size: 1.6rem;
+    }
+
+    .product.card-text {
+        font-size: 0.9rem;
+    }
+
+    .product.prop.card-title {
+        font-size: 0.9rem;
+    }
+
+    .product.prop.card-text {
+        font-size: 0.9rem;
+    }
+
+    .product.price.card-title {
+        font-size: 1.4rem;
+    }
+
+    .product.btn {
+        font-size: 0.9rem;
+    }
+
+    .specifications-title {
+        font-size: 1.6rem;
+    }
+
+    .specifications h4 {
+        font-size: 1.4rem;
+    }
+
+    .specifications p {
+        font-size: 0.9rem;
+    }
+
+    .params-title {
+        font-size: 1.4rem;
+    }
+
+    .params-category {
+        font-size: 1.0rem;
+    }
+
+    .params-value {
+        font-size: 0.9rem;
+    }
+
     .register-holder {
         padding: 40px 0;
     }
@@ -343,6 +514,54 @@ body {
 
     .card-text {
         font-size: 1rem;
+    }
+
+    .product.card-title {
+        font-size: 1.9rem;
+    }
+
+    .product.card-text {
+        font-size: 1rem;
+    }
+
+    .product.prop.card-title {
+        font-size: 1rem;
+    }
+
+    .product.prop.card-text {
+        font-size: 1rem;
+    }
+
+    .product.price.card-title {
+        font-size: 1.6rem;
+    }
+
+    .product.btn {
+        font-size: 1rem;
+    }
+
+    .specifications-title {
+        font-size: 1.7rem;
+    }
+
+    .specifications h4 {
+        font-size: 1.4rem;
+    }
+
+    .specifications p {
+        font-size: 1rem;
+    }
+
+    .params-title {
+        font-size: 1.4rem;
+    }
+
+    .params-category {
+        font-size: 1.1rem;
+    }
+
+    .params-value {
+        font-size: 0.9rem;
     }
 
     .register-holder {
@@ -388,9 +607,39 @@ body {
         font-size: 1.1rem;
     }
 
+    .product.card-title {
+        font-size: 2rem;
+    }
+
+    .product.price.card-title {
+        font-size: 1.9rem;
+    }
+
+    .specifications-title {
+        font-size: 2rem;
+    }
+
+    .specifications h4 {
+        font-size: 1.7rem;
+    }
+
+    .specifications p {
+        font-size: 1rem;
+    }
+
+    .params-title {
+        font-size: 1.5rem;
+    }
+
+    .params-category {
+        font-size: 1.2rem;
+    }
+
+    .params-value {
+        font-size: 1rem;
+    }
+
     .register-holder {
         padding: 60px 0;
     }
 }
-
-

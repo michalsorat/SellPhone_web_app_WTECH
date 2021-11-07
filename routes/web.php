@@ -19,8 +19,8 @@ Route::get('/', function () {
 Route::get('/iphone', function () {
     return view('iphonePage');
 });
-Route::get('/homepage', function () {
-    return view('homePage');
+Route::get('/product-detail', function () {
+    return view('productDetailPage');
 });
 Route::get('/homepage', function () {
     return view('homePage');
