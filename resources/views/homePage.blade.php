@@ -1,36 +1,36 @@
 @extends('layouts.app')
 
 @section('content')
-    <div id="slider" class="carousel slide" data-bs-ride="carousel">
+    <div id="homepage-slider" class="carousel carousel-dark slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
-            <button type="button" data-bs-target="#slider" data-bs-slide-to="0" class="active" aria-current="true">
+            <button type="button" data-bs-target="#homepage-slider" data-bs-slide-to="0" class="active" aria-current="true">
             </button>
-            <button type="button" data-bs-target="#slider" data-bs-slide-to="1"></button>
-            <button type="button" data-bs-target="#slider" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#homepage-slider" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#homepage-slider" data-bs-slide-to="2"></button>
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img
-                    src="https://images.ctfassets.net/hrltx12pl8hq/7yQR5uJhwEkRfjwMFJ7bUK/dc52a0913e8ff8b5c276177890eb0129/offset_comp_772626-opt.jpg?fit=fill&w=800&h=250"
+                    src="{{ asset('img/slider.png') }}"
                     class="d-block w-100" alt="">
             </div>
             <div class="carousel-item">
                 <img
-                    src="https://images.ctfassets.net/hrltx12pl8hq/7yQR5uJhwEkRfjwMFJ7bUK/dc52a0913e8ff8b5c276177890eb0129/offset_comp_772626-opt.jpg?fit=fill&w=800&h=250"
+                    src="{{ asset('img/slider.png') }}"
                     class="d-block w-100" alt="">
             </div>
             <div class="carousel-item">
                 <img
-                    src="https://images.ctfassets.net/hrltx12pl8hq/7yQR5uJhwEkRfjwMFJ7bUK/dc52a0913e8ff8b5c276177890eb0129/offset_comp_772626-opt.jpg?fit=fill&w=800&h=250"
+                    src="{{ asset('img/slider.png') }}"
                     class="d-block w-100" alt="">
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#slider"
+        <button class="carousel-control-prev" type="button" data-bs-target="#homepage-slider"
                 data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#slider"
+        <button class="carousel-control-next" type="button" data-bs-target="#homepage-slider"
                 data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
@@ -82,7 +82,7 @@
 
     <div class="card text-center mx-3 my-2 my-xxl-3">
         <div class="card-body">
-            <p class="card-title">Mobilné telefóny a smartfóny</p>
+            <h2 class="card-title">Mobilné telefóny a smartfóny</h2>
             <p class="card-text">V našej ponuke nájdete najznámejšie výrobky renomovaných predajcov mobilných telefónov
                 a smartfónov. Ponúkame to najlepšie na našom trhu za bekonkurenčné ceny. Naším hlavným cieľom je
                 dosiahnuť najvyššiu možnú mieru spokojnosti zákazníkov a sprostredkovať prívetivé nákupné prostredie.
