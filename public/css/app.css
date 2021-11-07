@@ -225,12 +225,7 @@ body {
 .footer {
     padding:10px;
     color:#f0f9ff;
-}
-
-.footer h3 {
-    margin-top:0;
-    margin-bottom:12px;
-    font-weight:bold;
+    margin-top: -10px;
 }
 
 .footer ul {

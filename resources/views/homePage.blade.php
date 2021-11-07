@@ -90,7 +90,7 @@
         </div>
     </div>
 
-    <div class="container bg-trasparent list-items-homepage">
+    <div class="container bg-trasparent list-items-homepage mb-5">
         <div class="row">
             <div class="header-holder text-center col-12">
                 <h4>Top produkty</h4>
