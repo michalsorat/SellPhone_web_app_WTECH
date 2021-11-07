@@ -28,4 +28,8 @@ Route::get('/homepage', function () {
 Route::get('/register', function () {
     return view('registerPage');
 });
+Route::get('/sumarization', function () {
+    return view('shoppingCartStep1');
+});
+
 
