@@ -79,17 +79,25 @@
                         </tr>
                         </tbody>
                     </table>
+                    <div class="d-flex justify-content-between">
+                        <div class="next-step">
+                            <ul>
+                                <button type="button" class="btn btn-dark btn"><- späť do košíka</button>
+                            </ul>
+                        </div>
+
+                        <div class="next-step mt-2">
+                            <ul class="text-left">
+                                <li><p>Doručenie na adresu:<span>3,99€</span></p></li>
+                                <li><p>Platba kartou:<span>0€</span></p></li>
+                                <li><p>Cena celkom:<span>1503,99€</span></p></li>
+                                <li><button type="button" class="btn btn-dark btn">Pokračovať v objednávke</button></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-
-
-            <div class="next-step">
-                <ul class="float-end text-center">
-                    <li><p>Cena celkom:<span>1500€</span></p></li>
-                    <li><button type="button" class="btn btn-dark btn">Pokračovať v objednávke</button></li>
-                </ul>
-            </div>
         </div>
     </div>
 @endsection
