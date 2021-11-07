@@ -26,28 +26,56 @@
 
             <div class="row">
                 <div class="table-wrap col-12 col-lg-6">
-                    <table class="table table-responsive table-borderless">
-                        <div>Sumár objednávky</div>
+                    <table class="table-small table table-responsive table-borderless">
+                        <h5>Spôsob dopravy</h5>
+                        <tbody>
+                            <tr class="align-middle alert border-bottom">
+                                <td> <input type="checkbox" id="check"> </td>
+                                <td class="text-center"> <i class="fas fa-shipping-fast"></i> </td>
+                                <td>
+                                    <div>
+                                        <p class="m-0 fw-bold">Doručenie na adresu</p>
+                                    </div>
+                                </td>
+                                <td> 3,99€ </td>
+                            </tr>
+                            <tr class="align-middle alert border-bottom">
+                                <td> <input type="checkbox" id="check"> </td>
+                                <td class="text-center"> <i class="fas fa-hand-holding-usd"></i> </td>
+                                <td>
+                                    <div>
+                                        <p class="m-0 fw-bold">Osobný odber</p>
+                                    </div>
+                                </td>
+                                <td> Zadarmo </td>
+                            </tr>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="table-small table table-responsive table-borderless">
+                        <h5>Spôsob platby</h5>
                         <tbody>
                         <tr class="align-middle alert border-bottom">
-                            <td class="text-center"> <img class="pic" src="{{ asset('img/iphone.png') }}" alt=""> </td>
+                            <td> <input type="checkbox" id="check"> </td>
+                            <td class="text-center"> <i class="fab fa-cc-visa"></i> </td>
                             <td>
                                 <div>
-                                    <p class="m-0 fw-bold">Samsung Galaxy S21, 5G 8GB/128GB</p>
+                                    <p class="m-0 fw-bold">Kartou online</p>
                                 </div>
                             </td>
-                            <td> <input type="text" readonly class="form-control-plaintext" value="1 KS"></td>
-                            <td> 650€ </td>
+                            <td> Zadarmo </td>
                         </tr>
                         <tr class="align-middle alert border-bottom">
-                            <td class="text-center"> <img class="pic" src="{{ asset('img/iphone.png') }}" alt=""> </td>
+                            <td> <input type="checkbox" id="check"> </td>
+                            <td class="text-center"> <i class="fas fa-wallet"></i> </td>
                             <td>
                                 <div>
-                                    <p class="m-0 fw-bold">iPhone X 256 GB</p>
+                                    <p class="m-0 fw-bold">Na dobierku</p>
                                 </div>
                             </td>
-                            <td> <input type="text" readonly class="form-control-plaintext" value="1 KS"></td>
-                            <td> 850€ </td>
+                            <td> 2,99€ </td>
+                        </tr>
                         </tr>
                         </tbody>
                     </table>
@@ -55,7 +83,7 @@
 
                 <div class="table-wrap col-12 col-lg-6">
                     <table class="table-small table table-responsive table-borderless">
-                        <div>Sumár objednávky</div>
+                        <h5>Sumár objednávky</h5>
                         <tbody>
                         <tr class="align-middle alert border-bottom">
                             <td class="text-center"> <img class="pic" src="{{ asset('img/iphone.png') }}" alt=""> </td>

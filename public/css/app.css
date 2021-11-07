@@ -232,7 +232,7 @@ body {
     padding:0;
     list-style:none;
     line-height:1.6;
-    font-size:14px;
+    font-size:0.7rem;
     margin-bottom:0;
 }
 .footer ul a{
@@ -336,6 +336,16 @@ body {
 }
 .next-step ul li span {
     margin-left: 10px;
+}
+.next-step ul{
+    list-style:none;
+}
+.next-step ul li span {
+    margin-left: 10px;
+}
+
+.table-small i {
+    font-size: 1.4rem;
 }
 
 /* small */
