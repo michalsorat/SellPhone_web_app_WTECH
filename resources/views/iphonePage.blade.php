@@ -198,7 +198,7 @@
                 </div>
             </div>
 
-            <div class="col-sm-8 col-md-9 col-xl-10 col-12 pe-5">
+            <div class="product-list col-sm-8 col-md-9 col-xl-10 col-12 pe-5">
                 <div class="bg-trasparent list-items">
                     <div class="row">
                         <div class="col-12 col-md-6 col-lg-4 col-xl-3">

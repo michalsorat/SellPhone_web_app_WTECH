@@ -97,7 +97,7 @@
             </div>
             <div class="col-lg-3 col-sm-6 col-12">
                 <div class="list-item card">
-                    <img src="https://im9.cz/sk/iR/importprodukt-orig/a97/a979b66ff3891ca02321b9e8dd5b68e2--mmf1000x1000.jpg" class="card-img-top" alt="...">
+                    <img src="{{ asset('img/iphone.png') }}" class="card-img-top" alt="...">
                     <div class="card-body pt-0">
                         <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
                         <div class="d-flex justify-content-between mx-4">
@@ -115,7 +115,7 @@
             </div>
             <div class="col-lg-3 col-sm-6 col-12">
                 <div class="list-item card">
-                    <img src="https://im9.cz/sk/iR/importprodukt-orig/a97/a979b66ff3891ca02321b9e8dd5b68e2--mmf1000x1000.jpg" class="card-img-top" alt="...">
+                    <img src="{{ asset('img/iphone.png') }}" class="card-img-top" alt="...">
                     <div class="card-body pt-0">
                         <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
                         <div class="d-flex justify-content-between mx-4">
@@ -133,7 +133,7 @@
             </div>
             <div class="col-lg-3 col-sm-6 col-12">
                 <div class="list-item card">
-                    <img src="https://im9.cz/sk/iR/importprodukt-orig/a97/a979b66ff3891ca02321b9e8dd5b68e2--mmf1000x1000.jpg" class="card-img-top" alt="...">
+                    <img src="{{ asset('img/iphone.png') }}" class="card-img-top" alt="...">
                     <div class="card-body pt-0">
                         <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
                         <div class="d-flex justify-content-between mx-4">
@@ -151,7 +151,7 @@
             </div>
             <div class="col-lg-3 col-sm-6 col-12">
                 <div class="list-item card">
-                    <img src="https://im9.cz/sk/iR/importprodukt-orig/a97/a979b66ff3891ca02321b9e8dd5b68e2--mmf1000x1000.jpg" class="card-img-top" alt="...">
+                    <img src="{{ asset('img/iphone.png') }}" class="card-img-top" alt="...">
                     <div class="card-body pt-0">
                         <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
                         <div class="d-flex justify-content-between mx-4">
@@ -173,7 +173,7 @@
             </div>
             <div class="col-lg-3 col-sm-6 col-12">
                 <div class="list-item card">
-                    <img src="https://im9.cz/sk/iR/importprodukt-orig/a97/a979b66ff3891ca02321b9e8dd5b68e2--mmf1000x1000.jpg" class="card-img-top" alt="...">
+                    <img src="{{ asset('img/iphone.png') }}" class="card-img-top" alt="...">
                     <div class="card-body pt-0">
                         <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
                         <div class="d-flex justify-content-between mx-4">
@@ -191,7 +191,7 @@
             </div>
             <div class="col-lg-3 col-sm-6 col-12">
                 <div class="list-item card">
-                    <img src="https://im9.cz/sk/iR/importprodukt-orig/a97/a979b66ff3891ca02321b9e8dd5b68e2--mmf1000x1000.jpg" class="card-img-top" alt="...">
+                    <img src="{{ asset('img/iphone.png') }}" class="card-img-top" alt="...">
                     <div class="card-body pt-0">
                         <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
                         <div class="d-flex justify-content-between mx-4">
@@ -209,7 +209,7 @@
             </div>
             <div class="col-lg-3 col-sm-6 col-12">
                 <div class="list-item card">
-                    <img src="https://im9.cz/sk/iR/importprodukt-orig/a97/a979b66ff3891ca02321b9e8dd5b68e2--mmf1000x1000.jpg" class="card-img-top" alt="...">
+                    <img src="{{ asset('img/iphone.png') }}" class="card-img-top" alt="...">
                     <div class="card-body pt-0">
                         <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
                         <div class="d-flex justify-content-between mx-4">
@@ -227,7 +227,7 @@
             </div>
             <div class="col-lg-3 col-sm-6 col-12">
                 <div class="list-item card">
-                    <img src="https://im9.cz/sk/iR/importprodukt-orig/a97/a979b66ff3891ca02321b9e8dd5b68e2--mmf1000x1000.jpg" class="card-img-top" alt="...">
+                    <img src="{{ asset('img/iphone.png') }}" class="card-img-top" alt="...">
                     <div class="card-body pt-0">
                         <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
                         <div class="d-flex justify-content-between mx-4">
@@ -249,7 +249,7 @@
             </div>
             <div class="col-lg-3 col-sm-6 col-12">
                 <div class="list-item card">
-                    <img src="https://im9.cz/sk/iR/importprodukt-orig/a97/a979b66ff3891ca02321b9e8dd5b68e2--mmf1000x1000.jpg" class="card-img-top" alt="...">
+                    <img src="{{ asset('img/iphone.png') }}" class="card-img-top" alt="...">
                     <div class="card-body pt-0">
                         <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
                         <div class="d-flex justify-content-between mx-4">
@@ -267,7 +267,7 @@
             </div>
             <div class="col-lg-3 col-sm-6 col-12">
                 <div class="list-item card">
-                    <img src="https://im9.cz/sk/iR/importprodukt-orig/a97/a979b66ff3891ca02321b9e8dd5b68e2--mmf1000x1000.jpg" class="card-img-top" alt="...">
+                    <img src="{{ asset('img/iphone.png') }}" class="card-img-top" alt="...">
                     <div class="card-body pt-0">
                         <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
                         <div class="d-flex justify-content-between mx-4">
@@ -285,7 +285,7 @@
             </div>
             <div class="col-lg-3 col-sm-6 col-12">
                 <div class="list-item card">
-                    <img src="https://im9.cz/sk/iR/importprodukt-orig/a97/a979b66ff3891ca02321b9e8dd5b68e2--mmf1000x1000.jpg" class="card-img-top" alt="...">
+                    <img src="{{ asset('img/iphone.png') }}" class="card-img-top" alt="...">
                     <div class="card-body pt-0">
                         <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
                         <div class="d-flex justify-content-between mx-4">
@@ -303,7 +303,7 @@
             </div>
             <div class="col-lg-3 col-sm-6 col-12">
                 <div class="list-item card">
-                    <img src="https://im9.cz/sk/iR/importprodukt-orig/a97/a979b66ff3891ca02321b9e8dd5b68e2--mmf1000x1000.jpg" class="card-img-top" alt="...">
+                    <img src="{{ asset('img/iphone.png') }}" class="card-img-top" alt="...">
                     <div class="card-body pt-0">
                         <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
                         <div class="d-flex justify-content-between mx-4">

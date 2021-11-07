@@ -53,7 +53,7 @@
                                 6.2" AMOLED 2400 × 1080, 120Hz, procesor Qualcomm Snapdragon 8- jadrový,
                                 RAM 8GB, interná pamäť 128GB, MicroSD až 1000 GB, zadný fotoaparát 64Mpx
                                 (f/1.8)+12Mpx (f/2.2)+5Mpx (f/2.4)+5Mpx (f/2.4) , predný fotoaparát 32Mpx,
-                                optická stabilizácia, GPS,...
+                                optická stabilizácia, GPS...<a href="#">zobraziť celý popis</a>
                             </p>
                         </div>
                     </div>
