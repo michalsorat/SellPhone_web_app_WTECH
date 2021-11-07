@@ -31,5 +31,7 @@ Route::get('/register', function () {
 Route::get('/sumarization', function () {
     return view('shoppingCartStep1');
 });
-
+Route::get('/shipping-payment', function () {
+    return view('shoppingCartStep2');
+});
 
