@@ -34,4 +34,7 @@ Route::get('/sumarization', function () {
 Route::get('/shipping-payment', function () {
     return view('shoppingCartStep2');
 });
+Route::get('/shipping-address', function () {
+    return view('shoppingCartStep3');
+});
 
