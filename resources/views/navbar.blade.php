@@ -12,9 +12,13 @@
             </span>
         </form>
     </div>
-    <div class="col-md-4 col-3 d-flex justify-content-end mt-3" id="nav-icons">
-        <i class="far fa-user"></i>
-        <i class="fas fa-shopping-cart"></i>
+    <div class="col-md-4 col-3 d-flex justify-content-end" id="nav-icons">
+        <button class="btn" type="button" data-bs-toggle="modal" data-bs-target="#loginModal">
+            <i class="far fa-user"></i>
+        </button>
+        <button class="btn" type="button">
+            <i class="fas fa-shopping-cart"></i>
+        </button>
     </div>
 </div>
 
@@ -43,6 +47,35 @@
                     </button>
                 </span>
             </form>
+        </div>
+    </div>
+
+
+
+    <div class="modal fade" id="loginModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Prihlásenie</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Emailová adresa</label>
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Emailová adresa" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Heslo</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Heslo" />
+                        </div>
+                        <div class="modal-footer d-block">
+                            <p class="float-start">Ešte nemáte účet? <a href="#">Zaregistrujte sa</a></p>
+                            <button type="submit" class="btn btn-dark float-end">Prihlásenie</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 
