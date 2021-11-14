@@ -1,5 +1,4 @@
-*
-{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,7 +7,14 @@
 }
 
 body {
-    font-size: 16px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
+    color:#f0f9ff;
 }
 
 #main-header {
@@ -147,6 +153,7 @@ body {
 .shopping-cart .btn i {
     font-size: 1.8rem;
 }
+
 .list-items-homepage .list-item {
     margin-top: 15px;
 }
@@ -155,11 +162,17 @@ body {
     margin-top: 30px;
 }
 
+.list-item {
+    text-decoration: none;
+    color: #000000;
+}
+
 .list-item:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
     transition: 0.2s ease-in-out;
 }
+
 .header-holder:first-child {
     margin-top: 30px;
 }
@@ -217,30 +230,32 @@ body {
     text-decoration: none;
 }
 
-.modal-footer a
-{
+.modal-footer a {
     text-decoration: none;
 }
 
 .footer {
-    padding:10px;
-    color:#f0f9ff;
+    padding: 10px;
+    color: #f0f9ff;
 }
 
 .footer ul {
-    padding:0;
-    list-style:none;
-    line-height:1.6;
-    font-size:0.7rem;
-    margin-bottom:0;
+    padding: 0;
+    list-style: none;
+    line-height: 1.6;
+    font-size: 0.7rem;
+    margin-bottom: 0;
 }
-.footer ul a{
+
+.footer ul a {
     text-decoration: none;
 }
+
 .fa-github {
     font-size: 3rem;
     color: #ffffff;
 }
+
 #copyrights {
     font-size: 0.7rem;
 }
@@ -338,15 +353,18 @@ body {
     min-width: 100px;
 }
 
-.next-step ul{
-    list-style:none;
+.next-step ul {
+    list-style: none;
 }
+
 .next-step ul li span {
     margin-left: 10px;
 }
-.next-step ul{
-    list-style:none;
+
+.next-step ul {
+    list-style: none;
 }
+
 .next-step ul li span {
     margin-left: 10px;
 }

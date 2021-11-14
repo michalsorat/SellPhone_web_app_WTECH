@@ -6,10 +6,10 @@
         <form class="d-sm-flex d-none my-2 my-lg-3">
             <input class="form-control" type="search" placeholder="Zadajte názov produktu" aria-label="Search">
             <span class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button">
-                    <i class="fa fa-search"></i>
-                </button>
-            </span>
+            <button class="btn btn-outline-secondary" type="button">
+                <i class="fa fa-search"></i>
+            </button>
+        </span>
         </form>
     </div>
     <div class="col-md-4 col-3 d-flex justify-content-end" id="nav-icons">
@@ -42,21 +42,19 @@
             <form class="d-sm-none d-flex">
                 <input class="form-control" type="search" placeholder="Zadajte názov produktu" aria-label="Search">
                 <span class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button">
-                        <i class="fa fa-search"></i>
-                    </button>
-                </span>
+                <button class="btn btn-outline-secondary" type="button">
+                    <i class="fa fa-search"></i>
+                </button>
+            </span>
             </form>
         </div>
     </div>
-
-
 
     <div class="modal fade" id="loginModal" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Prihlásenie</h5>
+                    <h5 class="modal-title" id="loginLabel">Prihlásenie</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -78,6 +76,6 @@
             </div>
         </div>
     </div>
-
 </nav>
+
 

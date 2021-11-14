@@ -9,21 +9,15 @@
             <button type="button" data-bs-target="#homepage-slider" data-bs-slide-to="2"></button>
         </div>
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img
-                    src="{{ asset('img/slider.png') }}"
-                    class="d-block w-100" alt="">
-            </div>
-            <div class="carousel-item">
-                <img
-                    src="{{ asset('img/slider.png') }}"
-                    class="d-block w-100" alt="">
-            </div>
-            <div class="carousel-item">
-                <img
-                    src="{{ asset('img/slider.png') }}"
-                    class="d-block w-100" alt="">
-            </div>
+            <a class="carousel-item active" href="#">
+                <img src="{{ asset('img/slider.png') }}" class="d-block w-100" alt="">
+            </a>
+            <a class="carousel-item" href="#">
+                <img src="{{ asset('img/slider.png') }}" class="d-block w-100" alt="">
+            </a>
+            <a class="carousel-item" href="#">
+                <img src="{{ asset('img/slider.png') }}" class="d-block w-100" alt="">
+            </a>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#homepage-slider"
                 data-bs-slide="prev">
@@ -90,13 +84,13 @@
         </div>
     </div>
 
-    <div class="container bg-trasparent list-items-homepage mb-5">
+    <div class="container bg-transparent list-items-homepage mb-5">
         <div class="row">
             <div class="header-holder text-center col-12">
                 <h4>Top produkty</h4>
             </div>
             <div class="col-lg-3 col-sm-6 col-12">
-                <div class="list-item card">
+                <a class="list-item card" href="#">
                     <img src="{{ asset('img/iphone.png') }}" class="card-img-top" alt="...">
                     <div class="card-body pt-0">
                         <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
@@ -111,10 +105,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col-lg-3 col-sm-6 col-12">
-                <div class="list-item card">
+                <a class="list-item card" href="#">
                     <img src="{{ asset('img/iphone.png') }}" class="card-img-top" alt="...">
                     <div class="card-body pt-0">
                         <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
@@ -129,10 +123,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col-lg-3 col-sm-6 col-12">
-                <div class="list-item card">
+                <a class="list-item card" href="#">
                     <img src="{{ asset('img/iphone.png') }}" class="card-img-top" alt="...">
                     <div class="card-body pt-0">
                         <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
@@ -147,10 +141,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col-lg-3 col-sm-6 col-12">
-                <div class="list-item card">
+                <a class="list-item card" href="#">
                     <img src="{{ asset('img/iphone.png') }}" class="card-img-top" alt="...">
                     <div class="card-body pt-0">
                         <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
@@ -165,14 +159,14 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
 
             <div class="header-holder text-center col-12">
                 <h4>Super cena</h4>
             </div>
             <div class="col-lg-3 col-sm-6 col-12">
-                <div class="list-item card">
+                <a class="list-item card" href="#">
                     <img src="{{ asset('img/iphone.png') }}" class="card-img-top" alt="...">
                     <div class="card-body pt-0">
                         <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
@@ -187,10 +181,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col-lg-3 col-sm-6 col-12">
-                <div class="list-item card">
+                <a class="list-item card" href="#">
                     <img src="{{ asset('img/iphone.png') }}" class="card-img-top" alt="...">
                     <div class="card-body pt-0">
                         <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
@@ -205,10 +199,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col-lg-3 col-sm-6 col-12">
-                <div class="list-item card">
+                <a class="list-item card" href="#">
                     <img src="{{ asset('img/iphone.png') }}" class="card-img-top" alt="...">
                     <div class="card-body pt-0">
                         <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
@@ -223,10 +217,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col-lg-3 col-sm-6 col-12">
-                <div class="list-item card">
+                <a class="list-item card" href="#">
                     <img src="{{ asset('img/iphone.png') }}" class="card-img-top" alt="...">
                     <div class="card-body pt-0">
                         <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
@@ -241,14 +235,14 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
 
             <div class="header-holder text-center col-12">
                 <h4>Akcia</h4>
             </div>
             <div class="col-lg-3 col-sm-6 col-12">
-                <div class="list-item card">
+                <a class="list-item card" href="#">
                     <img src="{{ asset('img/iphone.png') }}" class="card-img-top" alt="...">
                     <div class="card-body pt-0">
                         <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
@@ -263,10 +257,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col-lg-3 col-sm-6 col-12">
-                <div class="list-item card">
+                <a class="list-item card" href="#">
                     <img src="{{ asset('img/iphone.png') }}" class="card-img-top" alt="...">
                     <div class="card-body pt-0">
                         <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
@@ -281,10 +275,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col-lg-3 col-sm-6 col-12">
-                <div class="list-item card">
+                <a class="list-item card" href="#">
                     <img src="{{ asset('img/iphone.png') }}" class="card-img-top" alt="...">
                     <div class="card-body pt-0">
                         <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
@@ -299,10 +293,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col-lg-3 col-sm-6 col-12">
-                <div class="list-item card">
+                <a class="list-item card" href="#">
                     <img src="{{ asset('img/iphone.png') }}" class="card-img-top" alt="...">
                     <div class="card-body pt-0">
                         <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
@@ -317,7 +311,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </div>

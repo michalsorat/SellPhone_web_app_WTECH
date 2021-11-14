@@ -28,7 +28,8 @@
             <div class="col-sm-4 col-md-3 col-xl-2 col-12">
                 <div class="container border-bottom mt-4">
                     <div class="text-uppercase d-flex align-items-center">Cena
-                        <button class="btn ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#price-range"
+                        <button class="btn ms-auto" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#price-range"
                                 aria-expanded="false" aria-controls="avail-choices">
                             <span
                                 class="fas fa-plus">
@@ -59,7 +60,8 @@
 
                 <div class="container border-bottom mt-4">
                     <div class="text-uppercase d-flex align-items-center">Dostupnosť
-                        <button class="btn ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#avail-choices"
+                        <button class="btn ms-auto" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#avail-choices"
                                 aria-expanded="false" aria-controls="avail-choices">
                             <span
                                 class="fas fa-plus">
@@ -84,7 +86,8 @@
 
                 <div class="container border-bottom mt-4">
                     <div class="text-uppercase d-flex align-items-center">Uhlopriečka
-                        <button class="btn ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#screen-size-choices"
+                        <button class="btn ms-auto" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#screen-size-choices"
                                 aria-expanded="false" aria-controls="screen-size-choices">
                             <span
                                 class="fas fa-plus">
@@ -115,7 +118,8 @@
 
                 <div class="container border-bottom mt-4">
                     <div class="text-uppercase d-flex align-items-center">Operačná pamäť
-                        <button class="btn ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#ram-choices"
+                        <button class="btn ms-auto" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#ram-choices"
                                 aria-expanded="false" aria-controls="ram-choices">
                             <span
                                 class="fas fa-plus">
@@ -152,7 +156,8 @@
 
                 <div class="container border-bottom mt-4">
                     <div class="text-uppercase d-flex align-items-center">Interná pamäť
-                        <button class="btn ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#hdd-choices"
+                        <button class="btn ms-auto" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#hdd-choices"
                                 aria-expanded="false" aria-controls="hdd-choices">
                             <span
                                 class="fas fa-plus">
@@ -199,10 +204,10 @@
             </div>
 
             <div class="product-list col-sm-8 col-md-9 col-xl-10 col-12 pe-5">
-                <div class="bg-trasparent list-items">
+                <div class="bg-transparent list-items">
                     <div class="row">
                         <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                            <div class="list-item card">
+                            <a class="list-item card" href="#">
                                 <img
                                     src="{{ asset('img/iphone.png') }}"
                                     class="card-img-top" alt="...">
@@ -219,10 +224,10 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                         <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                            <div class="list-item card">
+                            <a class="list-item card" href="#">
                                 <img
                                     src="{{ asset('img/iphone.png') }}"
                                     class="card-img-top" alt="...">
@@ -239,10 +244,10 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                         <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                            <div class="list-item card">
+                            <a class="list-item card" href="#">
                                 <img
                                     src="{{ asset('img/iphone.png') }}"
                                     class="card-img-top" alt="...">
@@ -259,10 +264,10 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                         <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                            <div class="list-item card">
+                            <a class="list-item card" href="#">
                                 <img
                                     src="{{ asset('img/iphone.png') }}"
                                     class="card-img-top" alt="...">
@@ -279,92 +284,11 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                            <div class="list-item card">
-                                <img
-                                    src="{{ asset('img/iphone.png') }}"
-                                    class="card-img-top" alt="...">
-                                <div class="card-body pt-0">
-                                    <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
-                                    <div class="d-flex justify-content-between mx-4">
-                                        <div class="price">
-                                            <span>999,99€</span>
-                                        </div>
-                                        <div class="shopping-cart">
-                                            <button class="btn" type="button">
-                                                <i class="fas fa-cart-plus"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                            <div class="list-item card">
-                                <img
-                                    src="{{ asset('img/iphone.png') }}"
-                                    class="card-img-top" alt="...">
-                                <div class="card-body pt-0">
-                                    <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
-                                    <div class="d-flex justify-content-between mx-4">
-                                        <div class="price">
-                                            <span>999,99€</span>
-                                        </div>
-                                        <div class="shopping-cart">
-                                            <button class="btn" type="button">
-                                                <i class="fas fa-cart-plus"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                            <div class="list-item card">
-                                <img
-                                    src="{{ asset('img/iphone.png') }}"
-                                    class="card-img-top" alt="...">
-                                <div class="card-body pt-0">
-                                    <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
-                                    <div class="d-flex justify-content-between mx-4">
-                                        <div class="price">
-                                            <span>999,99€</span>
-                                        </div>
-                                        <div class="shopping-cart">
-                                            <button class="btn" type="button">
-                                                <i class="fas fa-cart-plus"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                            <div class="list-item card">
-                                <img
-                                    src="{{ asset('img/iphone.png') }}"
-                                    class="card-img-top" alt="...">
-                                <div class="card-body pt-0">
-                                    <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
-                                    <div class="d-flex justify-content-between mx-4">
-                                        <div class="price">
-                                            <span>999,99€</span>
-                                        </div>
-                                        <div class="shopping-cart">
-                                            <button class="btn" type="button">
-                                                <i class="fas fa-cart-plus"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            </a>
                         </div>
 
                         <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                            <div class="list-item card">
+                            <a class="list-item card" href="#">
                                 <img
                                     src="{{ asset('img/iphone.png') }}"
                                     class="card-img-top" alt="...">
@@ -381,10 +305,10 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                         <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                            <div class="list-item card">
+                            <a class="list-item card" href="#">
                                 <img
                                     src="{{ asset('img/iphone.png') }}"
                                     class="card-img-top" alt="...">
@@ -401,10 +325,10 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                         <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                            <div class="list-item card">
+                            <a class="list-item card" href="#">
                                 <img
                                     src="{{ asset('img/iphone.png') }}"
                                     class="card-img-top" alt="...">
@@ -421,10 +345,10 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                         <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                            <div class="list-item card">
+                            <a class="list-item card" href="#">
                                 <img
                                     src="{{ asset('img/iphone.png') }}"
                                     class="card-img-top" alt="...">
@@ -441,7 +365,88 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                            <a class="list-item card" href="#">
+                                <img
+                                    src="{{ asset('img/iphone.png') }}"
+                                    class="card-img-top" alt="...">
+                                <div class="card-body pt-0">
+                                    <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
+                                    <div class="d-flex justify-content-between mx-4">
+                                        <div class="price">
+                                            <span>999,99€</span>
+                                        </div>
+                                        <div class="shopping-cart">
+                                            <button class="btn" type="button">
+                                                <i class="fas fa-cart-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                            <a class="list-item card" href="#">
+                                <img
+                                    src="{{ asset('img/iphone.png') }}"
+                                    class="card-img-top" alt="...">
+                                <div class="card-body pt-0">
+                                    <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
+                                    <div class="d-flex justify-content-between mx-4">
+                                        <div class="price">
+                                            <span>999,99€</span>
+                                        </div>
+                                        <div class="shopping-cart">
+                                            <button class="btn" type="button">
+                                                <i class="fas fa-cart-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                            <a class="list-item card" href="#">
+                                <img
+                                    src="{{ asset('img/iphone.png') }}"
+                                    class="card-img-top" alt="...">
+                                <div class="card-body pt-0">
+                                    <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
+                                    <div class="d-flex justify-content-between mx-4">
+                                        <div class="price">
+                                            <span>999,99€</span>
+                                        </div>
+                                        <div class="shopping-cart">
+                                            <button class="btn" type="button">
+                                                <i class="fas fa-cart-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                            <a class="list-item card" href="#">
+                                <img
+                                    src="{{ asset('img/iphone.png') }}"
+                                    class="card-img-top" alt="...">
+                                <div class="card-body pt-0">
+                                    <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
+                                    <div class="d-flex justify-content-between mx-4">
+                                        <div class="price">
+                                            <span>999,99€</span>
+                                        </div>
+                                        <div class="shopping-cart">
+                                            <button class="btn" type="button">
+                                                <i class="fas fa-cart-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
                     <div class="row">
@@ -461,17 +466,17 @@
         </div>
     </div>
     <script>
-        $( function() {
-            $( "#slider-range" ).slider({
+        $(function () {
+            $("#slider-range").slider({
                 range: true,
                 min: 0,
                 max: 1500,
-                values: [ 250, 1250 ],
-                slide: function( event, ui ) {
+                values: [250, 1250],
+                slide: function (event, ui) {
                     $("#min-price").val(ui.values[0] + " €");
                     $("#max-price").val(ui.values[1] + " €");
                 }
             });
-        } );
+        });
     </script>
 @endsection
