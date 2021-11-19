@@ -1,77 +1,106 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+<div class="register-holder section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3 col-md-10 offset-md-1 col-12">
+                <div class="register-form">
+                    <div class="title">
+                        <h4>Nemáte účet? Zaregistrujte sa.</h4>
+                        <p>Registrácia trvá menej ako minútu a vďaka nej si uľahčíte proces objednávky</p>
+                    </div>
+                    <form class="row" method="POST" action="{{ route('register') }}">
                         @csrf
 
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                        <div class="reg-param col-sm-6">
+                            <div class="form-group">
+                                <label for="name">Meno</label>
+                                <input class="form-control @error('name') is-invalid @enderror" type="text" id="name" name="name" required>
 
                                 @error('name')
-                                    <span class="invalid-feedback" role="alert">
+                                <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
                         </div>
+                        <div class="reg-param col-sm-6">
+                            <div class="form-group">
+                                <label for="last-name">Priezvisko</label>
+                                <input class="form-control @error('last-name') is-invalid @enderror" type="text" id="last-name" name="last-name" required>
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                @error('last-name')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="reg-param col-12">
+                            <div class="form-group">
+                                <label for="email">E-mailová adresa</label>
+                                <input class="form-control @error('email') is-invalid @enderror" type="email" id="email" name="email" required>
 
                                 @error('email')
-                                    <span class="invalid-feedback" role="alert">
+                                <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
                         </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                        <div class="reg-param col-sm-6">
+                            <div class="form-group">
+                                <label for="street">Ulica</label>
+                                <input class="form-control" type="text" id="street" name="street" required>
+                            </div>
+                        </div>
+                        <div class="reg-param col-sm-6">
+                            <div class="form-group">
+                                <label for="street-nr">Orientačné číslo</label>
+                                <input class="form-control" type="text" id="street-nr" name="street-nr" required>
+                            </div>
+                        </div>
+                        <div class="reg-param col-sm-6">
+                            <div class="form-group">
+                                <label for="city">Mesto</label>
+                                <input class="form-control" type="text" id="city" name="city" required>
+                            </div>
+                        </div>
+                        <div class="reg-param col-sm-6">
+                            <div class="form-group">
+                                <label for="psc">PSČ</label>
+                                <input class="form-control" type="text" id="psc" name="psc" required>
+                            </div>
+                        </div>
+                        <div class="reg-param col-sm-6">
+                            <div class="form-group">
+                                <label for="password">Heslo</label>
+                                <input class="form-control @error('password') is-invalid @enderror" type="password" id="password" name="password" required>
 
                                 @error('password')
-                                    <span class="invalid-feedback" role="alert">
+                                <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
                         </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                        <div class="reg-param col-sm-6">
+                            <div class="form-group">
+                                <label for="password-confirm">Heslo znova</label>
+                                <input class="form-control" type="password" id="password-confirm" name="password_confirmation" required>
                             </div>
                         </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
+                        <div class="register-button">
+                            <button class="reg-btn btn btn-dark" type="submit">Registrovať</button>
                         </div>
+                        <p class="outer-link">Už máte účet? <a href="{{ route('login') }}">Prihlásiť sa</a>
+                        </p>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 @endsection

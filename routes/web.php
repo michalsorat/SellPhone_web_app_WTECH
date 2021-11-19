@@ -22,7 +22,7 @@ Route::get('/product-detail', function () {
     return view('productDetailPage');
 });
 Route::get('/register', function () {
-    return view('registerPage');
+    return view('register');
 });
 Route::get('/summarization', function () {
     return view('shoppingCartStep1');
