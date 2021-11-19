@@ -8,9 +8,11 @@
                 <div class="register-form">
                     <div class="title">
                         <h4>Nemáte účet? Zaregistrujte sa.</h4>
-                        <p>Registrácia trvá menej ako minútu a vďaka nej budete mať plnú kontrolu nad Vašimi objednávkami</p>
+                        <p>Registrácia trvá menej ako minútu a vďaka nej si uľahčíte proces objednávky</p>
                     </div>
-                    <form class="row" method="POST">
+                    <form class="row" method="POST" action="{{ route('register') }}">
+                        @csrf
+
                         <div class="reg-param col-sm-6">
                             <div class="form-group">
                                 <label for="reg-fn">Meno</label>

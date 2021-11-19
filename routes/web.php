@@ -37,3 +37,7 @@ Route::get('/order-confirmation', function () {
     return view('orderConfirmation');
 });
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

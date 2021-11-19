@@ -68,8 +68,33 @@
                             <input type="password" class="form-control" id="password" name="password" placeholder="Heslo" />
                         </div>
                         <div class="modal-footer d-block">
-                            <p class="float-start">Ešte nemáte účet? <a href="#">Zaregistrujte sa</a></p>
-                            <button type="submit" class="btn btn-dark float-end">Prihlásenie</button>
+                            @guest
+{{--                                @if (Route::has('register'))--}}
+                                    <p class="float-start">Ešte nemáte účet? <a href="{{ route('register') }}">Zaregistrujte sa</a></p>
+{{--                                @endif--}}
+
+{{--                                @if (Route::has('login'))--}}
+                                    <a type="submit" href="{{ route('login') }}" class="btn btn-dark float-end">Prihlásenie</a>
+{{--                                @endif--}}
+                            @else
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        {{ Auth::user()->name }}
+                                    </a>
+
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                           onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form>
+                                    </div>
+                                </li>
+                            @endguest
                         </div>
                     </form>
                 </div>
