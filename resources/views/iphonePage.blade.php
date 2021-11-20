@@ -13,11 +13,11 @@
     </div>
 
     <div class="container-fluid mt-4">
-        <div class="d-flex justify-content-end pe-5">
+        <div class="d-flex justify-content-end me-5">
+            <label class="align-self-center me-3" for="orderBy">Zoradiť podľa</label>
             <div>
-                <select id="orderBy" class="form-select ms-3">
-                    <option selected>Zoradiť podľa</option>
-                    <option value="1">Najpredávanejšie</option>
+                <select id="orderBy" class="form-select">
+                    <option selected value="1">Najpredávanejšie</option>
                     <option value="2">Novinky</option>
                     <option value="2">Najlacnejšie</option>
                     <option value="3">Najdrahšie</option>
@@ -203,266 +203,266 @@
                 </div>
             </div>
 
-            <div class="product-list col-sm-8 col-md-9 col-xl-10 col-12 pe-5">
-                <div class="bg-transparent list-items">
-                    <div class="row">
-                        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                            <a class="list-item card" href="#">
-                                <img
-                                    src="{{ asset('img/iphone.png') }}"
-                                    class="card-img-top" alt="...">
-                                <div class="card-body pt-0">
-                                    <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
-                                    <div class="d-flex justify-content-between mx-4">
-                                        <div class="price">
-                                            <span>999,99€</span>
-                                        </div>
-                                        <div class="shopping-cart">
-                                            <button class="btn" type="button">
-                                                <i class="fas fa-cart-plus"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                            <a class="list-item card" href="#">
-                                <img
-                                    src="{{ asset('img/iphone.png') }}"
-                                    class="card-img-top" alt="...">
-                                <div class="card-body pt-0">
-                                    <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
-                                    <div class="d-flex justify-content-between mx-4">
-                                        <div class="price">
-                                            <span>999,99€</span>
-                                        </div>
-                                        <div class="shopping-cart">
-                                            <button class="btn" type="button">
-                                                <i class="fas fa-cart-plus"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                            <a class="list-item card" href="#">
-                                <img
-                                    src="{{ asset('img/iphone.png') }}"
-                                    class="card-img-top" alt="...">
-                                <div class="card-body pt-0">
-                                    <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
-                                    <div class="d-flex justify-content-between mx-4">
-                                        <div class="price">
-                                            <span>999,99€</span>
-                                        </div>
-                                        <div class="shopping-cart">
-                                            <button class="btn" type="button">
-                                                <i class="fas fa-cart-plus"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                            <a class="list-item card" href="#">
-                                <img
-                                    src="{{ asset('img/iphone.png') }}"
-                                    class="card-img-top" alt="...">
-                                <div class="card-body pt-0">
-                                    <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
-                                    <div class="d-flex justify-content-between mx-4">
-                                        <div class="price">
-                                            <span>999,99€</span>
-                                        </div>
-                                        <div class="shopping-cart">
-                                            <button class="btn" type="button">
-                                                <i class="fas fa-cart-plus"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
+            {{--            <div class="product-list col-sm-8 col-md-9 col-xl-10 col-12 pe-5">--}}
+            {{--                <div class="bg-transparent list-items">--}}
+            {{--                    <div class="row">--}}
+            {{--                        <div class="col-12 col-md-6 col-lg-4 col-xl-3">--}}
+            {{--                            <a class="list-item card" href="#">--}}
+            {{--                                <img--}}
+            {{--                                    src="{{ asset('img/iphone.png') }}"--}}
+            {{--                                    class="card-img-top" alt="...">--}}
+            {{--                                <div class="card-body pt-0">--}}
+            {{--                                    <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>--}}
+            {{--                                    <div class="d-flex justify-content-between mx-4">--}}
+            {{--                                        <div class="price">--}}
+            {{--                                            <span>999,99€</span>--}}
+            {{--                                        </div>--}}
+            {{--                                        <div class="shopping-cart">--}}
+            {{--                                            <button class="btn" type="button">--}}
+            {{--                                                <i class="fas fa-cart-plus"></i>--}}
+            {{--                                            </button>--}}
+            {{--                                        </div>--}}
+            {{--                                    </div>--}}
+            {{--                                </div>--}}
+            {{--                            </a>--}}
+            {{--                        </div>--}}
+            {{--                        <div class="col-12 col-md-6 col-lg-4 col-xl-3">--}}
+            {{--                            <a class="list-item card" href="#">--}}
+            {{--                                <img--}}
+            {{--                                    src="{{ asset('img/iphone.png') }}"--}}
+            {{--                                    class="card-img-top" alt="...">--}}
+            {{--                                <div class="card-body pt-0">--}}
+            {{--                                    <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>--}}
+            {{--                                    <div class="d-flex justify-content-between mx-4">--}}
+            {{--                                        <div class="price">--}}
+            {{--                                            <span>999,99€</span>--}}
+            {{--                                        </div>--}}
+            {{--                                        <div class="shopping-cart">--}}
+            {{--                                            <button class="btn" type="button">--}}
+            {{--                                                <i class="fas fa-cart-plus"></i>--}}
+            {{--                                            </button>--}}
+            {{--                                        </div>--}}
+            {{--                                    </div>--}}
+            {{--                                </div>--}}
+            {{--                            </a>--}}
+            {{--                        </div>--}}
+            {{--                        <div class="col-12 col-md-6 col-lg-4 col-xl-3">--}}
+            {{--                            <a class="list-item card" href="#">--}}
+            {{--                                <img--}}
+            {{--                                    src="{{ asset('img/iphone.png') }}"--}}
+            {{--                                    class="card-img-top" alt="...">--}}
+            {{--                                <div class="card-body pt-0">--}}
+            {{--                                    <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>--}}
+            {{--                                    <div class="d-flex justify-content-between mx-4">--}}
+            {{--                                        <div class="price">--}}
+            {{--                                            <span>999,99€</span>--}}
+            {{--                                        </div>--}}
+            {{--                                        <div class="shopping-cart">--}}
+            {{--                                            <button class="btn" type="button">--}}
+            {{--                                                <i class="fas fa-cart-plus"></i>--}}
+            {{--                                            </button>--}}
+            {{--                                        </div>--}}
+            {{--                                    </div>--}}
+            {{--                                </div>--}}
+            {{--                            </a>--}}
+            {{--                        </div>--}}
+            {{--                        <div class="col-12 col-md-6 col-lg-4 col-xl-3">--}}
+            {{--                            <a class="list-item card" href="#">--}}
+            {{--                                <img--}}
+            {{--                                    src="{{ asset('img/iphone.png') }}"--}}
+            {{--                                    class="card-img-top" alt="...">--}}
+            {{--                                <div class="card-body pt-0">--}}
+            {{--                                    <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>--}}
+            {{--                                    <div class="d-flex justify-content-between mx-4">--}}
+            {{--                                        <div class="price">--}}
+            {{--                                            <span>999,99€</span>--}}
+            {{--                                        </div>--}}
+            {{--                                        <div class="shopping-cart">--}}
+            {{--                                            <button class="btn" type="button">--}}
+            {{--                                                <i class="fas fa-cart-plus"></i>--}}
+            {{--                                            </button>--}}
+            {{--                                        </div>--}}
+            {{--                                    </div>--}}
+            {{--                                </div>--}}
+            {{--                            </a>--}}
+            {{--                        </div>--}}
 
-                        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                            <a class="list-item card" href="#">
-                                <img
-                                    src="{{ asset('img/iphone.png') }}"
-                                    class="card-img-top" alt="...">
-                                <div class="card-body pt-0">
-                                    <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
-                                    <div class="d-flex justify-content-between mx-4">
-                                        <div class="price">
-                                            <span>999,99€</span>
-                                        </div>
-                                        <div class="shopping-cart">
-                                            <button class="btn" type="button">
-                                                <i class="fas fa-cart-plus"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                            <a class="list-item card" href="#">
-                                <img
-                                    src="{{ asset('img/iphone.png') }}"
-                                    class="card-img-top" alt="...">
-                                <div class="card-body pt-0">
-                                    <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
-                                    <div class="d-flex justify-content-between mx-4">
-                                        <div class="price">
-                                            <span>999,99€</span>
-                                        </div>
-                                        <div class="shopping-cart">
-                                            <button class="btn" type="button">
-                                                <i class="fas fa-cart-plus"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                            <a class="list-item card" href="#">
-                                <img
-                                    src="{{ asset('img/iphone.png') }}"
-                                    class="card-img-top" alt="...">
-                                <div class="card-body pt-0">
-                                    <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
-                                    <div class="d-flex justify-content-between mx-4">
-                                        <div class="price">
-                                            <span>999,99€</span>
-                                        </div>
-                                        <div class="shopping-cart">
-                                            <button class="btn" type="button">
-                                                <i class="fas fa-cart-plus"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                            <a class="list-item card" href="#">
-                                <img
-                                    src="{{ asset('img/iphone.png') }}"
-                                    class="card-img-top" alt="...">
-                                <div class="card-body pt-0">
-                                    <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
-                                    <div class="d-flex justify-content-between mx-4">
-                                        <div class="price">
-                                            <span>999,99€</span>
-                                        </div>
-                                        <div class="shopping-cart">
-                                            <button class="btn" type="button">
-                                                <i class="fas fa-cart-plus"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
+            {{--                        <div class="col-12 col-md-6 col-lg-4 col-xl-3">--}}
+            {{--                            <a class="list-item card" href="#">--}}
+            {{--                                <img--}}
+            {{--                                    src="{{ asset('img/iphone.png') }}"--}}
+            {{--                                    class="card-img-top" alt="...">--}}
+            {{--                                <div class="card-body pt-0">--}}
+            {{--                                    <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>--}}
+            {{--                                    <div class="d-flex justify-content-between mx-4">--}}
+            {{--                                        <div class="price">--}}
+            {{--                                            <span>999,99€</span>--}}
+            {{--                                        </div>--}}
+            {{--                                        <div class="shopping-cart">--}}
+            {{--                                            <button class="btn" type="button">--}}
+            {{--                                                <i class="fas fa-cart-plus"></i>--}}
+            {{--                                            </button>--}}
+            {{--                                        </div>--}}
+            {{--                                    </div>--}}
+            {{--                                </div>--}}
+            {{--                            </a>--}}
+            {{--                        </div>--}}
+            {{--                        <div class="col-12 col-md-6 col-lg-4 col-xl-3">--}}
+            {{--                            <a class="list-item card" href="#">--}}
+            {{--                                <img--}}
+            {{--                                    src="{{ asset('img/iphone.png') }}"--}}
+            {{--                                    class="card-img-top" alt="...">--}}
+            {{--                                <div class="card-body pt-0">--}}
+            {{--                                    <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>--}}
+            {{--                                    <div class="d-flex justify-content-between mx-4">--}}
+            {{--                                        <div class="price">--}}
+            {{--                                            <span>999,99€</span>--}}
+            {{--                                        </div>--}}
+            {{--                                        <div class="shopping-cart">--}}
+            {{--                                            <button class="btn" type="button">--}}
+            {{--                                                <i class="fas fa-cart-plus"></i>--}}
+            {{--                                            </button>--}}
+            {{--                                        </div>--}}
+            {{--                                    </div>--}}
+            {{--                                </div>--}}
+            {{--                            </a>--}}
+            {{--                        </div>--}}
+            {{--                        <div class="col-12 col-md-6 col-lg-4 col-xl-3">--}}
+            {{--                            <a class="list-item card" href="#">--}}
+            {{--                                <img--}}
+            {{--                                    src="{{ asset('img/iphone.png') }}"--}}
+            {{--                                    class="card-img-top" alt="...">--}}
+            {{--                                <div class="card-body pt-0">--}}
+            {{--                                    <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>--}}
+            {{--                                    <div class="d-flex justify-content-between mx-4">--}}
+            {{--                                        <div class="price">--}}
+            {{--                                            <span>999,99€</span>--}}
+            {{--                                        </div>--}}
+            {{--                                        <div class="shopping-cart">--}}
+            {{--                                            <button class="btn" type="button">--}}
+            {{--                                                <i class="fas fa-cart-plus"></i>--}}
+            {{--                                            </button>--}}
+            {{--                                        </div>--}}
+            {{--                                    </div>--}}
+            {{--                                </div>--}}
+            {{--                            </a>--}}
+            {{--                        </div>--}}
+            {{--                        <div class="col-12 col-md-6 col-lg-4 col-xl-3">--}}
+            {{--                            <a class="list-item card" href="#">--}}
+            {{--                                <img--}}
+            {{--                                    src="{{ asset('img/iphone.png') }}"--}}
+            {{--                                    class="card-img-top" alt="...">--}}
+            {{--                                <div class="card-body pt-0">--}}
+            {{--                                    <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>--}}
+            {{--                                    <div class="d-flex justify-content-between mx-4">--}}
+            {{--                                        <div class="price">--}}
+            {{--                                            <span>999,99€</span>--}}
+            {{--                                        </div>--}}
+            {{--                                        <div class="shopping-cart">--}}
+            {{--                                            <button class="btn" type="button">--}}
+            {{--                                                <i class="fas fa-cart-plus"></i>--}}
+            {{--                                            </button>--}}
+            {{--                                        </div>--}}
+            {{--                                    </div>--}}
+            {{--                                </div>--}}
+            {{--                            </a>--}}
+            {{--                        </div>--}}
 
-                        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                            <a class="list-item card" href="#">
-                                <img
-                                    src="{{ asset('img/iphone.png') }}"
-                                    class="card-img-top" alt="...">
-                                <div class="card-body pt-0">
-                                    <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
-                                    <div class="d-flex justify-content-between mx-4">
-                                        <div class="price">
-                                            <span>999,99€</span>
-                                        </div>
-                                        <div class="shopping-cart">
-                                            <button class="btn" type="button">
-                                                <i class="fas fa-cart-plus"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                            <a class="list-item card" href="#">
-                                <img
-                                    src="{{ asset('img/iphone.png') }}"
-                                    class="card-img-top" alt="...">
-                                <div class="card-body pt-0">
-                                    <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
-                                    <div class="d-flex justify-content-between mx-4">
-                                        <div class="price">
-                                            <span>999,99€</span>
-                                        </div>
-                                        <div class="shopping-cart">
-                                            <button class="btn" type="button">
-                                                <i class="fas fa-cart-plus"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                            <a class="list-item card" href="#">
-                                <img
-                                    src="{{ asset('img/iphone.png') }}"
-                                    class="card-img-top" alt="...">
-                                <div class="card-body pt-0">
-                                    <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
-                                    <div class="d-flex justify-content-between mx-4">
-                                        <div class="price">
-                                            <span>999,99€</span>
-                                        </div>
-                                        <div class="shopping-cart">
-                                            <button class="btn" type="button">
-                                                <i class="fas fa-cart-plus"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                            <a class="list-item card" href="#">
-                                <img
-                                    src="{{ asset('img/iphone.png') }}"
-                                    class="card-img-top" alt="...">
-                                <div class="card-body pt-0">
-                                    <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
-                                    <div class="d-flex justify-content-between mx-4">
-                                        <div class="price">
-                                            <span>999,99€</span>
-                                        </div>
-                                        <div class="shopping-cart">
-                                            <button class="btn" type="button">
-                                                <i class="fas fa-cart-plus"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <ul class="pagination justify-content-end">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#">Predchádzajúca stránka</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">Ďalšia stránka</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {{--                        <div class="col-12 col-md-6 col-lg-4 col-xl-3">--}}
+            {{--                            <a class="list-item card" href="#">--}}
+            {{--                                <img--}}
+            {{--                                    src="{{ asset('img/iphone.png') }}"--}}
+            {{--                                    class="card-img-top" alt="...">--}}
+            {{--                                <div class="card-body pt-0">--}}
+            {{--                                    <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>--}}
+            {{--                                    <div class="d-flex justify-content-between mx-4">--}}
+            {{--                                        <div class="price">--}}
+            {{--                                            <span>999,99€</span>--}}
+            {{--                                        </div>--}}
+            {{--                                        <div class="shopping-cart">--}}
+            {{--                                            <button class="btn" type="button">--}}
+            {{--                                                <i class="fas fa-cart-plus"></i>--}}
+            {{--                                            </button>--}}
+            {{--                                        </div>--}}
+            {{--                                    </div>--}}
+            {{--                                </div>--}}
+            {{--                            </a>--}}
+            {{--                        </div>--}}
+            {{--                        <div class="col-12 col-md-6 col-lg-4 col-xl-3">--}}
+            {{--                            <a class="list-item card" href="#">--}}
+            {{--                                <img--}}
+            {{--                                    src="{{ asset('img/iphone.png') }}"--}}
+            {{--                                    class="card-img-top" alt="...">--}}
+            {{--                                <div class="card-body pt-0">--}}
+            {{--                                    <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>--}}
+            {{--                                    <div class="d-flex justify-content-between mx-4">--}}
+            {{--                                        <div class="price">--}}
+            {{--                                            <span>999,99€</span>--}}
+            {{--                                        </div>--}}
+            {{--                                        <div class="shopping-cart">--}}
+            {{--                                            <button class="btn" type="button">--}}
+            {{--                                                <i class="fas fa-cart-plus"></i>--}}
+            {{--                                            </button>--}}
+            {{--                                        </div>--}}
+            {{--                                    </div>--}}
+            {{--                                </div>--}}
+            {{--                            </a>--}}
+            {{--                        </div>--}}
+            {{--                        <div class="col-12 col-md-6 col-lg-4 col-xl-3">--}}
+            {{--                            <a class="list-item card" href="#">--}}
+            {{--                                <img--}}
+            {{--                                    src="{{ asset('img/iphone.png') }}"--}}
+            {{--                                    class="card-img-top" alt="...">--}}
+            {{--                                <div class="card-body pt-0">--}}
+            {{--                                    <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>--}}
+            {{--                                    <div class="d-flex justify-content-between mx-4">--}}
+            {{--                                        <div class="price">--}}
+            {{--                                            <span>999,99€</span>--}}
+            {{--                                        </div>--}}
+            {{--                                        <div class="shopping-cart">--}}
+            {{--                                            <button class="btn" type="button">--}}
+            {{--                                                <i class="fas fa-cart-plus"></i>--}}
+            {{--                                            </button>--}}
+            {{--                                        </div>--}}
+            {{--                                    </div>--}}
+            {{--                                </div>--}}
+            {{--                            </a>--}}
+            {{--                        </div>--}}
+            {{--                        <div class="col-12 col-md-6 col-lg-4 col-xl-3">--}}
+            {{--                            <a class="list-item card" href="#">--}}
+            {{--                                <img--}}
+            {{--                                    src="{{ asset('img/iphone.png') }}"--}}
+            {{--                                    class="card-img-top" alt="...">--}}
+            {{--                                <div class="card-body pt-0">--}}
+            {{--                                    <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>--}}
+            {{--                                    <div class="d-flex justify-content-between mx-4">--}}
+            {{--                                        <div class="price">--}}
+            {{--                                            <span>999,99€</span>--}}
+            {{--                                        </div>--}}
+            {{--                                        <div class="shopping-cart">--}}
+            {{--                                            <button class="btn" type="button">--}}
+            {{--                                                <i class="fas fa-cart-plus"></i>--}}
+            {{--                                            </button>--}}
+            {{--                                        </div>--}}
+            {{--                                    </div>--}}
+            {{--                                </div>--}}
+            {{--                            </a>--}}
+            {{--                        </div>--}}
+            {{--                    </div>--}}
+            {{--                    <div class="row">--}}
+            {{--                        <div class="col-12">--}}
+            {{--                            <ul class="pagination justify-content-end">--}}
+            {{--                                <li class="page-item disabled">--}}
+            {{--                                    <a class="page-link" href="#">Predchádzajúca stránka</a>--}}
+            {{--                                </li>--}}
+            {{--                                <li class="page-item">--}}
+            {{--                                    <a class="page-link" href="#">Ďalšia stránka</a>--}}
+            {{--                                </li>--}}
+            {{--                            </ul>--}}
+            {{--                        </div>--}}
+            {{--                    </div>--}}
+            {{--                </div>--}}
+            {{--            </div>--}}
         </div>
     </div>
     <script>
