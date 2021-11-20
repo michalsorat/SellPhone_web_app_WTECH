@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        @include('head')
+        @include('partials.head')
     </head>
     <body>
         <header>
-            @include('navbar')
+            @include('partials.navbar')
         </header>
 
         <main>
@@ -13,7 +13,7 @@
         </main>
 
         <footer>
-            @include('footer')
+            @include('partials.footer')
         </footer>
 
     </body>

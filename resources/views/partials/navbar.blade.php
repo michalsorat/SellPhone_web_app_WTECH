@@ -46,7 +46,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav w-100 nav-justified">
-                <li class="nav-item"><a id="test" class="nav-link" href="#">Apple</a></li>
+                <li class="nav-item"><a {{ route('iphone') }} id="test" class="nav-link" href="#">Apple</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Samsung</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Huawei</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Xiaomi</a></li>
