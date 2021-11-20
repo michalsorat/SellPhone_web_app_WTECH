@@ -58,8 +58,14 @@
                         <div class="reg-param col-sm-6">
                             <div class="form-group">
                                 <label for="street-nr">Orientačné číslo</label>
-                                <input class="form-control" type="text" id="street-nr" name="street-nr" required>
+                                <input class="form-control @error('street-nr') is-invalid @enderror" type="text" id="street-nr" name="street-nr" required>
                             </div>
+
+                            @error('street-nr')
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
                         </div>
                         <div class="reg-param col-sm-6">
                             <div class="form-group">
