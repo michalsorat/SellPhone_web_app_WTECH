@@ -13,9 +13,12 @@
         </form>
     </div>
     <div class="col-md-4 col-3 d-flex justify-content-end" id="nav-icons">
-        <button class="btn" type="button" data-bs-toggle="modal" data-bs-target="#loginModal">
+        <a href="{{ route('login') }}" class="btn align-self-center">
             <i class="far fa-user"></i>
-        </button>
+        </a>
+{{--        <a href="{{ route('summarization') }}" class="btn align-self-center">--}}
+{{--            <i class="fas fa-shopping-cart"></i>--}}
+{{--        </a>--}}
         <button class="btn" type="button">
             <i class="fas fa-shopping-cart"></i>
         </button>
@@ -50,49 +53,49 @@
         </div>
     </div>
 
-    <div class="modal fade" id="loginModal" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                @guest
-                <div class="modal-header">
-                    <h5 class="modal-title" id="loginLabel">Prihlásenie</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label class="form-label">Emailová adresa</label>
-                            <input type="text" class="form-control" id="username" name="username" placeholder="Emailová adresa" />
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Heslo</label>
-                            <input type="password" class="form-control" id="password" name="password" placeholder="Heslo" />
-                        </div>
-                        <div class="modal-footer d-block">
+{{--    <div class="modal fade" id="loginModal" tabindex="-1">--}}
+{{--        <div class="modal-dialog">--}}
+{{--            <div class="modal-content">--}}
+{{--                @guest--}}
+{{--                <div class="modal-header">--}}
+{{--                    <h5 class="modal-title" id="loginLabel">Prihlásenie</h5>--}}
+{{--                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>--}}
+{{--                </div>--}}
+{{--                <div class="modal-body">--}}
+{{--                    <form>--}}
+{{--                        <div class="mb-3">--}}
+{{--                            <label class="form-label">Emailová adresa</label>--}}
+{{--                            <input type="text" class="form-control" id="username" name="username" placeholder="Emailová adresa" />--}}
+{{--                        </div>--}}
+{{--                        <div class="mb-3">--}}
+{{--                            <label class="form-label">Heslo</label>--}}
+{{--                            <input type="password" class="form-control" id="password" name="password" placeholder="Heslo" />--}}
+{{--                        </div>--}}
+{{--                        <div class="modal-footer d-block">--}}
 {{--                                @if (Route::has('register'))--}}
-                                    <p class="float-start">Ešte nemáte účet? <a href="{{ route('register') }}">Zaregistrujte sa</a></p>
+{{--                                    <p class="float-start">Ešte nemáte účet? <a href="{{ route('register') }}">Zaregistrujte sa</a></p>--}}
 {{--                                @endif--}}
 
 {{--                                @if (Route::has('login'))--}}
-                                    <a href="{{ route('login') }}" class="btn btn-dark float-end">Prihlásenie</a>
+{{--                                    <a href="{{ route('login') }}" class="btn btn-dark float-end">Prihlásenie</a>--}}
 {{--                                @endif--}}
-                        </div>
-                    </form>
-                </div>
-                @else
-                    <a href="{{ route('logout') }}"
-                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                    </a>
+{{--                        </div>--}}
+{{--                    </form>--}}
+{{--                </div>--}}
+{{--                @else--}}
+{{--                    <a href="{{ route('logout') }}"--}}
+{{--                       onclick="event.preventDefault();--}}
+{{--                                                     document.getElementById('logout-form').submit();">--}}
+{{--                        {{ __('Logout') }}--}}
+{{--                    </a>--}}
 
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
-                @endguest
-            </div>
-        </div>
-    </div>
+{{--                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">--}}
+{{--                        @csrf--}}
+{{--                    </form>--}}
+{{--                @endguest--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
 </nav>
 
 
