@@ -155,6 +155,10 @@
                     <span>8 GB</span>
                 </div>
                 <div class="params-value d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2">
+                    <span>Veľkosť úložiska:</span>
+                    <span>128 GB</span>
+                </div>
+                <div class="params-value d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2">
                     <span>Kapacita batérie:</span>
                     <span>4000 mAh</span>
                 </div>

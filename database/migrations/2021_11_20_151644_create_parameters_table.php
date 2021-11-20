@@ -26,7 +26,7 @@ class CreateParametersTable extends Migration
             $table->integer('battery_capacity');
             $table->string('back_camera_resolution');
             $table->string('front_camera_resolution');
-            $table->integer('max_video_resolution');
+            $table->string('max_video_resolution');
             $table->string('operating_system');
             $table->string('connector');
             $table->string('network_connection');
