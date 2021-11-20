@@ -197,12 +197,12 @@ footer {
     border-radius: .3rem;
 }
 
-.register-holder {
+.auth-holder {
     padding: 10px 0;
     position: relative;
 }
 
-.register-form {
+.auth-form {
     padding: 30px;
     border: 1px solid #969696;
     border-radius: 4px;
@@ -210,23 +210,23 @@ footer {
     box-shadow: 0 5px 5px #969696;
 }
 
-.reg-param {
+.auth-param {
     margin-bottom: 10px;
 }
 
-.reg-btn {
+.auth-btn {
     width: 100%;
     margin: 15px 0;
     height: 50px;
 }
 
-.register-form .outer-link {
+.auth-form .outer-link {
     display: block;
     text-align: center;
     margin-bottom: 0;
 }
 
-.register-form .outer-link a {
+.auth-form .outer-link a {
     text-decoration: none;
 }
 
@@ -474,7 +474,7 @@ footer {
         font-size: 0.8rem;
     }
 
-    .register-holder {
+    .auth-holder {
         padding: 20px 0;
     }
 
@@ -522,7 +522,7 @@ footer {
         font-size: 0.8rem;
     }
 
-    .register-holder {
+    .auth-holder {
         padding: 30px 0;
     }
 
@@ -618,7 +618,7 @@ footer {
         font-size: 0.9rem;
     }
 
-    .register-holder {
+    .auth-holder {
         padding: 40px 0;
     }
 
@@ -714,7 +714,7 @@ footer {
         font-size: 0.9rem;
     }
 
-    .register-holder {
+    .auth-holder {
         padding: 50px 0;
     }
 
@@ -794,7 +794,7 @@ footer {
         font-size: 1rem;
     }
 
-    .register-holder {
+    .auth-holder {
         padding: 60px 0;
     }
 
