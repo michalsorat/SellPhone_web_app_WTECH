@@ -1,6 +1,6 @@
 <div class="row g-0">
     <div class="col-4">
-        <h1 id="main-header">SellPhone.sk</h1>
+        <h1 id="main-header"><a href="#">SellPhone.sk</a></h1>
     </div>
     <div class="col-md-4 col-5">
         <form class="d-sm-flex d-none my-2 my-lg-3">
@@ -46,7 +46,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav w-100 nav-justified">
-                <li class="nav-item"><a {{ route('iphone') }} id="test" class="nav-link" href="#">Apple</a></li>
+                <li class="nav-item"><a id="test" class="nav-link" href="{{ route('product') }}">Apple</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Samsung</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Huawei</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Xiaomi</a></li>

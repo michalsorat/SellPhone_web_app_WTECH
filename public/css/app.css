@@ -17,9 +17,11 @@ footer {
     color:#f0f9ff;
 }
 
-#main-header {
+#main-header a {
     margin-top: 5px;
     margin-left: 15px;
+    text-decoration: none;
+    color: #000000;
 }
 
 #nav-icons i {
