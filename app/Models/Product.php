@@ -17,17 +17,17 @@ class Product extends Model
         'available_amount'
     ];
 
-    public function specification()
+    public function specifications()
     {
         return $this->hasMany(Specification::class);
     }
 
-    public function productImage()
+    public function productImages()
     {
         return $this->hasMany(ProductImage::class);
     }
 
-    public function parameter()
+    public function parameters()
     {
         return $this->hasOne(Parameter::class);
     }

@@ -48,12 +48,10 @@
                 <div class="row mx-lg-1 mx-xxl-4">
                     <div class="card border-0 mt-lg-0 mt-xxl-4 ">
                         <div class="product card-body">
-                            <h2 class="product card-title">Samsung Galaxy S21, 5G 8GB/128GB</h2>
+                            <h2 class="product card-title">{{ $product[0]->name }}</h2>
                             <p class="product card-text my-sm-3">
-                                6.2" AMOLED 2400 × 1080, 120Hz, procesor Qualcomm Snapdragon 8- jadrový,
-                                RAM 8GB, interná pamäť 128GB, MicroSD až 1000 GB, zadný fotoaparát 64Mpx
-                                (f/1.8)+12Mpx (f/2.2)+5Mpx (f/2.4)+5Mpx (f/2.4) , predný fotoaparát 32Mpx,
-                                optická stabilizácia, GPS...<a href="#">zobraziť celý popis</a>
+                                {{ $product[0]->short_description }}
+                                <a href="#">zobraziť celý popis</a>
                             </p>
                         </div>
                     </div>
@@ -61,7 +59,11 @@
                         <div class="product prop card-body">
                             <h3 class="product prop card-title">Dostupnosť</h3>
                             <p class="product prop card-text">
+                                @if($product[0]->available_amount > 0)
                                 Skladom
+                                @else
+                                Na objednávku
+                                @endif
                             </p>
                         </div>
                     </div>
@@ -75,10 +77,12 @@
                     </div>
                     <div class="card border-0 col-6 col-lg-4 mx-lg-4 my-2 my-lg-3 px-3">
                         <div class="product price card-body">
-                            <h3 class="product price card-title">999,99€</h3>
+                            <h3 class="product price card-title">{{ $product[0]->price }} €</h3>
                         </div>
                     </div>
-                    <button class="product btn btn-primary col-5 col-lg-4 mx-lg-4 my-3 my-lg-4 ms-3 ms-sm-4 ms-md-3 px-lg-0" type="button">
+                    <button
+                        class="product btn btn-primary col-5 col-lg-4 mx-lg-4 my-3 my-lg-4 ms-3 ms-sm-4 ms-md-3 px-lg-0"
+                        type="button">
                         <i class="fas fa-cart-plus"></i>
                         Pridať do košíka
                     </button>
@@ -93,106 +97,105 @@
                 Kompletné špecifikácie
             </h2>
             <div class="container col-10 col-lg-7 mb-5">
-                <div class="row mt-2">
-                    <h4 class="text-center my-3">Výkonný procesor</h4>
-                    <p>
-                        Procesor Qualcomm Snapdragon ponúka špičkovú energetickú účinnosť, výkon a 5G konektivitu.
-                        Výkonná čipová sada umožňuje rýchlejšie pripojenie, optimalizované hranie hier a lepšie
-                        spracovanie obrazu za cenu, ktorú nikde inde nenájdete.
-                    </p>
-                    <img src="{{ asset('img/processor.jpg') }}" alt="">
-                </div>
-                <div class="row mt-4">
-                    <h4 class="text-center my-3">Displej</h4>
-                    <p>
-                        Impozantný 6,2 palcový Infinity-O displej Galaxy S21 5G prináša živé detaily aj za jasného svetla. Eye
-                        Comfort Shield2 znižuje vyžarovanie modrého svetla a Real Smooth udržuje hladký obraz, či už
-                        hráte alebo scrollujete.
-                    </p>
-                    <img src="{{ asset('img/display.jpg') }}" alt="">
-                </div>
-                <div class="row mt-4">
-                    <h4 class="text-center my-3">Výdrž</h4>
-                    <p>
-                        Batéria s vysokou kapacitou 4 000 mAh zaisťuje dlhú výdrž. Určite oceníte aj podporu rýchleho
-                        nabíjania, ktorej zásluhou dodáte 100 % energie za iba 59 minút.
-                    </p>
-                    <img src="{{ asset('img/battery.png') }}" alt="">
-                </div>
+                @foreach($product[0]->specifications as $specification)
+                    <div class="row mt-4">
+                        <h4 class="text-center my-3">{{ $specification->name }}</h4>
+                        <p>{{ $specification->description }}</p>
+                        <img src="{{ asset($specification->image_src) }}" alt="">
+                    </div>
+                @endforeach
             </div>
 
             <div class="tech-parameters-placeholder container col-9 col-lg-4 mt-3 mb-5 pb-4">
                 <h3 class="params-title text-center my-4">Technické parametre</h3>
-                <div class="params-category d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2 mt-2">
+                <div
+                    class="params-category d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2 mt-2">
                     <span>Displej</span>
                 </div>
-                <div class="params-value d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2">
+                <div
+                    class="params-value d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2">
                     <span>Uhlopriečka displeja:</span>
-                    <span>6,2"</span>
+                    <span>{{ $product[0]->parameters->screen_size }}"</span>
                 </div>
-                <div class="params-value d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2">
+                <div
+                    class="params-value d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2">
                     <span>Rozlíšenie displeja:</span>
-                    <span>2400 x 1080 px</span>
+                    <span>{{ $product[0]->parameters->screen_resolution }}</span>
                 </div>
-                <div class="params-value d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2">
+                <div
+                    class="params-value d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2">
                     <span>Typ displeja</span>
-                    <span>AMOLED</span>
+                    <span>{{ $product[0]->parameters->screen_type }}</span>
                 </div>
 
-                <div class="params-category d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2 mt-5">
+                <div
+                    class="params-category d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2 mt-5">
                     <span>Výkon a výdrž</span>
                 </div>
-                <div class="params-value d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2">
+                <div
+                    class="params-value d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2">
                     <span>Počet jadier procesora:</span>
-                    <span>8</span>
+                    <span>{{ $product[0]->parameters->cpu_cores }}</span>
                 </div>
-                <div class="params-value d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2">
+                <div
+                    class="params-value d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2">
                     <span>Frekvencia procesora:</span>
-                    <span>2,91 GHz</span>
+                    <span>{{ $product[0]->parameters->cpu_frequency }} GHz</span>
                 </div>
-                <div class="params-value d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2">
+                <div
+                    class="params-value d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2">
                     <span>Operačná pamäť:</span>
-                    <span>8 GB</span>
+                    <span>{{ $product[0]->parameters->ram }} GB</span>
                 </div>
-                <div class="params-value d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2">
+                <div
+                    class="params-value d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2">
                     <span>Veľkosť úložiska:</span>
-                    <span>128 GB</span>
+                    <span>{{ $product[0]->parameters->internal_storage }} GB</span>
                 </div>
-                <div class="params-value d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2">
+                <div
+                    class="params-value d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2">
                     <span>Kapacita batérie:</span>
-                    <span>4000 mAh</span>
+                    <span>{{ $product[0]->parameters->battery_capacity }} mAh</span>
                 </div>
 
-                <div class="params-category d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2 mt-5">
+                <div
+                    class="params-category d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2 mt-5">
                     <span>Fotoaparát</span>
                 </div>
-                <div class="params-value d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2">
+                <div
+                    class="params-value d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2">
                     <span>Rozlíšenie zadného fotoaparátu:</span>
-                    <span>12+64+12 Mpx</span>
+                    <span>{{ $product[0]->parameters->back_camera_resolution }}</span>
                 </div>
-                <div class="params-value d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2">
+                <div
+                    class="params-value d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2">
                     <span>Rozlíšenie predného fotoaparátu:</span>
-                    <span>10 Mpx</span>
+                    <span>{{ $product[0]->parameters->front_camera_resolution }}</span>
                 </div>
-                <div class="params-value d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2">
+                <div
+                    class="params-value d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2">
                     <span>Maximálne rozlíšenie videa:</span>
-                    <span>8K Ultra HD</span>
+                    <span>{{ $product[0]->parameters->max_video_resolution }}</span>
                 </div>
 
-                <div class="params-category d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2 mt-5">
+                <div
+                    class="params-category d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2 mt-5">
                     <span>Softvér a pripojenie</span>
                 </div>
-                <div class="params-value d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2">
+                <div
+                    class="params-value d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2">
                     <span>Operačný systém:</span>
-                    <span>Android 11</span>
+                    <span>{{ $product[0]->parameters->operating_system }}</span>
                 </div>
-                <div class="params-value d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2">
+                <div
+                    class="params-value d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2">
                     <span>Konektor:</span>
-                    <span>USB-C</span>
+                    <span>{{ $product[0]->parameters->connector }}</span>
                 </div>
-                <div class="params-value d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2">
+                <div
+                    class="params-value d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2">
                     <span>Sieťové pripojenie:</span>
-                    <span>5G</span>
+                    <span>{{ $product[0]->parameters->network_connection }}</span>
                 </div>
             </div>
         </div>

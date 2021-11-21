@@ -24,8 +24,9 @@ Route::get('/huawei', [ProductController::class, 'index']) -> name('huawei');
 Route::get('/xiaomi', [ProductController::class, 'index']) -> name('xiaomi');
 Route::get('/oneplus', [ProductController::class, 'index']) -> name('oneplus');
 Route::get('/lg', [ProductController::class, 'index']) -> name('lg');
-Route::get('/prislusenstvo', [ProductController::class, 'index']) -> name('accessories');
+Route::get('/accessories', [ProductController::class, 'index']) -> name('accessories');
 
+Route::resource('product', ProductController::class);
 
 Route::get('/product-detail', function () {
     return view('productDetailPage');

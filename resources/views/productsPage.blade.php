@@ -229,10 +229,10 @@
                                 <a class="list-item card" href="#">
                                     <img src="{{ asset('img/iphone.png') }}" class="card-img-top" alt="...">
                                     <div class="card-body pt-0">
-                                        <h5 class="card-title text-center mb-4">{{$product->name}}</h5>
+                                        <h5 class="card-title text-center mb-4">{{ $product->name }}</h5>
                                         <div class="d-flex justify-content-between mx-4">
                                             <div class="price">
-                                                <span>{{$product->price}}</span>
+                                                <span>{{ $product->price }}</span>
                                             </div>
                                             <div class="shopping-cart">
                                                 <button class="btn" type="button">
@@ -244,9 +244,9 @@
                                 </a>
                             </div>
                         @endforeach
-                        <div class="d-flex justify-content-center">
-                            {{$products->links()}}
-                        </div>
+{{--                        <div class="d-flex justify-content-center">--}}
+{{--                            {{  $products->links() }}--}}
+{{--                        </div>--}}
 
             {{--                        <div class="col-12 col-md-6 col-lg-4 col-xl-3">--}}
             {{--                            <a class="list-item card" href="#">--}}
