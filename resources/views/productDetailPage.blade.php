@@ -15,28 +15,21 @@
                             <button type="button" data-bs-target="#product-images-slider" data-bs-slide-to="2"></button>
                         </div>
                         <div class="carousel-inner">
-                            @foreach($product->product_images as $image)
+                            @foreach($product->productImages as $image)
+                                @if($image->main_img == true)
                                 <div class="carousel-item active">
                                     <img
-                                        src="{{ asset('img/iphone.png') }}"
+                                        src="{{ asset($image->image_src) }}"
                                         class="d-block w-100" alt="">
                                 </div>
+                                @else
+                                <div class="carousel-item">
+                                    <img
+                                        src="{{ asset($image->image_src) }}"
+                                        class="d-block w-100" alt="">
+                                </div>
+                                @endif
                             @endforeach
-{{--                            <div class="carousel-item active">--}}
-{{--                                <img--}}
-{{--                                    src="{{ asset('img/iphone.png') }}"--}}
-{{--                                    class="d-block w-100" alt="">--}}
-{{--                            </div>--}}
-{{--                            <div class="carousel-item">--}}
-{{--                                <img--}}
-{{--                                    src="{{ asset('img/iphone.png') }}"--}}
-{{--                                    class="d-block w-100" alt="">--}}
-{{--                            </div>--}}
-{{--                            <div class="carousel-item">--}}
-{{--                                <img--}}
-{{--                                    src="{{ asset('img/iphone.png') }}"--}}
-{{--                                    class="d-block w-100" alt="">--}}
-{{--                            </div>--}}
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#product-images-slider"
                                 data-bs-slide="prev">

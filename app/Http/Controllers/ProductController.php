@@ -29,7 +29,7 @@ class ProductController extends Controller
     {
         $product = Product::with('productImages', 'specifications', 'parameters')->where('id', $id)->first();
 
-        dd($product->toArray());
+//        dd($product->toArray());
 
         if ($product->available_amount > 0) {
             $availability = 'Skladom';

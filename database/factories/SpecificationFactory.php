@@ -15,7 +15,7 @@ class SpecificationFactory extends Factory
     {
         static $product_id = 1;
 
-        if ($product_id > 20) {
+        if ($product_id > 120) {
             $product_id = 1;
         }
 
