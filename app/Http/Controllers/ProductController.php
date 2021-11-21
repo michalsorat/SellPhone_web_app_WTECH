@@ -12,22 +12,24 @@ class ProductController extends Controller
     {
         $name = Route::currentRouteName();
 
-        $products = Product::with('productImages')->whereHas('productImages', function ($query) {
-                                                                $query->where('main_img', 1);})
-                                                         ->where('category', $name)->get();
-        //TODO prist na sposob ako vyfiltrovat obrazky ktore maju atribut main_img na true resp. 1 a zaroven filtrovat tú kategoriu
+        $image = Product::find(1)->productImages()
+                                 ->where('main_img', 1)
+                                 ->first();
+
+        $products = Product::where('category', $name)->paginate(16);
 
 //        dd($products->toArray());
 
         return view('productsPage')
-            ->with('products', $products);
+            ->with('products', $products)
+            ->with('image', $image->image_src);
     }
 
     public function show($id)
     {
-        $product = Product::with('productImages', 'specifications', 'parameters')->where('id', $id)->get();
+        $product = Product::with('productImages', 'specifications', 'parameters')->where('id', $id)->first();
 
-//        dd($product->toArray());
+        dd($product->toArray());
 
         return view('productDetailPage')
             ->with('product', $product);
