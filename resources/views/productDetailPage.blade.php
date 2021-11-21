@@ -15,21 +15,28 @@
                             <button type="button" data-bs-target="#product-images-slider" data-bs-slide-to="2"></button>
                         </div>
                         <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img
-                                    src="{{ asset('img/iphone.png') }}"
-                                    class="d-block w-100" alt="">
-                            </div>
-                            <div class="carousel-item">
-                                <img
-                                    src="{{ asset('img/iphone.png') }}"
-                                    class="d-block w-100" alt="">
-                            </div>
-                            <div class="carousel-item">
-                                <img
-                                    src="{{ asset('img/iphone.png') }}"
-                                    class="d-block w-100" alt="">
-                            </div>
+                            @foreach($product->product_images as $image)
+                                <div class="carousel-item active">
+                                    <img
+                                        src="{{ asset('img/iphone.png') }}"
+                                        class="d-block w-100" alt="">
+                                </div>
+                            @endforeach
+{{--                            <div class="carousel-item active">--}}
+{{--                                <img--}}
+{{--                                    src="{{ asset('img/iphone.png') }}"--}}
+{{--                                    class="d-block w-100" alt="">--}}
+{{--                            </div>--}}
+{{--                            <div class="carousel-item">--}}
+{{--                                <img--}}
+{{--                                    src="{{ asset('img/iphone.png') }}"--}}
+{{--                                    class="d-block w-100" alt="">--}}
+{{--                            </div>--}}
+{{--                            <div class="carousel-item">--}}
+{{--                                <img--}}
+{{--                                    src="{{ asset('img/iphone.png') }}"--}}
+{{--                                    class="d-block w-100" alt="">--}}
+{{--                            </div>--}}
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#product-images-slider"
                                 data-bs-slide="prev">
@@ -48,9 +55,9 @@
                 <div class="row mx-lg-1 mx-xxl-4">
                     <div class="card border-0 mt-lg-0 mt-xxl-4 ">
                         <div class="product card-body">
-                            <h2 class="product card-title">{{ $product[0]->name }}</h2>
+                            <h2 class="product card-title">{{ $product->name }}</h2>
                             <p class="product card-text my-sm-3">
-                                {{ $product[0]->short_description }}
+                                {{ $product->short_description }}
                                 <a href="#">zobraziť celý popis</a>
                             </p>
                         </div>
@@ -59,11 +66,7 @@
                         <div class="product prop card-body">
                             <h3 class="product prop card-title">Dostupnosť</h3>
                             <p class="product prop card-text">
-                                @if($product[0]->available_amount > 0)
-                                Skladom
-                                @else
-                                Na objednávku
-                                @endif
+                                {{ $availability }}
                             </p>
                         </div>
                     </div>
@@ -77,7 +80,7 @@
                     </div>
                     <div class="card border-0 col-6 col-lg-4 mx-lg-4 my-2 my-lg-3 px-3">
                         <div class="product price card-body">
-                            <h3 class="product price card-title">{{ $product[0]->price }} €</h3>
+                            <h3 class="product price card-title">{{ $product->price }} €</h3>
                         </div>
                     </div>
                     <button
@@ -97,7 +100,7 @@
                 Kompletné špecifikácie
             </h2>
             <div class="container col-10 col-lg-7 mb-5">
-                @foreach($product[0]->specifications as $specification)
+                @foreach($product->specifications as $specification)
                     <div class="row mt-4">
                         <h4 class="text-center my-3">{{ $specification->name }}</h4>
                         <p>{{ $specification->description }}</p>
@@ -115,17 +118,17 @@
                 <div
                     class="params-value d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2">
                     <span>Uhlopriečka displeja:</span>
-                    <span>{{ $product[0]->parameters->screen_size }}"</span>
+                    <span>{{ $product->parameters->screen_size }}"</span>
                 </div>
                 <div
                     class="params-value d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2">
                     <span>Rozlíšenie displeja:</span>
-                    <span>{{ $product[0]->parameters->screen_resolution }}</span>
+                    <span>{{ $product->parameters->screen_resolution }}</span>
                 </div>
                 <div
                     class="params-value d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2">
                     <span>Typ displeja</span>
-                    <span>{{ $product[0]->parameters->screen_type }}</span>
+                    <span>{{ $product->parameters->screen_type }}</span>
                 </div>
 
                 <div
@@ -135,27 +138,27 @@
                 <div
                     class="params-value d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2">
                     <span>Počet jadier procesora:</span>
-                    <span>{{ $product[0]->parameters->cpu_cores }}</span>
+                    <span>{{ $product->parameters->cpu_cores }}</span>
                 </div>
                 <div
                     class="params-value d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2">
                     <span>Frekvencia procesora:</span>
-                    <span>{{ $product[0]->parameters->cpu_frequency }} GHz</span>
+                    <span>{{ $product->parameters->cpu_frequency }} GHz</span>
                 </div>
                 <div
                     class="params-value d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2">
                     <span>Operačná pamäť:</span>
-                    <span>{{ $product[0]->parameters->ram }} GB</span>
+                    <span>{{ $product->parameters->ram }} GB</span>
                 </div>
                 <div
                     class="params-value d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2">
                     <span>Veľkosť úložiska:</span>
-                    <span>{{ $product[0]->parameters->internal_storage }} GB</span>
+                    <span>{{ $product->parameters->internal_storage }} GB</span>
                 </div>
                 <div
                     class="params-value d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2">
                     <span>Kapacita batérie:</span>
-                    <span>{{ $product[0]->parameters->battery_capacity }} mAh</span>
+                    <span>{{ $product->parameters->battery_capacity }} mAh</span>
                 </div>
 
                 <div
@@ -165,17 +168,17 @@
                 <div
                     class="params-value d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2">
                     <span>Rozlíšenie zadného fotoaparátu:</span>
-                    <span>{{ $product[0]->parameters->back_camera_resolution }}</span>
+                    <span>{{ $product->parameters->back_camera_resolution }}</span>
                 </div>
                 <div
                     class="params-value d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2">
                     <span>Rozlíšenie predného fotoaparátu:</span>
-                    <span>{{ $product[0]->parameters->front_camera_resolution }}</span>
+                    <span>{{ $product->parameters->front_camera_resolution }}</span>
                 </div>
                 <div
                     class="params-value d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2">
                     <span>Maximálne rozlíšenie videa:</span>
-                    <span>{{ $product[0]->parameters->max_video_resolution }}</span>
+                    <span>{{ $product->parameters->max_video_resolution }}</span>
                 </div>
 
                 <div
@@ -185,17 +188,17 @@
                 <div
                     class="params-value d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2">
                     <span>Operačný systém:</span>
-                    <span>{{ $product[0]->parameters->operating_system }}</span>
+                    <span>{{ $product->parameters->operating_system }}</span>
                 </div>
                 <div
                     class="params-value d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2">
                     <span>Konektor:</span>
-                    <span>{{ $product[0]->parameters->connector }}</span>
+                    <span>{{ $product->parameters->connector }}</span>
                 </div>
                 <div
                     class="params-value d-flex justify-content-between border-bottom border-1 border-primary mx-2 my-2">
                     <span>Sieťové pripojenie:</span>
-                    <span>{{ $product[0]->parameters->network_connection }}</span>
+                    <span>{{ $product->parameters->network_connection }}</span>
                 </div>
             </div>
         </div>

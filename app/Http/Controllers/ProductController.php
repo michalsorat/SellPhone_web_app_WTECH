@@ -31,7 +31,15 @@ class ProductController extends Controller
 
         dd($product->toArray());
 
+        if ($product->available_amount > 0) {
+            $availability = 'Skladom';
+        }
+        else {
+            $availability = 'Na objednávku';
+        }
+
         return view('productDetailPage')
-            ->with('product', $product);
+            ->with('product', $product)
+            ->with('availability', $availability);
     }
 }

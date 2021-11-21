@@ -206,33 +206,15 @@
             <div class="product-list col-sm-8 col-md-9 col-xl-10 col-12 pe-5">
                 <div class="bg-transparent list-items">
                     <div class="row">
-{{--                        <div class="col-12 col-md-6 col-lg-4 col-xl-3">--}}
-{{--                            <a class="list-item card" href="#">--}}
-{{--                                <img src="{{ asset('img/iphone.png') }}" class="card-img-top" alt="...">--}}
-{{--                                <div class="card-body pt-0">--}}
-{{--                                    <h5 class="card-title text-center mb-4"></h5>--}}
-{{--                                    <div class="d-flex justify-content-between mx-4">--}}
-{{--                                        <div class="price">--}}
-{{--                                            <span></span>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="shopping-cart">--}}
-{{--                                            <button class="btn" type="button">--}}
-{{--                                                <i class="fas fa-cart-plus"></i>--}}
-{{--                                            </button>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </a>--}}
-{{--                        </div>--}}
                         @foreach($products as $product)
                             <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                                <a class="list-item card" href="#">
+                                <a class="list-item card" href="{{ route('product.show', $product->id) }}">
                                     <img src="{{ asset($image) }}" class="card-img-top" alt="...">
                                     <div class="card-body pt-0">
                                         <h5 class="card-title text-center mb-4">{{ $product->name }}</h5>
                                         <div class="d-flex justify-content-between mx-4">
                                             <div class="price">
-                                                <span>{{ $product->price }}</span>
+                                                <span>{{ $product->price }} €</span>
                                             </div>
                                             <div class="shopping-cart">
                                                 <button class="btn" type="button">
