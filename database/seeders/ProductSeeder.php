@@ -22,16 +22,16 @@ class ProductSeeder extends Seeder
             ->create(['name' => 'Apple iPhone X 256GB',
                       'category' => 'apple']);
         Product::factory()->count(20)
-            ->create(['name' => 'Apple iPhone X 256GB',
+            ->create(['name' => 'Huawei P40 lite 128GB',
                 'category' => 'huawei']);
         Product::factory()->count(20)
-            ->create(['name' => 'Apple iPhone X 256GB',
+            ->create(['name' => 'Xiaomi Mi 11 256GB',
                 'category' => 'xiaomi']);
         Product::factory()->count(20)
-            ->create(['name' => 'Apple iPhone X 256GB',
+            ->create(['name' => 'OnePlus 8T 256 GB',
                 'category' => 'oneplus']);
         Product::factory()->count(20)
-            ->create(['name' => 'Apple iPhone X 256GB',
+            ->create(['name' => 'LG Velvet 4G 6GB/128GBB',
                 'category' => 'lg']);
 
 //        Product::factory()->count(20)->create();

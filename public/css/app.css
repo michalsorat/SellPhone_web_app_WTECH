@@ -68,6 +68,10 @@ footer {
     background-color: #e9ecef;
 }
 
+.category {
+    text-transform: uppercase;
+}
+
 .card-title {
     font-size: 0.8rem;
     font-weight: bold;

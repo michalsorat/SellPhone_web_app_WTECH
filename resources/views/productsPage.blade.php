@@ -3,9 +3,9 @@
 @section('content')
     <div class="card text-center mx-5 my-3">
         <div class="card-body">
-            <h4 class="card-title">Apple smartfóny</h4>
+            <h4 class="card-title"><span class="category">{{$products[0]->category}}</span> smartfóny</h4>
             <p class="card-text text-responsive">V našej ponuke nájdete výrobky renomovaného predajcu mobilných
-                telefónov a smartfónov Apple. Ponúkame to najlepšie na našom trhu za
+                telefónov a smartfónov {{$products[0]->category}}. Ponúkame to najlepšie na našom trhu za
                 bekonkurenčné ceny. Naším hlavným cieľom je dosiahnuť najvyššiu možnú mieru spokojnosti zákazníkov a
                 sprostredkovať prívetivé nákupné prostredie.
             </p>
