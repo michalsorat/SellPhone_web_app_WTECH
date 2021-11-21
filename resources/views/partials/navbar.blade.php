@@ -46,13 +46,13 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav w-100 nav-justified">
-                <li class="nav-item"><a id="test" class="nav-link" href="{{ route('product') }}">Apple</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Samsung</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Huawei</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Xiaomi</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">OnePlus</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">LG</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Príslušenstvo</a></li>
+                <li class="nav-item"><a id="test" class="nav-link" href="{{ route('apple') }}">Apple</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('samsung') }}">Samsung</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('huawei') }}">Huawei</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('xiaomi') }}">Xiaomi</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('oneplus') }}">OnePlus</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('lg') }}">LG</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('accessories') }}">Príslušenstvo</a></li>
             </ul>
         </div>
         <div>

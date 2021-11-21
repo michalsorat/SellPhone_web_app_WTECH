@@ -14,18 +14,12 @@ class ProductImageSeeder extends Seeder
      */
     public function run()
     {
-        $productImages = [
-            [
-                'image_src' => 'img/iphone.png',
-                'product_id' => '1'
-            ]
-        ];
-
-        foreach ($productImages as $productImage) {
-            ProductImage::create(array(
-                'image_src' => $productImage['image_src'],
-                'product_id' => $productImage['product_id']
-            ));
-        }
+        ProductImage::factory()->count(20)->create();
+        ProductImage::factory()->count(20)
+            ->create(['image_src' => 'img/iphone_next_photo.png',
+                      'main_img' => false]);
+        ProductImage::factory()->count(20)
+            ->create(['image_src' => 'img/iphone_next_next_photo.png',
+                      'main_img' => false]);;
     }
 }

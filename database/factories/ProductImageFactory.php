@@ -11,10 +11,18 @@ class ProductImageFactory extends Factory
      *
      * @return array
      */
-    public function definition()
+    public function definition(): array
     {
+        static $product_id = 1;
+
+        if ($product_id > 20) {
+            $product_id = 1;
+        }
+
         return [
-            //
+            'image_src' => 'img/iphone.png',
+            'main_img' => true,
+            'product_id' => $product_id++
         ];
     }
 }
