@@ -18,9 +18,46 @@ class ProductSeeder extends Seeder
         //samsung
         Product::factory()->count(20)->create();
         //apple
-        Product::factory()->count(20)
-            ->create(['name' => 'Apple iPhone X 256GB',
+        Product::factory()->count(1)
+            ->create(['name' => 'Apple iPhone X 12GB/512GB',
+                      'category' => 'apple',
+                      'top_product' => true,
+                      'best_price' => true,
+                      'discount' => true]);
+        Product::factory()->count(4)
+            ->create(['name' => 'Apple iPhone X 8GB/256GB',
                       'category' => 'apple']);
+
+        Product::factory()->count(1)
+            ->create(['name' => 'Apple iPhone X 12GB/128GB',
+                      'category' => 'apple',
+                      'top_product' => true,
+                      'best_price' => true,
+                      'discount' => true]);
+        Product::factory()->count(4)
+            ->create(['name' => 'Apple iPhone X 8GB/128GB',
+                      'category' => 'apple']);
+
+        Product::factory()->count(1)
+            ->create(['name' => 'Apple iPhone XS Max 12GB/512GB',
+                      'category' => 'apple',
+                      'top_product' => true,
+                      'best_price' => true,
+                      'discount' => true]);
+        Product::factory()->count(4)
+            ->create(['name' => 'Apple iPhone XS Max 12GB/128GB',
+                      'category' => 'apple']);
+
+        Product::factory()->count(1)
+            ->create(['name' => 'Apple iPhone X mini 8GB/128GB',
+                      'category' => 'apple',
+                      'top_product' => true,
+                      'best_price' => true,
+                      'discount' => true]);
+        Product::factory()->count(4)
+            ->create(['name' => 'Apple iPhone X mini 4GB/128GB',
+                'category' => 'apple']);
+        //others
         Product::factory()->count(20)
             ->create(['name' => 'Huawei P40 lite 128GB',
                 'category' => 'huawei']);

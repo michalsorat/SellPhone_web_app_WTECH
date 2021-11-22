@@ -14,6 +14,24 @@ class ParameterSeeder extends Seeder
      */
     public function run()
     {
-        Parameter::factory()->count(120)->create();
+        //samsung
+        Parameter::factory()->count(20)->create();
+        //apple
+        Parameter::factory()->count(5)
+            ->create(['screen_size' => '5.8',
+                      'internal_storage' => '256']);
+        Parameter::factory()->count(5)
+            ->create(['screen_size' => '5.8',
+                      'internal_storage' => '128']);
+        Parameter::factory()->count(5)
+            ->create(['screen_size' => '6.4',
+                      'internal_storage' => '128',
+                      'ram' => '12']);
+        Parameter::factory()->count(5)
+            ->create(['screen_size' => '6.4',
+                      'internal_storage' => '128',
+                      'ram' => '4']);
+        //others
+        Parameter::factory()->count(80)->create();
     }
 }

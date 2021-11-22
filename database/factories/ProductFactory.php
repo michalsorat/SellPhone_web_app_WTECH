@@ -14,11 +14,11 @@ class ProductFactory extends Factory
     public function definition()
     {
         return [
-            'name' => 'Samsung Galaxy S21, 5G 8GB/128GB',
+            'name' => 'Samsung Galaxy S21, 5G 8GB/128GB/6.2"',
             'category' => 'samsung',
-            'top_product' => '0',
-            'best_price' => '0',
-            'discount' => '0',
+            'top_product' => false,
+            'best_price' => false,
+            'discount' => false,
             'price' => '999.99',
             'short_description' => '6.2" AMOLED 2400 × 1080, 120Hz, procesor Qualcomm Snapdragon 8- jadrový, RAM 8GB,
                 interná pamäť 128GB, MicroSD až 1000 GB, zadný fotoaparát 64Mpx (f/1.8)+12Mpx (f/2.2)+5Mpx (f/2.4)+5Mpx
