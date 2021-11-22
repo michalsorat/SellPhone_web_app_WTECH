@@ -102,18 +102,31 @@ class ProductController extends Controller
     }
 
     public function showProductByName(Request $request){
+        $category = "samsung";
         $product = Product::with('productImages', 'specifications', 'parameters')->where('name', $request->search_input)->first();
+        $products = Product::with('productImages', 'specifications', 'parameters')
+                            ->where('category', 'LIKE', "%{$request->search_input}%")
+                            ->orWhere('price', 'LIKE', "%{$request->search_input}%")
+                            ->paginate(16);
 
-        if ($product->available_amount > 0) {
-            $availability = 'Skladom';
-        }
-        else {
-            $availability = 'Na objednávku';
-        }
+        if ($product != null) {
+            if ($product->available_amount > 0) {
+                $availability = 'Skladom';
+            }
+            else {
+                $availability = 'Na objednávku';
+            }
 
-        return view('productDetailPage')
-            ->with('product', $product)
-            ->with('availability', $availability);
+            return view('productDetailPage')
+                ->with('product', $product)
+                ->with('availability', $availability);
+        }
+        else if ($products != null) {
+            return view('productsPage')
+                ->with('products', $products)
+                ->with('category', $category);
+        }
+        else return redirect('/');
     }
 
     public function autocomplete(Request $request)
