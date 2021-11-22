@@ -89,230 +89,74 @@
             <div class="header-holder text-center col-12">
                 <h4>Top produkty</h4>
             </div>
-            <div class="col-lg-3 col-sm-6 col-12">
-                <a class="list-item card" href="#">
-                    <img src="{{ asset('img/iphone.png') }}" class="card-img-top" alt="...">
-                    <div class="card-body pt-0">
-                        <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
-                        <div class="d-flex justify-content-between mx-4">
-                            <div class="price">
-                                <span>999,99€</span>
-                            </div>
-                            <div class="shopping-cart">
-                                <button class="btn" type="button">
-                                    <i class="fas fa-cart-plus"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-sm-6 col-12">
-                <a class="list-item card" href="#">
-                    <img src="{{ asset('img/iphone.png') }}" class="card-img-top" alt="...">
-                    <div class="card-body pt-0">
-                        <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
-                        <div class="d-flex justify-content-between mx-4">
-                            <div class="price">
-                                <span>999,99€</span>
-                            </div>
-                            <div class="shopping-cart">
-                                <button class="btn" type="button">
-                                    <i class="fas fa-cart-plus"></i>
-                                </button>
+            @foreach($top_products as $top_product)
+                <div class="col-lg-3 col-sm-6 col-12">
+                    <a class="list-item card" href="#">
+                        <img src="{{ asset('img/iphone.png') }}" class="card-img-top" alt="...">
+                        <div class="card-body pt-0">
+                            <h5 class="card-title text-center mb-4">{{ $top_product->name }}</h5>
+                            <div class="d-flex justify-content-between mx-4">
+                                <div class="price">
+                                    <span>{{ $top_product->price }} €</span>
+                                </div>
+                                <div class="shopping-cart">
+                                    <button class="btn" type="button">
+                                        <i class="fas fa-cart-plus"></i>
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-sm-6 col-12">
-                <a class="list-item card" href="#">
-                    <img src="{{ asset('img/iphone.png') }}" class="card-img-top" alt="...">
-                    <div class="card-body pt-0">
-                        <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
-                        <div class="d-flex justify-content-between mx-4">
-                            <div class="price">
-                                <span>999,99€</span>
-                            </div>
-                            <div class="shopping-cart">
-                                <button class="btn" type="button">
-                                    <i class="fas fa-cart-plus"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-sm-6 col-12">
-                <a class="list-item card" href="#">
-                    <img src="{{ asset('img/iphone.png') }}" class="card-img-top" alt="...">
-                    <div class="card-body pt-0">
-                        <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
-                        <div class="d-flex justify-content-between mx-4">
-                            <div class="price">
-                                <span>999,99€</span>
-                            </div>
-                            <div class="shopping-cart">
-                                <button class="btn" type="button">
-                                    <i class="fas fa-cart-plus"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
+                    </a>
+                </div>
+            @endforeach
 
             <div class="header-holder text-center col-12">
                 <h4>Super cena</h4>
             </div>
-            <div class="col-lg-3 col-sm-6 col-12">
-                <a class="list-item card" href="#">
-                    <img src="{{ asset('img/iphone.png') }}" class="card-img-top" alt="...">
-                    <div class="card-body pt-0">
-                        <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
-                        <div class="d-flex justify-content-between mx-4">
-                            <div class="price">
-                                <span>999,99€</span>
-                            </div>
-                            <div class="shopping-cart">
-                                <button class="btn" type="button">
-                                    <i class="fas fa-cart-plus"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-sm-6 col-12">
-                <a class="list-item card" href="#">
-                    <img src="{{ asset('img/iphone.png') }}" class="card-img-top" alt="...">
-                    <div class="card-body pt-0">
-                        <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
-                        <div class="d-flex justify-content-between mx-4">
-                            <div class="price">
-                                <span>999,99€</span>
-                            </div>
-                            <div class="shopping-cart">
-                                <button class="btn" type="button">
-                                    <i class="fas fa-cart-plus"></i>
-                                </button>
+            @foreach($best_prices as $best_price)
+                <div class="col-lg-3 col-sm-6 col-12">
+                    <a class="list-item card" href="#">
+                        <img src="{{ asset('img/iphone.png') }}" class="card-img-top" alt="...">
+                        <div class="card-body pt-0">
+                            <h5 class="card-title text-center mb-4">{{ $best_price->name }}</h5>
+                            <div class="d-flex justify-content-between mx-4">
+                                <div class="price">
+                                    <span>{{ $best_price->price }} €</span>
+                                </div>
+                                <div class="shopping-cart">
+                                    <button class="btn" type="button">
+                                        <i class="fas fa-cart-plus"></i>
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-sm-6 col-12">
-                <a class="list-item card" href="#">
-                    <img src="{{ asset('img/iphone.png') }}" class="card-img-top" alt="...">
-                    <div class="card-body pt-0">
-                        <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
-                        <div class="d-flex justify-content-between mx-4">
-                            <div class="price">
-                                <span>999,99€</span>
-                            </div>
-                            <div class="shopping-cart">
-                                <button class="btn" type="button">
-                                    <i class="fas fa-cart-plus"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-sm-6 col-12">
-                <a class="list-item card" href="#">
-                    <img src="{{ asset('img/iphone.png') }}" class="card-img-top" alt="...">
-                    <div class="card-body pt-0">
-                        <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
-                        <div class="d-flex justify-content-between mx-4">
-                            <div class="price">
-                                <span>999,99€</span>
-                            </div>
-                            <div class="shopping-cart">
-                                <button class="btn" type="button">
-                                    <i class="fas fa-cart-plus"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
+                    </a>
+                </div>
+            @endforeach
 
             <div class="header-holder text-center col-12">
                 <h4>Akcia</h4>
             </div>
-            <div class="col-lg-3 col-sm-6 col-12">
-                <a class="list-item card" href="#">
-                    <img src="{{ asset('img/iphone.png') }}" class="card-img-top" alt="...">
-                    <div class="card-body pt-0">
-                        <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
-                        <div class="d-flex justify-content-between mx-4">
-                            <div class="price">
-                                <span>999,99€</span>
-                            </div>
-                            <div class="shopping-cart">
-                                <button class="btn" type="button">
-                                    <i class="fas fa-cart-plus"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-sm-6 col-12">
-                <a class="list-item card" href="#">
-                    <img src="{{ asset('img/iphone.png') }}" class="card-img-top" alt="...">
-                    <div class="card-body pt-0">
-                        <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
-                        <div class="d-flex justify-content-between mx-4">
-                            <div class="price">
-                                <span>999,99€</span>
-                            </div>
-                            <div class="shopping-cart">
-                                <button class="btn" type="button">
-                                    <i class="fas fa-cart-plus"></i>
-                                </button>
+            @foreach($discounts as $discount)
+                <div class="col-lg-3 col-sm-6 col-12">
+                    <a class="list-item card" href="#">
+                        <img src="{{ asset('img/iphone.png') }}" class="card-img-top" alt="...">
+                        <div class="card-body pt-0">
+                            <h5 class="card-title text-center mb-4">{{ $discount->name }}</h5>
+                            <div class="d-flex justify-content-between mx-4">
+                                <div class="price">
+                                    <span>{{ $discount->price }} €</span>
+                                </div>
+                                <div class="shopping-cart">
+                                    <button class="btn" type="button">
+                                        <i class="fas fa-cart-plus"></i>
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-sm-6 col-12">
-                <a class="list-item card" href="#">
-                    <img src="{{ asset('img/iphone.png') }}" class="card-img-top" alt="...">
-                    <div class="card-body pt-0">
-                        <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
-                        <div class="d-flex justify-content-between mx-4">
-                            <div class="price">
-                                <span>999,99€</span>
-                            </div>
-                            <div class="shopping-cart">
-                                <button class="btn" type="button">
-                                    <i class="fas fa-cart-plus"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-sm-6 col-12">
-                <a class="list-item card" href="#">
-                    <img src="{{ asset('img/iphone.png') }}" class="card-img-top" alt="...">
-                    <div class="card-body pt-0">
-                        <h5 class="card-title text-center mb-4">Samsung galaxy S21</h5>
-                        <div class="d-flex justify-content-between mx-4">
-                            <div class="price">
-                                <span>999,99€</span>
-                            </div>
-                            <div class="shopping-cart">
-                                <button class="btn" type="button">
-                                    <i class="fas fa-cart-plus"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
+                    </a>
+                </div>
+            @endforeach
         </div>
     </div>
 @endsection

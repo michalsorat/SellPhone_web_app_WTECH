@@ -12,6 +12,9 @@ class Product extends Model
     protected $fillable = [
         'name',
         'category',
+        'top_product',
+        'best_price',
+        'discount',
         'price',
         'short_description',
         'available_amount'
@@ -31,6 +34,4 @@ class Product extends Model
     {
         return $this->hasOne(Parameter::class);
     }
-
-
 }

@@ -17,6 +17,9 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('category');
+            $table->boolean('top_product');
+            $table->boolean('best_price');
+            $table->boolean('discount');
             $table->float('price', 6, 2);
             $table->longText('short_description');
             $table->integer('available_amount');

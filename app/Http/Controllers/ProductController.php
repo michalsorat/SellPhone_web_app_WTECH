@@ -8,6 +8,18 @@ use Illuminate\Support\Facades\Route;
 
 class ProductController extends Controller
 {
+    public function home()
+    {
+        $top_products = Product::where('top_product', 1)->get();
+        $best_prices = Product::where('best_price', 1)->get();
+        $discounts = Product::where('discount', 1)->get();
+
+        return view('homePage')
+            ->with('top_products', $top_products)
+            ->with('best_prices', $best_prices)
+            ->with('discounts', $discounts);
+    }
+
     public function index()
     {
         $name = Route::currentRouteName();
