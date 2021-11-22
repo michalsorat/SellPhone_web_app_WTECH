@@ -9,6 +9,7 @@
         </header>
 
         <main>
+            @include('sweetalert::alert')
             @yield('content')
         </main>
 

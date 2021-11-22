@@ -1,8 +1,3 @@
-
-
-
-{{--    {{ __('You are logged in!') }}--}}
-
 <div class="row g-0">
     <div class="col-4">
         <h1 id="main-header"><a href="{{ route('homepage') }}">SellPhone.sk</a></h1>
@@ -46,10 +41,6 @@
         //     });
         // })
         // const search_button = document.getElementById("search_btn");
-
-        // search_button.addEventListener("click", function () {
-        //     findProblemWithAddress(document.getElementById('search-input').value);
-        // });
     </script>
     <div class="col-md-4 col-3 d-flex justify-content-end align-self-center" id="nav-icons">
         @guest
@@ -68,23 +59,9 @@
             </form>
         @endguest
 
-        {{--        <a href="{{ route('summarization') }}" class="btn">--}}
-        {{--            <i class="fas fa-shopping-cart"></i>--}}
-        {{--        </a>--}}
         <button class="btn">
             <i class="fas fa-shopping-cart"></i>
         </button>
-{{--        @if (session('status'))--}}
-{{--            <div id="success-alert" class="alert alert-success" role="alert">--}}
-{{--                {{ session('status') }}--}}
-{{--            </div>--}}
-{{--        @endif--}}
-
-{{--        <script>--}}
-{{--            $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){--}}
-{{--                $("#success-alert").slideUp(500);--}}
-{{--            });--}}
-{{--        </script>--}}
     </div>
 </div>
 
