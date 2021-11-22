@@ -10,9 +10,9 @@ class ProductController extends Controller
 {
     public function home()
     {
-        $top_products = Product::where('top_product', 1)->get();
-        $best_prices = Product::where('best_price', 1)->get();
-        $discounts = Product::where('discount', 1)->get();
+        $top_products = Product::with('productImages')->where('top_product', 1)->get();
+        $best_prices = Product::with('productImages')->where('best_price', 1)->get();
+        $discounts = Product::with('productImages')->where('discount', 1)->get();
 
         return view('homePage')
             ->with('top_products', $top_products)
@@ -22,19 +22,12 @@ class ProductController extends Controller
 
     public function index()
     {
-        $name = Route::currentRouteName();
-
-        $image = Product::find(1)->productImages()
-                                 ->where('main_img', 1)
-                                 ->first();
-
-        $products = Product::where('category', $name)->paginate(16);
+        $products = Product::with('productImages')->where('category', request('category'))->paginate(16);
 
 //        dd($products->toArray());
 
         return view('productsPage')
-            ->with('products', $products)
-            ->with('image', $image->image_src);
+            ->with('products', $products);
     }
 
     public function show($id)

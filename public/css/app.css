@@ -31,16 +31,19 @@ footer {
 }
 
 #navbarNav ul li {
-    font-size: 0.75rem;
-    font-weight: bold;
     border-radius: .3rem;
+}
+
+#navbarNav ul li button{
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
 #navbarNav ul li:hover {
     background-color: #8c8886;
 }
 
-#navbarNav ul li a:hover {
+#navbarNav ul li button:hover {
     color: #ffffff;
 }
 

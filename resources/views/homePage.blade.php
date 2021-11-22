@@ -89,15 +89,20 @@
             <div class="header-holder text-center col-12">
                 <h4>Top produkty</h4>
             </div>
-            @foreach($top_products as $top_product)
+            @foreach($top_products as $product)
                 <div class="col-lg-3 col-sm-6 col-12">
-                    <a class="list-item card" href="#">
-                        <img src="{{ asset('img/iphone.png') }}" class="card-img-top" alt="...">
+                    <a class="list-item card" href="{{ route('product.show', $product->id) }}">
+                        @foreach($product->productImages as $image)
+                            @if($image->main_img == true)
+                                <img src="{{ asset($image->image_src) }}" class="card-img-top" alt="...">
+                                @break
+                            @endif
+                        @endforeach
                         <div class="card-body pt-0">
-                            <h5 class="card-title text-center mb-4">{{ $top_product->name }}</h5>
+                            <h5 class="card-title text-center mb-4">{{ $product->name }}</h5>
                             <div class="d-flex justify-content-between mx-4">
                                 <div class="price">
-                                    <span>{{ $top_product->price }} €</span>
+                                    <span>{{ $product->price }} €</span>
                                 </div>
                                 <div class="shopping-cart">
                                     <button class="btn" type="button">
@@ -113,15 +118,20 @@
             <div class="header-holder text-center col-12">
                 <h4>Super cena</h4>
             </div>
-            @foreach($best_prices as $best_price)
+            @foreach($best_prices as $product)
                 <div class="col-lg-3 col-sm-6 col-12">
-                    <a class="list-item card" href="#">
-                        <img src="{{ asset('img/iphone.png') }}" class="card-img-top" alt="...">
+                    <a class="list-item card" href="{{ route('product.show', $product->id) }}">
+                        @foreach($product->productImages as $image)
+                            @if($image->main_img == true)
+                                <img src="{{ asset($image->image_src) }}" class="card-img-top" alt="...">
+                                @break
+                            @endif
+                        @endforeach
                         <div class="card-body pt-0">
-                            <h5 class="card-title text-center mb-4">{{ $best_price->name }}</h5>
+                            <h5 class="card-title text-center mb-4">{{ $product->name }}</h5>
                             <div class="d-flex justify-content-between mx-4">
                                 <div class="price">
-                                    <span>{{ $best_price->price }} €</span>
+                                    <span>{{ $product->price }} €</span>
                                 </div>
                                 <div class="shopping-cart">
                                     <button class="btn" type="button">
@@ -137,15 +147,20 @@
             <div class="header-holder text-center col-12">
                 <h4>Akcia</h4>
             </div>
-            @foreach($discounts as $discount)
+            @foreach($discounts as $product)
                 <div class="col-lg-3 col-sm-6 col-12">
-                    <a class="list-item card" href="#">
-                        <img src="{{ asset('img/iphone.png') }}" class="card-img-top" alt="...">
+                    <a class="list-item card" href="{{ route('product.show', $product->id) }}">
+                        @foreach($product->productImages as $image)
+                            @if($image->main_img == true)
+                                <img src="{{ asset($image->image_src) }}" class="card-img-top" alt="...">
+                                @break
+                            @endif
+                        @endforeach
                         <div class="card-body pt-0">
-                            <h5 class="card-title text-center mb-4">{{ $discount->name }}</h5>
+                            <h5 class="card-title text-center mb-4">{{ $product->name }}</h5>
                             <div class="d-flex justify-content-between mx-4">
                                 <div class="price">
-                                    <span>{{ $discount->price }} €</span>
+                                    <span>{{ $product->price }} €</span>
                                 </div>
                                 <div class="shopping-cart">
                                     <button class="btn" type="button">

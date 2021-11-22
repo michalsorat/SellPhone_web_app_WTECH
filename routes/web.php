@@ -16,13 +16,13 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/', [ProductController::class, 'home']) -> name('homepage');
 
-Route::get('/apple', [ProductController::class, 'index']) -> name('apple');
-Route::get('/samsung', [ProductController::class, 'index']) -> name('samsung');
-Route::get('/huawei', [ProductController::class, 'index']) -> name('huawei');
-Route::get('/xiaomi', [ProductController::class, 'index']) -> name('xiaomi');
-Route::get('/oneplus', [ProductController::class, 'index']) -> name('oneplus');
-Route::get('/lg', [ProductController::class, 'index']) -> name('lg');
-Route::get('/accessories', [ProductController::class, 'index']) -> name('accessories');
+//Route::get('/apple', [ProductController::class, 'index']) -> name('apple');
+//Route::get('/samsung', [ProductController::class, 'index']) -> name('samsung');
+//Route::get('/huawei', [ProductController::class, 'index']) -> name('huawei');
+//Route::get('/xiaomi', [ProductController::class, 'index']) -> name('xiaomi');
+//Route::get('/oneplus', [ProductController::class, 'index']) -> name('oneplus');
+//Route::get('/lg', [ProductController::class, 'index']) -> name('lg');
+//Route::get('/accessories', [ProductController::class, 'index']) -> name('accessories');
 
 Route::resource('product', ProductController::class);
 
