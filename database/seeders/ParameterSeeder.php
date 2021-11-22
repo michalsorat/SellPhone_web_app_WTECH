@@ -27,7 +27,8 @@ class ParameterSeeder extends Seeder
 
         Parameter::factory()->count(1)
             ->create(['screen_size' => '5.8',
-                      'internal_storage' => '128']);
+                      'internal_storage' => '128',
+                      'ram' => '12']);
         Parameter::factory()->count(4)
             ->create(['screen_size' => '5.8',
                       'internal_storage' => '128']);
@@ -43,7 +44,7 @@ class ParameterSeeder extends Seeder
 
         Parameter::factory()->count(1)
             ->create(['screen_size' => '4.8',
-                'internal_storage' => '128']);
+                      'internal_storage' => '128']);
         Parameter::factory()->count(4)
             ->create(['screen_size' => '4.8',
                       'internal_storage' => '128',
