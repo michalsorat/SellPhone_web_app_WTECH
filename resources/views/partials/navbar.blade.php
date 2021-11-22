@@ -1,17 +1,56 @@
+
+
+
+{{--    {{ __('You are logged in!') }}--}}
+
 <div class="row g-0">
     <div class="col-4">
         <h1 id="main-header"><a href="{{ route('homepage') }}">SellPhone.sk</a></h1>
     </div>
     <div class="col-md-4 col-5">
-        <form class="d-sm-flex d-none my-2 my-lg-3">
-            <input class="form-control" type="search" placeholder="Zadajte názov produktu" aria-label="Search">
+        <form class="d-sm-flex d-none my-2 my-lg-3" action="{{ route('searchProduct') }}" method="GET">
+            <input class="form-control" type="search" id="search-input" name="search_input" placeholder="Zadajte názov produktu" aria-label="Search" autocomplete="off">
             <span class="input-group-append">
-            <button class="btn btn-outline-secondary" type="button">
+            <button class="btn btn-outline-secondary" id="search-btn" type="submit">
                 <i class="fa fa-search"></i>
             </button>
         </span>
         </form>
     </div>
+    <script type="text/javascript">
+        var path = "{{ route('autocomplete') }}";
+        $('#search-input').typeahead({
+            source: function (query, process) {
+                return $.get(path, {query: query}, function (data) {
+                    return process(data);
+                });
+            }
+        });
+
+        // $('#search-btn').on('click', function (e) {
+        //     e.preventDefault();
+        //
+        //     const name = document.getElementById('search-input').value;
+        //     console.log(name);
+        //     $.ajax({
+        //         type: 'GET',
+        //         url: '/productik/',
+        //         data: {
+        //             name : name
+        //         },
+        //         async: false,
+        //         dataType: 'json',
+        //         success: function (response) {
+        //             console.log(response);
+        //         }
+        //     });
+        // })
+        // const search_button = document.getElementById("search_btn");
+
+        // search_button.addEventListener("click", function () {
+        //     findProblemWithAddress(document.getElementById('search-input').value);
+        // });
+    </script>
     <div class="col-md-4 col-3 d-flex justify-content-end align-self-center" id="nav-icons">
         @guest
             <a href="{{ route('login') }}" class="btn">
@@ -35,6 +74,17 @@
         <button class="btn">
             <i class="fas fa-shopping-cart"></i>
         </button>
+{{--        @if (session('status'))--}}
+{{--            <div id="success-alert" class="alert alert-success" role="alert">--}}
+{{--                {{ session('status') }}--}}
+{{--            </div>--}}
+{{--        @endif--}}
+
+{{--        <script>--}}
+{{--            $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){--}}
+{{--                $("#success-alert").slideUp(500);--}}
+{{--            });--}}
+{{--        </script>--}}
     </div>
 </div>
 
@@ -72,50 +122,6 @@
             </form>
         </div>
     </div>
-
-    {{--    <div class="modal fade" id="loginModal" tabindex="-1">--}}
-    {{--        <div class="modal-dialog">--}}
-    {{--            <div class="modal-content">--}}
-    {{--                @guest--}}
-    {{--                <div class="modal-header">--}}
-    {{--                    <h5 class="modal-title" id="loginLabel">Prihlásenie</h5>--}}
-    {{--                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>--}}
-    {{--                </div>--}}
-    {{--                <div class="modal-body">--}}
-    {{--                    <form>--}}
-    {{--                        <div class="mb-3">--}}
-    {{--                            <label class="form-label">Emailová adresa</label>--}}
-    {{--                            <input type="text" class="form-control" id="username" name="username" placeholder="Emailová adresa" />--}}
-    {{--                        </div>--}}
-    {{--                        <div class="mb-3">--}}
-    {{--                            <label class="form-label">Heslo</label>--}}
-    {{--                            <input type="password" class="form-control" id="password" name="password" placeholder="Heslo" />--}}
-    {{--                        </div>--}}
-    {{--                        <div class="modal-footer d-block">--}}
-    {{--                                @if (Route::has('register'))--}}
-    {{--                                    <p class="float-start">Ešte nemáte účet? <a href="{{ route('register') }}">Zaregistrujte sa</a></p>--}}
-    {{--                                @endif--}}
-
-    {{--                                @if (Route::has('login'))--}}
-    {{--                                    <a href="{{ route('login') }}" class="btn btn-dark float-end">Prihlásenie</a>--}}
-    {{--                                @endif--}}
-    {{--                        </div>--}}
-    {{--                    </form>--}}
-    {{--                </div>--}}
-    {{--                @else--}}
-    {{--                    <a href="{{ route('logout') }}"--}}
-    {{--                       onclick="event.preventDefault();--}}
-    {{--                                                     document.getElementById('logout-form').submit();">--}}
-    {{--                        {{ __('Logout') }}--}}
-    {{--                    </a>--}}
-
-    {{--                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">--}}
-    {{--                        @csrf--}}
-    {{--                    </form>--}}
-    {{--                @endguest--}}
-    {{--            </div>--}}
-    {{--        </div>--}}
-    {{--    </div>--}}
 </nav>
 
 

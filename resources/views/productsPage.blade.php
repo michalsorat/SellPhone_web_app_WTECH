@@ -13,26 +13,63 @@
     </div>
 
     <div class="container-fluid mt-4">
-        <div class="d-flex justify-content-end me-5">
-            <label class="align-self-center me-3" for="orderBy">Zoradiť podľa</label>
-            <div>
-                <select id="orderBy" class="form-select">
-                    <option selected value="1">Najpredávanejšie</option>
-                    <option value="2">Novinky</option>
-                    <option value="2">Najlacnejšie</option>
-                    <option value="3">Najdrahšie</option>
-                </select>
-            </div>
-        </div>
+{{--        <div class="d-flex justify-content-end me-5">--}}
+{{--            <label class="align-self-center me-3" for="orderBy">Zoradiť podľa</label>--}}
+{{--            <div>--}}
+{{--                <select id="orderBy" class="form-select">--}}
+{{--                    <option value="2">Novinky</option>--}}
+{{--                    <option value="2">Najlacnejšie</option>--}}
+{{--                    <option value="3">Najdrahšie</option>--}}
+{{--                </select>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+
+{{--        <script>--}}
+{{--            $('#orderBy').onChange(function () {--}}
+
+{{--            })--}}
+{{--        </script>--}}
 
         <div class="row">
             <div class="col-sm-4 col-md-3 col-xl-2 col-12">
                 <form >
                     <div class="container border-bottom mt-4">
+                        <div class="text-uppercase d-flex align-items-center">Zoradiť podľa
+                            <button class="btn ms-auto" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#order-choices"
+                                    aria-expanded="false" aria-controls="order-choices">
+                        <span
+                            class="fas fa-plus">
+                        </span>
+                            </button>
+                        </div>
+                        <div id="order-choices" class="collapse">
+                            <div class="form-check my-1">
+                                <input class="form-check-input only-one" type="checkbox" name="orderBy[]" id="new-products">
+                                <label class="form-check-label" for="new-products">
+                                    Novinky
+                                </label>
+                            </div>
+                            <div class="form-check my-1">
+                                <input class="form-check-input only-one" type="checkbox" name="orderBy[]" id="ascending">
+                                <label class="form-check-label" for="ascending">
+                                    Najlacnejšie
+                                </label>
+                            </div>
+                            <div class="form-check my-1">
+                                <input class="form-check-input only-one" type="checkbox" name="orderBy[]" id="descending">
+                                <label class="form-check-label" for="descending">
+                                    Najdrahšie
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container border-bottom mt-4">
                         <div class="text-uppercase d-flex align-items-center">Cena
                             <button class="btn ms-auto" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#price-range"
-                                    aria-expanded="false" aria-controls="avail-choices">
+                                    aria-expanded="false" aria-controls="price-range">
                         <span
                             class="fas fa-plus">
                         </span>
@@ -254,6 +291,9 @@
                     $("#max-price").val(ui.values[1] + " €");
                 }
             });
+        });
+        $('.only-one').click(function() {
+            $('.only-one').not(this).prop('checked', false);
         });
     </script>
 @endsection

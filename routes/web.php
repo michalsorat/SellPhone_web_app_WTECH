@@ -25,6 +25,8 @@ Route::get('/', [ProductController::class, 'home']) -> name('homepage');
 //Route::get('/accessories', [ProductController::class, 'index']) -> name('accessories');
 
 Route::resource('product', ProductController::class);
+Route::get('/autocomplete', [ProductController::class, 'autocomplete'])->name('autocomplete');
+Route::get('/product-search', [ProductController::class, 'showProductByName'])->name('searchProduct');
 
 Route::get('/product-detail', function () {
     return view('productDetailPage');
