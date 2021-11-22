@@ -20,16 +20,51 @@ class ProductController extends Controller
             ->with('discounts', $discounts);
     }
 
-    public function index()
+    public function index(Request $request)
     {
+//        dd($request->toArray());
 
-        $request = request();
-        $products = Product::with('productImages')->where('category', $request->category)->paginate(16);
+        $category = Route::currentRouteName();
+        $products = Product::with('productImages')
+            ->where('category', $category)
+            ->where(function($query) use ($request) {
+                if (!empty($request->minPrice)) {
+                    $query->where('price', '>=', $request->minPrice);
+                }
+                if (!empty($request->maxPrice)) {
+                    $query->where('price', '<=', $request->maxPrice);
+                }
+                if (!empty($request->inStock)) {
+                    if (count($request->inStock) == 1) {
+                        if ($request->inStock[0] == 'true') {
+                            $query->where('available_amount', '>', 0);
+                        }
+                        else {
+                            $query->where('available_amount', 0);
+                        }
+                    }
+                }
+            })
+            ->whereHas('parameters', function ($query) use ($request) {
+                if (!empty($request->screenSize)) {
+                    foreach ($request->screenSize as $screenSize) {
+                        $query->where('screen_size', 'LIKE', "$screenSize%");
+                    }
+                }
+                if (!empty($request->ram)) {
+                    $query->whereIn('ram', $request->ram);
+                }
+                if (!empty($request->internalStorage)) {
+                    $query->whereIn('internal_storage', $request->internalStorage);
+                }
+            })
+            ->paginate(16);
 
 //        dd($products->toArray());
 
         return view('productsPage')
-            ->with('products', $products);
+            ->with('products', $products)
+            ->with('category', $category);
     }
 
     public function show($id)
