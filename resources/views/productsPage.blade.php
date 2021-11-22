@@ -45,19 +45,19 @@
                         </div>
                         <div id="order-choices" class="collapse">
                             <div class="form-check my-1">
-                                <input class="form-check-input only-one" type="checkbox" name="orderBy[]" id="new-products">
+                                <input class="form-check-input only-one" type="checkbox" name="orderBy" value="new" id="new-products">
                                 <label class="form-check-label" for="new-products">
                                     Novinky
                                 </label>
                             </div>
                             <div class="form-check my-1">
-                                <input class="form-check-input only-one" type="checkbox" name="orderBy[]" id="ascending">
+                                <input class="form-check-input only-one" type="checkbox" name="orderBy" value="priceAsc" id="ascending">
                                 <label class="form-check-label" for="ascending">
                                     Najlacnejšie
                                 </label>
                             </div>
                             <div class="form-check my-1">
-                                <input class="form-check-input only-one" type="checkbox" name="orderBy[]" id="descending">
+                                <input class="form-check-input only-one" type="checkbox" name="orderBy" value="priceDesc" id="descending">
                                 <label class="form-check-label" for="descending">
                                     Najdrahšie
                                 </label>
@@ -265,7 +265,7 @@
                             </div>
                         @endforeach
                         <div class="d-flex justify-content-end">
-                            {{  $products->links() }}
+                            {{  $products->withQueryString()->links() }}
                         </div>
                     </div>
                 </div>

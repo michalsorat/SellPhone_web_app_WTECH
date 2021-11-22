@@ -58,6 +58,22 @@ class ProductController extends Controller
                     $query->whereIn('internal_storage', $request->internalStorage);
                 }
             })
+            ->when($request, function($query) use ($request) {
+                if (!empty($request->orderBy)) {
+                    if ($request->orderBy == 'new') {
+                        $query->orderByDesc('created_at');
+                    }
+                    else if ($request->orderBy == 'priceAsc') {
+                        $query->orderBy('price');
+                    }
+                    else if ($request->orderBy == 'priceDesc') {
+                        $query->orderByDesc('price');
+                    }
+                }
+                else {
+                    $query->orderByDesc('created_at');
+                }
+            })
             ->paginate(16);
 
 //        dd($products->toArray());
