@@ -3,9 +3,9 @@
 @section('content')
     <div class="card text-center mx-5 my-3">
         <div class="card-body">
-            <h4 class="card-title"><span class="category">{{$products[0]->category}}</span> smartfóny</h4>
+            <h4 class="card-title"><span class="category">{{ $category }}</span> smartfóny</h4>
             <p class="card-text text-responsive">V našej ponuke nájdete výrobky renomovaného predajcu mobilných
-                telefónov a smartfónov {{$products[0]->category}}. Ponúkame to najlepšie na našom trhu za
+                telefónov a smartfónov {{ $category }}. Ponúkame to najlepšie na našom trhu za
                 bekonkurenčné ceny. Naším hlavným cieľom je dosiahnuť najvyššiu možnú mieru spokojnosti zákazníkov a
                 sprostredkovať prívetivé nákupné prostredie.
             </p>
@@ -79,13 +79,13 @@
                             <div class="row mt-3 mb-4">
                                 <div class="col-6 pe-1 ps-0">
                                     <div class="form-floating">
-                                        <input id="min-price" class="form-control" name="minPrice" value="" readonly>
+                                        <input id="min-price" class="form-control" name="minPrice" readonly>
                                         <label for="min-price">Od:</label>
                                     </div>
                                 </div>
                                 <div class="col-6 ps-1 pe-0">
                                     <div class="form-floating">
-                                        <input id="max-price" class="form-control" name="maxPrice" value="" readonly>
+                                        <input id="max-price" class="form-control" name="maxPrice" readonly>
                                         <label for="max-price">Do:</label>
                                     </div>
                                 </div>
@@ -93,7 +93,6 @@
                                     <div id="slider-range"></div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
 
@@ -109,13 +108,13 @@
                         </div>
                         <div id="avail-choices" class="collapse">
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" name="inStock" id="inStock">
+                                <input class="form-check-input" type="checkbox" name="inStock[]" value="true" id="inStock">
                                 <label class="form-check-label" for="inStock">
                                     Skladom
                                 </label>
                             </div>
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" name="onOrder" id="onOrder">
+                                <input class="form-check-input" type="checkbox" name="inStock[]" value="false" id="onOrder">
                                 <label class="form-check-label" for="onOrder">
                                     Na objednávku
                                 </label>
@@ -135,21 +134,21 @@
                         </div>
                         <div id="screen-size-choices" class="collapse">
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" name="screeSize1" id="screen-size-1">
+                                <input class="form-check-input" type="checkbox" name="screenSize[]" value="4" id="screen-size-1">
                                 <label class="form-check-label" for="screen-size-1">
                                     4" až 4,9"
                                 </label>
                             </div>
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" name="screeSize2" id="screen-size-2">
+                                <input class="form-check-input" type="checkbox" name="screenSize[]" value="5" id="screen-size-2">
                                 <label class="form-check-label" for="screen-size-2">
                                     5" až 5,9"
                                 </label>
                             </div>
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" name="screeSize3" id="screen-size-3">
+                                <input class="form-check-input" type="checkbox" name="screenSize[]" value="6" id="screen-size-3">
                                 <label class="form-check-label" for="screen-size-3">
-                                    6" a viac
+                                    6" až 6,9"
                                 </label>
                             </div>
                         </div>
@@ -167,27 +166,21 @@
                         </div>
                         <div id="ram-choices" class="collapse">
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" name="ram1" id="ram-1">
+                                <input class="form-check-input" type="checkbox" name="ram[]" value="12" id="ram-1">
                                 <label class="form-check-label" for="ram-1">
                                     12 GB
                                 </label>
                             </div>
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" name="ram2" id="ram-2">
+                                <input class="form-check-input" type="checkbox" name="ram[]" value="8" id="ram-2">
                                 <label class="form-check-label" for="ram-2">
                                     8 GB
                                 </label>
                             </div>
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" name="ram3" id="ram-3">
+                                <input class="form-check-input" type="checkbox" name="ram[]" value="4" id="ram-3">
                                 <label class="form-check-label" for="ram-3">
                                     4 GB
-                                </label>
-                            </div>
-                            <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" name="ram4" id="ram-4">
-                                <label class="form-check-label" for="ram-4">
-                                    < 4 GB
                                 </label>
                             </div>
                         </div>
@@ -205,33 +198,33 @@
                         </div>
                         <div id="hdd-choices" class="collapse">
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" name="hdd1" id="hdd-1">
+                                <input class="form-check-input" type="checkbox" name="internalStorage[]" value="512" id="hdd-1">
                                 <label class="form-check-label" for="hdd-1">
                                     512 GB
                                 </label>
                             </div>
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" name="hdd2" id="hdd-2">
+                                <input class="form-check-input" type="checkbox" name="internalStorage[]" value="256" id="hdd-2">
                                 <label class="form-check-label" for="hdd-2">
                                     256 GB
                                 </label>
                             </div>
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" name="hdd3" id="hdd-3">
+                                <input class="form-check-input" type="checkbox" name="internalStorage[]" value="128" id="hdd-3">
                                 <label class="form-check-label" for="hdd-3">
                                     128 GB
                                 </label>
                             </div>
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" name="hdd4" id="hdd-4">
+                                <input class="form-check-input" type="checkbox" name="internalStorage[]" value="64" id="hdd-4">
                                 <label class="form-check-label" for="hdd-4">
                                     64 GB
                                 </label>
                             </div>
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" name="hdd5" id="hdd-5">
+                                <input class="form-check-input" type="checkbox" name="internalStorage[]" value="32" id="hdd-5">
                                 <label class="form-check-label" for="hdd-5">
-                                    < 64 GB
+                                    32 GB
                                 </label>
                             </div>
                         </div>
@@ -285,10 +278,10 @@
                 range: true,
                 min: 0,
                 max: 1500,
-                values: [250, 1250],
+                values: [0, 1500],
                 slide: function (event, ui) {
-                    $("#min-price").val(ui.values[0] + " €");
-                    $("#max-price").val(ui.values[1] + " €");
+                    $("#min-price").val(ui.values[0]);
+                    $("#max-price").val(ui.values[1]);
                 }
             });
         });

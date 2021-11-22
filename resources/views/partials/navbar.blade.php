@@ -71,23 +71,26 @@
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <form class="collapse navbar-collapse" id="navbarNav" action="{{ route('product.index') }}" method="GET">
+        <div class="collapse navbar-collapse" id="navbarNav">
+{{--        <form class="collapse navbar-collapse" id="navbarNav" action="{{ route('product.index') }}" method="GET">--}}
             <ul class="navbar-nav w-100 nav-justified">
-                <li class="nav-item"><button class="nav-link btn" type="submit" name="category" value="apple">Apple</button></li>
-                <li class="nav-item"><button class="nav-link btn" type="submit" name="category" value="samsung">Samsung</button></li>
-                <li class="nav-item"><button class="nav-link btn" type="submit" name="category" value="huawei">Huawei</button></li>
-                <li class="nav-item"><button class="nav-link btn" type="submit" name="category" value="xiaomi">Xiaomi</button></li>
-                <li class="nav-item"><button class="nav-link btn" type="submit" name="category" value="oneplus">OnePlus</button></li>
-                <li class="nav-item"><button class="nav-link btn" type="submit" name="category" value="lg">LG</button></li>
-                <li class="nav-item"><button class="nav-link btn" type="submit" name="category" value="accessories">Príslušenstvo</button></li>
-{{--                <li class="nav-item"><button class="btn"><a class="nav-link">Samsung</a></button></li>--}}
-{{--                <li class="nav-item"><a class="nav-link" href="{{ route('huawei') }}">Huawei</a></li>--}}
-{{--                <li class="nav-item"><a class="nav-link" href="{{ route('xiaomi') }}">Xiaomi</a></li>--}}
-{{--                <li class="nav-item"><a class="nav-link" href="{{ route('oneplus') }}">OnePlus</a></li>--}}
-{{--                <li class="nav-item"><a class="nav-link" href="{{ route('lg') }}">LG</a></li>--}}
-{{--                <li class="nav-item"><a class="nav-link" href="{{ route('accessories') }}">Príslušenstvo</a></li>--}}
+{{--                <li class="nav-item"><button class="nav-link btn" type="submit" name="category" value="apple">Apple</button></li>--}}
+{{--                <li class="nav-item"><button class="nav-link btn" type="submit" name="category" value="samsung">Samsung</button></li>--}}
+{{--                <li class="nav-item"><button class="nav-link btn" type="submit" name="category" value="huawei">Huawei</button></li>--}}
+{{--                <li class="nav-item"><button class="nav-link btn" type="submit" name="category" value="xiaomi">Xiaomi</button></li>--}}
+{{--                <li class="nav-item"><button class="nav-link btn" type="submit" name="category" value="oneplus">OnePlus</button></li>--}}
+{{--                <li class="nav-item"><button class="nav-link btn" type="submit" name="category" value="lg">LG</button></li>--}}
+{{--                <li class="nav-item"><button class="nav-link btn" type="submit" name="category" value="accessories">Príslušenstvo</button></li>--}}
+                <li class="nav-item"><a class="nav-link" href="{{ route('apple') }}">Apple</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('samsung') }}">Samsung</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('huawei') }}">Huawei</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('xiaomi') }}">Xiaomi</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('oneplus') }}">OnePlus</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('lg') }}">LG</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('accessories') }}">Príslušenstvo</a></li>
             </ul>
-        </form>
+{{--        </form>--}}
+        </div>
         <div>
             <form class="d-sm-none d-flex">
                 <input class="form-control" type="search" placeholder="Zadajte názov produktu" aria-label="Search">

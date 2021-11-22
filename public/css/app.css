@@ -31,12 +31,9 @@ footer {
 }
 
 #navbarNav ul li {
-    border-radius: .3rem;
-}
-
-#navbarNav ul li button{
-    font-size: 1.2rem;
+    font-size: 0.75rem;
     font-weight: bold;
+    border-radius: .3rem;
 }
 
 #navbarNav ul li:hover {
