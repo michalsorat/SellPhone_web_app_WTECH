@@ -15,9 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', [ProductController::class, 'home']) -> name('homepage');
-//Route::get('/', function () {
-//    return view('homePage');
-//});
 
 Route::get('/apple', [ProductController::class, 'index']) -> name('apple');
 Route::get('/samsung', [ProductController::class, 'index']) -> name('samsung');

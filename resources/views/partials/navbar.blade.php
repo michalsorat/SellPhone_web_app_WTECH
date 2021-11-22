@@ -1,6 +1,6 @@
 <div class="row g-0">
     <div class="col-4">
-        <h1 id="main-header"><a href="#">SellPhone.sk</a></h1>
+        <h1 id="main-header"><a href="{{ route('homepage') }}">SellPhone.sk</a></h1>
     </div>
     <div class="col-md-4 col-5">
         <form class="d-sm-flex d-none my-2 my-lg-3">
