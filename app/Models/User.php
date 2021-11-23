@@ -28,6 +28,11 @@ class User extends Authenticatable
         'psc'
     ];
 
+    public function shoppingCart()
+    {
+        return $this->hasOne(ShoppingCart::class);
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

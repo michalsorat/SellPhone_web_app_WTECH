@@ -36,7 +36,7 @@ Route::get('/remove-one-item-from-cart/{id}', [ProductController::class, 'remove
 Route::get('/get-shopping-cart-1', [ProductController::class, 'getShoppingCart1'])->name('getShoppingCart1');
 Route::get('/get-shopping-cart-1/get-shopping-cart-2', [ProductController::class, 'getShoppingCart2'])->name('getShoppingCart2');
 Route::get('/get-shopping-cart-1/get-shopping-cart-2/get-shopping-cart-3', [ProductController::class, 'getShoppingCart3'])->name('getShoppingCart3');
-Route::get('/get-shopping-cart-1/get-shopping-cart-2/get-shopping-cart-3/order-confirmation', [ProductController::class, 'getOrderConfirmation'])->name('getOrderConfirmation');
+Route::post('/get-shopping-cart-1/get-shopping-cart-2/get-shopping-cart-3/order-confirmation', [ProductController::class, 'getOrderConfirmation'])->name('getOrderConfirmation');
 Route::get('/get-shopping-cart-1/get-shopping-cart-2/transport-type/{type}', [ProductController::class, 'getTransportType'])->name('transportType');
 
 Route::get('/summarization', function () {

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use App\Models\Product;
 use App\Models\ShoppingCart;
 use Illuminate\Http\Request;
@@ -262,11 +263,11 @@ class ProductController extends Controller
     public function getOrderConfirmation(Request $request) {
         $order_id = substr(str_shuffle("123456789"), 0, 6);
         if ($request->session()->has('shoppingCart')) {
+//            dd($request->request->all());
+            Order::create($request->request->all());
             return view('orderConfirmation')
                 ->with('totalPrice', $request->session()->get('shoppingCart')->totalPrice)
                 ->with('orderId', $order_id);
         }
     }
-
-
 }
