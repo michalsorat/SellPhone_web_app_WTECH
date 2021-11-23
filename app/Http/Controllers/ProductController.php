@@ -156,16 +156,21 @@ class ProductController extends Controller
 
     public function addItemToCart(Request $request, $id)
     {
-        $oldShoppingCart = null;
+        $oldShoppingCart = 1;
+        $times = null;
         if ($request->session()->has('shoppingCart')) {
             $oldShoppingCart = $request->session()->get('shoppingCart');
         }
         $shoppingCart = new ShoppingCart($oldShoppingCart);
         $product = Product::with('productImages', 'specifications', 'parameters')->find($id);
 
-//        dd($product->toArray());
+        if ($request->cart_count != null){
+            $times = $request->cart_count;
+        }
 
-        $shoppingCart->add($product, $product->id);
+//        dd($times);
+
+        $shoppingCart->add($product, $product->id, $times);
 //        dd($shoppingCart);
         $request->session()->put('shoppingCart', $shoppingCart);
 
@@ -243,9 +248,12 @@ class ProductController extends Controller
             ->with('user', $user);
     }
 
-    public function getTransportType($type) {
-//        dd($type);
+    public function getTransportType(Request $request, $type) {
         $price = 0;
+//        $validated = $request->validate(
+//            [ 'cats' => Input::get('cats') ],
+//            [ 'cats' => 'min:1' ]
+//        );
         if ($type == 'delivery'){
             $price = 3.99;
         }

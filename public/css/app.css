@@ -12,6 +12,14 @@ body {
     flex-direction: column;
 }
 
+#cart-count {
+    position: absolute;
+    width: 30px;
+    height: 37px;
+    margin-left: 5px;
+    /*top: 150px;*/
+}
+
 footer {
     margin-top: auto;
     color:#f0f9ff;
@@ -740,6 +748,7 @@ footer {
         margin-top: 7px;
     }
 
+    /*//TODO dorobit*/
     #nav-icons span {
         font-size: 1rem;
     }

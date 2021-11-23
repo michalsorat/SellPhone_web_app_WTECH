@@ -18,18 +18,18 @@ class ShoppingCart
         }
     }
 
-    public function add($item, $id) {
+    public function add($item, $id, $times) {
         $newItem = ['item' => $item, 'price' => $item->price, 'quantity' => 0];
         if ($this->items) {
             if (array_key_exists($id, $this->items)) {
                 $newItem = $this->items[$id];
             }
         }
-        $newItem['quantity']++;
+        $newItem['quantity']+= $times;
         $newItem['price'] = $item->price * $newItem['quantity'];
         $this->items[$id] = $newItem;
-        $this->totalPrice += $item->price;
-        $this->totalQuantity++;
+        $this->totalPrice += ($item->price * $times);
+        $this->totalQuantity += $times;
     }
 
     public function remove($id) {

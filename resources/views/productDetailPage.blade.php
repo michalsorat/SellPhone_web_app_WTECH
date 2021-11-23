@@ -86,6 +86,7 @@
                             <i class="fas fa-cart-plus"></i>
                             Pridať do košíka
                         </button>
+                        <input id="cart-count" name="cart_count" type="text" placeholder="ks">
                     </form>
                 </div>
             </div>
