@@ -59,7 +59,7 @@
                                         </a>
                                     </div>
                                 </td>
-                                <td>{{ $product['item']['price'] }} €</td>
+                                <td>{{ $product['price'] }} €</td>
                                 <td>
                                     <a href="{{ route('removeItemFromCart', $product['item']['id']) }}" class="btn">
                                         <i class="fas fa-times"></i>

@@ -226,4 +226,16 @@ class ProductController extends Controller
             ->with('products', $shoppingCart->items)
             ->with('totalPrice', $shoppingCart->totalPrice);
     }
+
+    public function getShoppingCart3(Request $request) {
+        if (!$request->session()->has('shoppingCart')) {
+            return view('shoppingCartStep2');
+        }
+        $oldShoppingCart = $request->session()->get('shoppingCart');
+        $shoppingCart = new ShoppingCart($oldShoppingCart);
+//        dd($shoppingCart->items);
+        return view('shoppingCartStep3')
+            ->with('products', $shoppingCart->items)
+            ->with('totalPrice', $shoppingCart->totalPrice);
+    }
 }

@@ -3,6 +3,7 @@
 @section('content')
     <div class="container sumarization my-5 px-5 pt-2 pb-4">
         <div class="row d-flex justify-content-center">
+            @if($products)
             <div class="progress-holder col-10 mt-5">
                 <div class="progress">
                     <div id="progress-bar-2" class="progress-bar" role="progressbar" aria-valuenow="50"
@@ -90,32 +91,34 @@
                     <table class="table-small table table-responsive table-borderless">
                         <h5>Sumár objednávky</h5>
                         <tbody>
+                        @foreach($products as $product)
                         <tr class="align-middle alert border-bottom">
-                            <td class="text-center"><img class="pic" src="{{ asset('img/iphone.png') }}" alt=""></td>
+                            <td class="text-center">
+                                @foreach($product['item']['productImages'] as $image)
+                                    @if($image->main_img == true)
+                                        <img src="{{ asset($image->image_src) }}" class="pic" alt="...">
+                                        @break
+                                    @endif
+                                @endforeach
+                            </td>
                             <td>
                                 <div>
-                                    <p class="m-0 fw-bold">Samsung Galaxy S21, 5G 8GB/128GB</p>
+                                    <p class="m-0 fw-bold">{{ $product['item']['name'] }}</p>
                                 </div>
                             </td>
-                            <td><input type="text" readonly class="form-control-plaintext" value="1 KS"></td>
-                            <td> 650€</td>
-                        </tr>
-                        <tr class="align-middle alert border-bottom">
-                            <td class="text-center"><img class="pic" src="{{ asset('img/iphone.png') }}" alt=""></td>
                             <td>
                                 <div>
-                                    <p class="m-0 fw-bold">iPhone X 256 GB</p>
+                                    <p class="m-0 fw-bold">{{ $product['quantity'] }} KS</p>
                                 </div>
-                            </td>
-                            <td><input type="text" readonly class="form-control-plaintext" value="1 KS"></td>
-                            <td> 850€</td>
+                            <td>{{ $product['price'] }} €</td>
                         </tr>
+                        @endforeach
                         </tbody>
                     </table>
                     <div class="d-flex justify-content-between">
                         <div class="next-step">
                             <ul>
-                                <button type="button" class="btn btn-dark btn"><- späť do košíka</button>
+                                <li><a href="{{route('getShoppingCart1')}}" class="btn btn-dark btn"><- späť do košíka</a></li>
                             </ul>
                         </div>
 
@@ -123,15 +126,18 @@
                             <ul class="text-left">
                                 <li><p>Doručenie na adresu:<span>3,99€</span></p></li>
                                 <li><p>Platba kartou:<span>0€</span></p></li>
-                                <li><p>Cena celkom:<span>1503,99€</span></p></li>
-                                <li>
-                                    <button type="button" class="btn btn-dark btn">Pokračovať v objednávke</button>
-                                </li>
+                                <li><p>Cena celkom:<span>{{ $totalPrice }} €</span></p></li>
+                                <li><a href="{{route('getShoppingCart3')}}" class="btn btn-dark btn">Pokračovať v objednávke</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
+            @else
+                <div class="d-flex justify-content-center mt-auto">
+                    <h3>Nemáte žiadne produkty v košíku.</h3>
+                </div>
+            @endif
         </div>
     </div>
 @endsection

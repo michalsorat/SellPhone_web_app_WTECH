@@ -34,18 +34,9 @@ Route::get('/add-one-item-to-cart/{id}', [ProductController::class, 'addOneItemT
 Route::get('/remove-item-from-cart/{id}', [ProductController::class, 'removeItemFromCart'])->name('removeItemFromCart');
 Route::get('/remove-one-item-from-cart/{id}', [ProductController::class, 'removeOneItemToCart'])->name('removeOneItemToCart');
 Route::get('/get-shopping-cart-1', [ProductController::class, 'getShoppingCart1'])->name('getShoppingCart1');
-
 Route::get('/get-shopping-cart-1/get-shopping-cart-2', [ProductController::class, 'getShoppingCart2'])->name('getShoppingCart2');
+Route::get('/get-shopping-cart-1/get-shopping-cart-2/get-shopping-cart-3', [ProductController::class, 'getShoppingCart3'])->name('getShoppingCart3');
 
-Route::get('/summarization', function () {
-    return view('shoppingCartStep1');
-});
-Route::get('/shipping-payment', function () {
-    return view('shoppingCartStep2');
-});
-Route::get('/shipping-address', function () {
-    return view('CartStep3');
-});
 Route::get('/order-confirmation', function () {
     return view('orderConfirmation');
 });
