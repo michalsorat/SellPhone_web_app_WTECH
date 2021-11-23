@@ -76,12 +76,17 @@
                             <h3 class="product price card-title">{{ $product->price }} €</h3>
                         </div>
                     </div>
-                    <button
-                        class="product btn btn-primary col-5 col-lg-4 mx-lg-4 my-3 my-lg-4 ms-3 ms-sm-4 ms-md-3 px-lg-0"
-                        type="button">
-                        <i class="fas fa-cart-plus"></i>
-                        Pridať do košíka
-                    </button>
+{{--                    <form method="GET" action="{{ route('addItemToCart', $product->id) }}">--}}
+{{--                        <button class="btn" type="submit">--}}
+{{--                            <i class="fas fa-cart-plus"></i>--}}
+{{--                        </button>--}}
+{{--                    </form>--}}
+                    <form class="align-self-center col-5 col-lg-4 mx-lg-4 my-3 my-lg-4 ms-3 ms-sm-4 ms-md-3 px-lg-0" method="GET" action="{{ route('addItemToCart', $product->id) }}">
+                        <button class="product btn btn-primary " type="submit">
+                            <i class="fas fa-cart-plus"></i>
+                            Pridať do košíka
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>

@@ -49,7 +49,16 @@
                                         <p class="m-0 fw-bold">{{ $product['item']['name'] }}</p>
                                     </div>
                                 </td>
-                                <td> <input class="input" type="text" value={{ $product['quantity'] }} readonly></td>
+                                <td> <input class="input" type="text" value={{ $product['quantity'] }} readonly>
+                                    <div class="d-inline">
+                                        <a class="btn" href="{{ route('addOneItemToCart', $product['item']['id']) }}">
+                                            <i class="fas fa-plus-square"></i>
+                                        </a>
+                                        <a class="btn" href="{{ route('removeOneItemToCart', $product['item']['id']) }}">
+                                            <i class="fas fa-minus-square"></i>
+                                        </a>
+                                    </div>
+                                </td>
                                 <td>{{ $product['item']['price'] }} €</td>
                                 <td>
                                     <a href="{{ route('removeItemFromCart', $product['item']['id']) }}" class="btn">
@@ -65,11 +74,11 @@
             <div class="next-step">
                 <ul class="float-end text-center">
                     <li><p>Cena celkom:<span>{{ $totalPrice }} €</span></p></li>
-                    <li><button type="button" class="btn btn-dark btn">Pokračovať v objednávke</button></li>
+                    <li><a href="{{route('getShoppingCart2')}}" class="btn btn-dark btn">Pokračovať v objednávke</a></li>
                 </ul>
             </div>
             @else
-                <div class="d-flex justify-content-center">
+                <div class="d-flex justify-content-center mt-auto">
                     <h3>Nemáte žiadne produkty v košíku.</h3>
                 </div>
             @endif

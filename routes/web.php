@@ -30,8 +30,12 @@ Route::get('/autocomplete', [ProductController::class, 'autocomplete'])->name('a
 Route::get('/product-search', [ProductController::class, 'showProductByName'])->name('searchProduct');
 
 Route::get('/add-item-to-cart/{id}', [ProductController::class, 'addItemToCart'])->name('addItemToCart');
+Route::get('/add-one-item-to-cart/{id}', [ProductController::class, 'addOneItemToCart'])->name('addOneItemToCart');
 Route::get('/remove-item-from-cart/{id}', [ProductController::class, 'removeItemFromCart'])->name('removeItemFromCart');
+Route::get('/remove-one-item-from-cart/{id}', [ProductController::class, 'removeOneItemToCart'])->name('removeOneItemToCart');
 Route::get('/get-shopping-cart-1', [ProductController::class, 'getShoppingCart1'])->name('getShoppingCart1');
+
+Route::get('/get-shopping-cart-1/get-shopping-cart-2', [ProductController::class, 'getShoppingCart2'])->name('getShoppingCart2');
 
 Route::get('/summarization', function () {
     return view('shoppingCartStep1');

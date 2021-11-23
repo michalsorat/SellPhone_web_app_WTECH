@@ -176,8 +176,7 @@ class ProductController extends Controller
 //        $shoppingCart[$id][]
 //    }
 
-    public function removeItemFromCart(Request $request, $id)
-    {
+    public function removeItemFromCart(Request $request, $id) {
         $oldShoppingCart = $request->session()->get('shoppingCart');
         $shoppingCart = new ShoppingCart($oldShoppingCart);
         $shoppingCart->remove($id);
@@ -186,8 +185,25 @@ class ProductController extends Controller
         return redirect()->back();
     }
 
-    public function getShoppingCart1(Request $request)
-    {
+    public function addOneItemToCart(Request $request, $id) {
+        $oldShoppingCart = $request->session()->get('shoppingCart');
+        $shoppingCart = new ShoppingCart($oldShoppingCart);
+        $shoppingCart->addOne($id);
+        $request->session()->put('shoppingCart', $shoppingCart);
+
+        return redirect()->back();
+    }
+
+    public function removeOneItemToCart(Request $request, $id) {
+        $oldShoppingCart = $request->session()->get('shoppingCart');
+        $shoppingCart = new ShoppingCart($oldShoppingCart);
+        $shoppingCart->removeOne($id);
+        $request->session()->put('shoppingCart', $shoppingCart);
+
+        return redirect()->back();
+    }
+
+    public function getShoppingCart1(Request $request) {
         if (!$request->session()->has('shoppingCart')) {
             return view('shoppingCartStep1');
         }
@@ -195,6 +211,18 @@ class ProductController extends Controller
         $shoppingCart = new ShoppingCart($oldShoppingCart);
 //        dd($shoppingCart->items);
         return view('shoppingCartStep1')
+            ->with('products', $shoppingCart->items)
+            ->with('totalPrice', $shoppingCart->totalPrice);
+    }
+
+    public function getShoppingCart2(Request $request) {
+        if (!$request->session()->has('shoppingCart')) {
+            return view('shoppingCartStep2');
+        }
+        $oldShoppingCart = $request->session()->get('shoppingCart');
+        $shoppingCart = new ShoppingCart($oldShoppingCart);
+//        dd($shoppingCart->items);
+        return view('shoppingCartStep2')
             ->with('products', $shoppingCart->items)
             ->with('totalPrice', $shoppingCart->totalPrice);
     }
