@@ -59,9 +59,11 @@
             </form>
         @endguest
 
-        <button class="btn">
-            <i class="fas fa-shopping-cart"></i>
-        </button>
+        <a class="btn align-self-center">
+            <i class="fas fa-shopping-cart">
+                <span class="translate-middle badge rounded-pill bg-danger">{{ Session::has('shoppingCart') ? Session::get('shoppingCart')->totalQuantity : '' }}</span>
+            </i>
+        </a>
     </div>
 </div>
 
