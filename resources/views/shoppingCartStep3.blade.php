@@ -180,7 +180,7 @@
                                 <li><p>Doručenie na adresu:<span>3,99€</span></p></li>
                                 <li><p>Platba kartou:<span>0€</span></p></li>
                                 <li><p>Cena celkom:<span>{{ $totalPrice }} €</span></p></li>
-                                <li><a href="{{route('getShoppingCart3')}}" class="btn btn-dark btn">Pokračovať v objednávke</a></li>
+                                <li><a href="{{route('getOrderConfirmation')}}" class="btn btn-dark btn">Pokračovať v objednávke</a></li>
                             </ul>
                         </div>
                     </div>

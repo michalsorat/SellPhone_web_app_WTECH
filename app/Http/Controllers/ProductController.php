@@ -230,7 +230,7 @@ class ProductController extends Controller
 
     public function getShoppingCart3(Request $request) {
         if (!$request->session()->has('shoppingCart')) {
-            return view('shoppingCartStep2');
+            return view('shoppingCartStep3');
         }
         $oldShoppingCart = $request->session()->get('shoppingCart');
         $shoppingCart = new ShoppingCart($oldShoppingCart);
@@ -241,4 +241,32 @@ class ProductController extends Controller
             ->with('totalPrice', $shoppingCart->totalPrice)
             ->with('user', $user);
     }
+
+    public function getTransportType($type) {
+//        dd($type);
+        $price = 0;
+        if ($type == 'delivery'){
+            $price = 3.99;
+        }
+        else if ($type == 'cash-on-delivery') {
+            $price = 2.99;
+        }
+        $oldShoppingCart = Session::get('shoppingCart');
+        $shoppingCart = new ShoppingCart($oldShoppingCart);
+        $shoppingCart->addPrice($price);
+        Session::put('shoppingCart', $shoppingCart);
+
+        return response()->json($price);
+    }
+
+    public function getOrderConfirmation(Request $request) {
+        $order_id = substr(str_shuffle("123456789"), 0, 6);
+        if ($request->session()->has('shoppingCart')) {
+            return view('orderConfirmation')
+                ->with('totalPrice', $request->session()->get('shoppingCart')->totalPrice)
+                ->with('orderId', $order_id);
+        }
+    }
+
+
 }

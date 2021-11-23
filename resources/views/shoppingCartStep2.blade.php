@@ -36,7 +36,7 @@
                         <h5>Spôsob dopravy</h5>
                         <tbody>
                         <tr class="align-middle alert border-bottom">
-                            <td><input type="checkbox" id="check"></td>
+                            <td><input type="checkbox" id="delivery" class="transport-check" name="transport[]"></td>
                             <td class="text-center"><i class="fas fa-shipping-fast"></i></td>
                             <td>
                                 <div>
@@ -46,7 +46,7 @@
                             <td> 3,99€</td>
                         </tr>
                         <tr class="align-middle alert border-bottom">
-                            <td><input type="checkbox" id="check"></td>
+                            <td><input type="checkbox" id="personal-collect" class="transport-check" name="transport[]"></td>
                             <td class="text-center"><i class="fas fa-hand-holding-usd"></i></td>
                             <td>
                                 <div>
@@ -63,7 +63,7 @@
                         <h5>Spôsob platby</h5>
                         <tbody>
                         <tr class="align-middle alert border-bottom">
-                            <td><input type="checkbox" id="check"></td>
+                            <td><input type="checkbox" id="card" name="payment_method[]"></td>
                             <td class="text-center"><i class="fab fa-cc-visa"></i></td>
                             <td>
                                 <div>
@@ -73,7 +73,7 @@
                             <td> Zadarmo</td>
                         </tr>
                         <tr class="align-middle alert border-bottom">
-                            <td><input type="checkbox" id="check"></td>
+                            <td><input type="checkbox" id="cash-on-delivery" name="payment_method[]"></td>
                             <td class="text-center"><i class="fas fa-wallet"></i></td>
                             <td>
                                 <div>
@@ -124,9 +124,9 @@
 
                         <div class="next-step mt-2">
                             <ul class="text-left">
-                                <li><p>Doručenie na adresu:<span>3,99€</span></p></li>
-                                <li><p>Platba kartou:<span>0€</span></p></li>
-                                <li><p>Cena celkom:<span>{{ $totalPrice }} €</span></p></li>
+                                <li><p>Spôsob doručenia:<span id="transport-type"></span></p></li>
+                                <li><p>Spôsob platby:<span id="payment-method"></span></p></li>
+                                <li><p>Cena celkom:<span id="price-total">{{ $totalPrice }} €</span></p></li>
                                 <li><a href="{{route('getShoppingCart3')}}" class="btn btn-dark btn">Pokračovať v objednávke</a></li>
                             </ul>
                         </div>
@@ -140,4 +140,53 @@
             @endisset
         </div>
     </div>
+
+    <script>
+        $('input[type="checkbox"]').on('change', function() {
+            $('input[name="' + this.name + '"]').not(this).prop('checked', false);
+            let type = $(this).attr('id');
+            var url = "{{ route('transportType', ":type")  }}";
+            url = url.replace(':type', type);
+            if(this.checked){
+                $.ajax({
+                    type: "GET",
+                    url: url,
+                    success: function(data) {
+                        console.log('Data retrieved succesfully');
+                        if (type==='delivery' || type==='personal-collect'){
+                            $('#transport-type').html(data + '€');
+                        }
+                        else if (type==='card' || type==='cash-on-delivery'){
+                            $('#payment-method').html(data + '€');
+                        }
+                        // let total_now = document.getElementById("price-total").innerText;
+                        // $('#price-total').html(parseFloat(total_now) + parseFloat(data));
+                    },
+                    error: function() {
+                        console.log('Something went wrong');
+                    }
+                });
+
+            }
+        });
+
+            // const name = document.getElementById('search-input').value;
+            // console.log(name);
+            // $.ajax({
+            //     type: 'GET',
+            //     url: '/productik/',
+            //     data: {
+            //         name : name
+            //     },
+            //     async: false,
+            //     dataType: 'json',
+            //     success: function (response) {
+            //         console.log(response);
+            //     }
+            // });
+
+        // $('input[type="checkbox"]').on('change', function() {
+        //     $('input[name="' + this.name + '"]').not(this).prop('checked', false);
+        // });
+    </script>
 @endsection

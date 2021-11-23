@@ -49,7 +49,6 @@ class ShoppingCart
                 $this->items[$id]['price'] += $this->items[$id]['item']['price'];
                 $this->items[$id]['quantity']++;
                 $this->totalQuantity++;
-
             }
         }
     }
@@ -66,5 +65,9 @@ class ShoppingCart
                 }
             }
         }
+    }
+
+    public function addPrice($price) {
+        $this->totalPrice += $price;
     }
 }
