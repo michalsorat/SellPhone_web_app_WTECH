@@ -25,10 +25,20 @@ class ShoppingCart
                 $newItem = $this->items[$id];
             }
         }
-        $newItem['price'] = $item->price * $newItem['quantity'];
         $newItem['quantity']++;
+        $newItem['price'] = $item->price * $newItem['quantity'];
         $this->items[$id] = $newItem;
         $this->totalPrice += $item->price;
         $this->totalQuantity++;
+    }
+
+    public function remove($id) {
+        if ($this->items) {
+            if (array_key_exists($id, $this->items)) {
+                $this->totalPrice -= $this->items[$id]['price'];
+                $this->totalQuantity -= $this->items[$id]['quantity'];
+                unset($this->items[$id]);
+            }
+        }
     }
 }

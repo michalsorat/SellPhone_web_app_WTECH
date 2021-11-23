@@ -3,6 +3,7 @@
 @section('content')
     <div class="container sumarization my-5 px-5 pt-2 pb-4">
         <div class="row d-flex justify-content-center">
+            @if($products)
             <div class="progress-holder col-10 mt-5">
                 <div class="progress">
                     <div id="progress-bar-1" class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
@@ -34,42 +35,44 @@
                     <th>&nbsp;</th>
                     </thead>
                     <tbody>
-                    <tr class="align-middle alert border-bottom">
-                        <td class="text-center"> <img class="pic" src="{{ asset('img/iphone.png') }}" alt=""> </td>
-                        <td>
-                            <div>
-                                <p class="m-0 fw-bold">Samsung Galaxy S21, 5G 8GB/128GB</p>
-                            </div>
-                        </td>
-                        <td> <input class="input" type="text"></td>
-                        <td> 650€ </td>
-                        <td>
-                            <div class="btn" data-bs-dismiss="alert"> <span class="fas fa-times"></span> </div>
-                        </td>
-                    </tr>
-                    <tr class="align-middle alert border-bottom">
-                        <td class="text-center"> <img class="pic" src="{{ asset('img/iphone.png') }}" alt=""> </td>
-                        <td>
-                            <div>
-                                <p class="m-0 fw-bold">iPhone X 256 GB</p>
-                            </div>
-                        </td>
-                        <td> <input class="input" type="text"></td>
-                        <td> 850€ </td>
-                        <td>
-                            <div class="btn" data-bs-dismiss="alert"> <span class="fas fa-times"></span> </div>
-                        </td>
-                    </tr>
+                        @foreach($products as $product)
+                            <tr class="align-middle alert border-bottom">
+                                <td class="text-center">
+                                    @foreach($product['item']['productImages'] as $image)
+                                        @if($image->main_img == true)
+                                            <img src="{{ asset($image->image_src) }}" class="pic" alt="...">
+                                            @break
+                                        @endif
+                                    @endforeach
+                                <td>
+                                    <div>
+                                        <p class="m-0 fw-bold">{{ $product['item']['name'] }}</p>
+                                    </div>
+                                </td>
+                                <td> <input class="input" type="text" value={{ $product['quantity'] }} readonly></td>
+                                <td>{{ $product['item']['price'] }} €</td>
+                                <td>
+                                    <a href="{{ route('removeItemFromCart', $product['item']['id']) }}" class="btn">
+                                        <i class="fas fa-times"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
 
             <div class="next-step">
                 <ul class="float-end text-center">
-                    <li><p>Cena celkom:<span>1500€</span></p></li>
+                    <li><p>Cena celkom:<span>{{ $totalPrice }} €</span></p></li>
                     <li><button type="button" class="btn btn-dark btn">Pokračovať v objednávke</button></li>
                 </ul>
             </div>
+            @else
+                <div class="d-flex justify-content-center">
+                    <h3>Nemáte žiadne produkty v košíku.</h3>
+                </div>
+            @endif
         </div>
     </div>
 

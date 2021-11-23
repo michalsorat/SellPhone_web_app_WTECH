@@ -35,9 +35,9 @@ class Product extends Model
         return $this->hasOne(Parameter::class);
     }
 
-    protected $searchable = [
-        'name',
-        'category',
-        'short_description'
-    ];
+//    protected $searchable = [
+//        'name',
+//        'category',
+//        'short_description'
+//    ];
 }

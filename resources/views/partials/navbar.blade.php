@@ -59,7 +59,7 @@
             </form>
         @endguest
 
-        <a class="btn align-self-center">
+        <a class="btn" href="{{ route('getShoppingCart1') }}">
             <i class="fas fa-shopping-cart">
                 <span class="translate-middle badge rounded-pill bg-danger">{{ Session::has('shoppingCart') ? Session::get('shoppingCart')->totalQuantity : '' }}</span>
             </i>

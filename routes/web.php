@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\testController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -29,6 +30,8 @@ Route::get('/autocomplete', [ProductController::class, 'autocomplete'])->name('a
 Route::get('/product-search', [ProductController::class, 'showProductByName'])->name('searchProduct');
 
 Route::get('/add-item-to-cart/{id}', [ProductController::class, 'addItemToCart'])->name('addItemToCart');
+Route::get('/remove-item-from-cart/{id}', [ProductController::class, 'removeItemFromCart'])->name('removeItemFromCart');
+Route::get('/get-shopping-cart-1', [ProductController::class, 'getShoppingCart1'])->name('getShoppingCart1');
 
 Route::get('/summarization', function () {
     return view('shoppingCartStep1');

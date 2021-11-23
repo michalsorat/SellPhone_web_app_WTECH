@@ -21,23 +21,6 @@
     @endif
 
     <div class="container-fluid mt-4">
-{{--        <div class="d-flex justify-content-end me-5">--}}
-{{--            <label class="align-self-center me-3" for="orderBy">Zoradiť podľa</label>--}}
-{{--            <div>--}}
-{{--                <select id="orderBy" class="form-select">--}}
-{{--                    <option value="2">Novinky</option>--}}
-{{--                    <option value="2">Najlacnejšie</option>--}}
-{{--                    <option value="3">Najdrahšie</option>--}}
-{{--                </select>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-
-{{--        <script>--}}
-{{--            $('#orderBy').onChange(function () {--}}
-
-{{--            })--}}
-{{--        </script>--}}
-
         <div class="row">
             @if($category != null)
             <div class="col-sm-4 col-md-3 col-xl-2 col-12">

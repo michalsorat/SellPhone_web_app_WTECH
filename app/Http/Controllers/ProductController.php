@@ -159,12 +159,43 @@ class ProductController extends Controller
             $oldShoppingCart = $request->session()->get('shoppingCart');
         }
         $shoppingCart = new ShoppingCart($oldShoppingCart);
-        $product = Product::find($id);
+        $product = Product::with('productImages', 'specifications', 'parameters')->find($id);
+
+//        dd($product->toArray());
+
         $shoppingCart->add($product, $product->id);
-//        dd($request->session()->get('shoppingCart'));
+//        dd($shoppingCart);
         $request->session()->put('shoppingCart', $shoppingCart);
 
-        return redirect('/');
-//        return redirect()->route(Route::currentRouteName());
+        return redirect()->back();
+    }
+
+//    public function removeItemFromCart(Request $request, $id)
+//    {
+//        $shoppingCart = $request->session()->get('shoppingCart');
+//        $shoppingCart[$id][]
+//    }
+
+    public function removeItemFromCart(Request $request, $id)
+    {
+        $oldShoppingCart = $request->session()->get('shoppingCart');
+        $shoppingCart = new ShoppingCart($oldShoppingCart);
+        $shoppingCart->remove($id);
+        $request->session()->put('shoppingCart', $shoppingCart);
+
+        return redirect()->back();
+    }
+
+    public function getShoppingCart1(Request $request)
+    {
+        if (!$request->session()->has('shoppingCart')) {
+            return view('shoppingCartStep1');
+        }
+        $oldShoppingCart = $request->session()->get('shoppingCart');
+        $shoppingCart = new ShoppingCart($oldShoppingCart);
+//        dd($shoppingCart->items);
+        return view('shoppingCartStep1')
+            ->with('products', $shoppingCart->items)
+            ->with('totalPrice', $shoppingCart->totalPrice);
     }
 }
