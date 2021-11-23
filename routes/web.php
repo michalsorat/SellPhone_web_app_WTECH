@@ -27,13 +27,8 @@ Route::get('/accessories', [ProductController::class, 'index']) -> name('accesso
 Route::resource('product', ProductController::class);
 Route::get('/autocomplete', [ProductController::class, 'autocomplete'])->name('autocomplete');
 Route::get('/product-search', [ProductController::class, 'showProductByName'])->name('searchProduct');
-//Route::get('/add-item-to-cart/{id}', [
-//    'uses' => 'ProductController@addItemToCart',
-//    'as' => 'product.addItemToCart'
-//]);
 
-//Route::get('/add-item-to-cart/{id}', [ProductController::class, 'addItemToCart'])->name('addItemToCart');
-Route::resource('add-item-to-cart', ProductController::class);
+Route::get('/add-item-to-cart/{id}', [ProductController::class, 'addItemToCart'])->name('addItemToCart');
 
 Route::get('/summarization', function () {
     return view('shoppingCartStep1');

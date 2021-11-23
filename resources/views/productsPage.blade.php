@@ -268,15 +268,11 @@
                                                 <span>{{ $product->price }} €</span>
                                             </div>
                                             <div class="shopping-cart">
-{{--                                                <form method="GET" action="{{ route('addItemToCart', ['id' => $product->id]) }}">--}}
-{{--                                                    <button class="btn" type="submit">--}}
-{{--                                                        <i class="fas fa-cart-plus"></i>--}}
-{{--                                                    </button>--}}
-{{--                                                    <input name="id" type="hidden" value={{ $product->id }}>--}}
-{{--                                                </form>--}}
-                                                <a href="{{ route('add-item-to-cart.update', $product->id) }}" class="btn">
-                                                    <i class="fas fa-cart-plus"></i>
-                                                </a>
+                                                <form method="GET" action="{{ route('addItemToCart', $product->id) }}">
+                                                    <button class="btn" type="submit">
+                                                        <i class="fas fa-cart-plus"></i>
+                                                    </button>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>

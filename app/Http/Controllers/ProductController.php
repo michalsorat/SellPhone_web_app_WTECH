@@ -161,9 +161,10 @@ class ProductController extends Controller
         $shoppingCart = new ShoppingCart($oldShoppingCart);
         $product = Product::find($id);
         $shoppingCart->add($product, $product->id);
-
+//        dd($request->session()->get('shoppingCart'));
         $request->session()->put('shoppingCart', $shoppingCart);
 
-        return redirect()->route(Route::currentRouteName());
+        return redirect('/');
+//        return redirect()->route(Route::currentRouteName());
     }
 }
