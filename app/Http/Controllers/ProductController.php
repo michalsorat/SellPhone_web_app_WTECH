@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\ShoppingCart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 
 class ProductController extends Controller
 {
@@ -47,8 +50,9 @@ class ProductController extends Controller
             })
             ->whereHas('parameters', function ($query) use ($request) {
                 if (!empty($request->screenSize)) {
+                    $query->where('screen_size', 'LIKE', "{$request->screenSize[0]}%");
                     foreach ($request->screenSize as $screenSize) {
-                        $query->where('screen_size', 'LIKE', "$screenSize%");
+                        $query->orWhere('screen_size', 'LIKE', "{$screenSize}%");
                     }
                 }
                 if (!empty($request->ram)) {
@@ -102,12 +106,15 @@ class ProductController extends Controller
     }
 
     public function showProductByName(Request $request){
-        $category = "samsung";
         $product = Product::with('productImages', 'specifications', 'parameters')->where('name', $request->search_input)->first();
         $products = Product::with('productImages', 'specifications', 'parameters')
                             ->where('category', 'LIKE', "%{$request->search_input}%")
+                            ->orWhere('name', 'LIKE', "%{$request->search_input}%")
                             ->orWhere('price', 'LIKE', "%{$request->search_input}%")
                             ->paginate(16);
+
+//        $products = DB::select(DB::raw());
+//        $products = Product::whereRaw('MATCH (name, category, short_description AGAINST (?)', array($request->search_input))->get();
 
         if ($product != null) {
             if ($product->available_amount > 0) {
@@ -124,7 +131,7 @@ class ProductController extends Controller
         else if ($products != null) {
             return view('productsPage')
                 ->with('products', $products)
-                ->with('category', $category);
+                ->with('category', null);
         }
         else return redirect('/');
     }
@@ -143,5 +150,20 @@ class ProductController extends Controller
 //        return Problem::select('address')
 //            ->where('address', 'LIKE', "%{$request->get('query')}%")
 //            ->pluck('address');
+    }
+
+    public function addItemToCart(Request $request, $id)
+    {
+        $oldShoppingCart = null;
+        if ($request->session()->has('shoppingCart')) {
+            $oldShoppingCart = $request->session()->get('shoppingCart');
+        }
+        $shoppingCart = new ShoppingCart($oldShoppingCart);
+        $product = Product::find($id);
+        $shoppingCart->add($product, $product->id);
+
+        $request->session()->put('shoppingCart', $shoppingCart);
+
+        return redirect()->route(Route::currentRouteName());
     }
 }

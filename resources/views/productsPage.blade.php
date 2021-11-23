@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    @if($category != null)
     <div class="card text-center mx-5 my-3">
         <div class="card-body">
             <h4 class="card-title"><span class="category">{{ $category }}</span> smartfóny</h4>
@@ -11,6 +12,13 @@
             </p>
         </div>
     </div>
+    @else
+        <div class="card text-center mx-5 my-3">
+            <div class="card-body">
+                <h4 class="card-title">Nájdené produkty</h4>
+            </div>
+        </div>
+    @endif
 
     <div class="container-fluid mt-4">
 {{--        <div class="d-flex justify-content-end me-5">--}}
@@ -31,6 +39,7 @@
 {{--        </script>--}}
 
         <div class="row">
+            @if($category != null)
             <div class="col-sm-4 col-md-3 col-xl-2 col-12">
                 <form >
                     <div class="container border-bottom mt-4">
@@ -235,6 +244,10 @@
                     </div>
                 </form>
             </div>
+            @else
+                <div class="col-sm-3 col-md-2 col-xl-1 col-12">
+                </div>
+            @endif
             <div class="product-list col-sm-8 col-md-9 col-xl-10 col-12 pe-5">
                 <div class="bg-transparent list-items">
                     <div class="row">
@@ -255,9 +268,15 @@
                                                 <span>{{ $product->price }} €</span>
                                             </div>
                                             <div class="shopping-cart">
-                                                <button class="btn" type="button">
+{{--                                                <form method="GET" action="{{ route('addItemToCart', ['id' => $product->id]) }}">--}}
+{{--                                                    <button class="btn" type="submit">--}}
+{{--                                                        <i class="fas fa-cart-plus"></i>--}}
+{{--                                                    </button>--}}
+{{--                                                    <input name="id" type="hidden" value={{ $product->id }}>--}}
+{{--                                                </form>--}}
+                                                <a href="{{ route('add-item-to-cart.update', $product->id) }}" class="btn">
                                                     <i class="fas fa-cart-plus"></i>
-                                                </button>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>

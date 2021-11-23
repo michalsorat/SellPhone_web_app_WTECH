@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 class CreateProductsTable extends Migration
@@ -25,6 +26,8 @@ class CreateProductsTable extends Migration
             $table->integer('available_amount');
             $table->timestamps();
         });
+
+//        DB::statement('ALTER TABLE products ADD FULLTEXT fulltext_index (name, category, short_description)');
     }
 
     /**
