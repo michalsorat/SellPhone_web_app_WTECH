@@ -3,7 +3,7 @@
 @section('content')
     <div class="container sumarization my-5 px-5 pt-2 pb-4">
         <div class="row d-flex justify-content-center">
-            @if($products)
+            @isset($products)
             <div class="progress-holder col-10 mt-5">
                 <div class="progress">
                     <div id="progress-bar-3" class="progress-bar" role="progressbar" aria-valuenow="50"
@@ -36,54 +36,104 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="register-form">
+                                    @guest
                                     <div class="title">
                                         <h4>Osobné údaje</h4>
-                                        <p>Máte už účet? <a href="#">Prihláste sa</a></p>
+                                            <p>Máte už účet? <a href="{{ route('login') }}">Prihláste sa</a></p>
                                     </div>
-                                    <form class="row" method="POST">
-                                        <div class="reg-param col-sm-6">
-                                            <div class="form-group">
-                                                <label for="reg-fn">Meno</label>
-                                                <input class="form-control" type="text" id="reg-fn" required>
+                                        <form class="row" method="POST">
+                                            <div class="reg-param col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="reg-fn">Meno</label>
+                                                    <input class="form-control" type="text" id="reg-fn" name="name" required>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="reg-param col-sm-6">
-                                            <div class="form-group">
-                                                <label for="reg-ln">Priezvisko</label>
-                                                <input class="form-control" type="text" id="reg-ln" required>
+                                            <div class="reg-param col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="reg-ln">Priezvisko</label>
+                                                    <input class="form-control" type="text" id="reg-ln" name="last_name" required>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="reg-param col-12">
-                                            <div class="form-group">
-                                                <label for="reg-email">E-mailová adresa</label>
-                                                <input class="form-control" type="email" id="reg-email" required>
+                                            <div class="reg-param col-12">
+                                                <div class="form-group">
+                                                    <label for="reg-email">E-mailová adresa</label>
+                                                    <input class="form-control" type="email" id="reg-email" name="email" required>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="reg-param col-sm-6">
-                                            <div class="form-group">
-                                                <label for="reg-street">Ulica</label>
-                                                <input class="form-control" type="text" id="reg-street" required>
+                                            <div class="reg-param col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="reg-street">Ulica</label>
+                                                    <input class="form-control" type="text" id="reg-street" name="street" required>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="reg-param col-sm-6">
-                                            <div class="form-group">
-                                                <label for="reg-street-nr">Orientačné číslo</label>
-                                                <input class="form-control" type="text" id="reg-street-nr" required>
+                                            <div class="reg-param col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="reg-street-nr">Orientačné číslo</label>
+                                                    <input class="form-control" type="text" id="reg-street-nr" name="street_nr" required>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="reg-param col-sm-6">
-                                            <div class="form-group">
-                                                <label for="reg-city">Mesto</label>
-                                                <input class="form-control" type="text" id="reg-city" required>
+                                            <div class="reg-param col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="reg-city">Mesto</label>
+                                                    <input class="form-control" type="text" id="reg-city" name="city" required>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="reg-param col-sm-6">
-                                            <div class="form-group">
-                                                <label for="reg-psc">PSČ</label>
-                                                <input class="form-control" type="password" id="reg-psc" required>
+                                            <div class="reg-param col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="reg-psc">PSČ</label>
+                                                    <input class="form-control" type="text" id="reg-psc" name="psc" required>
+                                                </div>
                                             </div>
+                                        </form>
+                                    @else
+                                        <div class="title">
+                                            <h4>Osobné údaje</h4>
                                         </div>
-                                    </form>
+                                        <form class="row" method="POST">
+                                            <div class="reg-param col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="reg-fn">Meno</label>
+                                                    <input class="form-control" type="text" id="reg-fn" name="name" value={{ $user->name }} required>
+                                                </div>
+                                            </div>
+                                            <div class="reg-param col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="reg-ln">Priezvisko</label>
+                                                    <input class="form-control" type="text" id="reg-ln" name="last_name" value={{ $user->last_name }} required>
+                                                </div>
+                                            </div>
+                                            <div class="reg-param col-12">
+                                                <div class="form-group">
+                                                    <label for="reg-email">E-mailová adresa</label>
+                                                    <input class="form-control" type="email" id="reg-email" name="email" value={{ $user->email }} required>
+                                                </div>
+                                            </div>
+                                            <div class="reg-param col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="reg-street">Ulica</label>
+                                                    <input class="form-control" type="text" id="reg-street" name="street" value={{ $user->street }} required>
+                                                </div>
+                                            </div>
+                                            <div class="reg-param col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="reg-street-nr">Orientačné číslo</label>
+                                                    <input class="form-control" type="text" id="reg-street-nr" name="street_nr" value={{ $user->street_nr }} required>
+                                                </div>
+                                            </div>
+                                            <div class="reg-param col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="reg-city">Mesto</label>
+                                                    <input class="form-control" type="text" id="reg-city" name="city" value={{ $user->city }} required>
+                                                </div>
+                                            </div>
+                                            <div class="reg-param col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="reg-psc">PSČ</label>
+                                                    <input class="form-control" type="text" id="reg-psc" name="psc" value={{ $user->psc }} required>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    @endguest
                                 </div>
                             </div>
                         </div>
@@ -121,7 +171,7 @@
                     <div class="d-flex justify-content-between">
                         <div class="next-step">
                             <ul>
-                                <li><a href="{{route('getShoppingCart1')}}" class="btn btn-dark btn"><- späť do košíka</a></li>
+                                <li><a href="{{route('getShoppingCart2')}}" class="btn btn-dark btn"><- späť na výber dopravy a platby</a></li>
                             </ul>
                         </div>
 
@@ -140,7 +190,7 @@
                 <div class="d-flex justify-content-center mt-auto">
                     <h3>Nemáte žiadne produkty v košíku.</h3>
                 </div>
-            @endif
+            @endisset
         </div>
     </div>
 @endsection

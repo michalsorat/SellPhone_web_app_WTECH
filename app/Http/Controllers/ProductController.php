@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\ShoppingCart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
@@ -233,9 +234,11 @@ class ProductController extends Controller
         }
         $oldShoppingCart = $request->session()->get('shoppingCart');
         $shoppingCart = new ShoppingCart($oldShoppingCart);
+        $user = Auth::user();
 //        dd($shoppingCart->items);
         return view('shoppingCartStep3')
             ->with('products', $shoppingCart->items)
-            ->with('totalPrice', $shoppingCart->totalPrice);
+            ->with('totalPrice', $shoppingCart->totalPrice)
+            ->with('user', $user);
     }
 }

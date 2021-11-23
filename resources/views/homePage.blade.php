@@ -105,9 +105,11 @@
                                     <span>{{ $product->price }} €</span>
                                 </div>
                                 <div class="shopping-cart">
-                                    <button class="btn" type="button">
-                                        <i class="fas fa-cart-plus"></i>
-                                    </button>
+                                    <form method="GET" action="{{ route('addItemToCart', $product->id) }}">
+                                        <button class="btn" type="submit">
+                                            <i class="fas fa-cart-plus"></i>
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -134,9 +136,11 @@
                                     <span>{{ $product->price }} €</span>
                                 </div>
                                 <div class="shopping-cart">
-                                    <button class="btn" type="button">
-                                        <i class="fas fa-cart-plus"></i>
-                                    </button>
+                                    <form method="GET" action="{{ route('addItemToCart', $product->id) }}">
+                                        <button class="btn" type="submit">
+                                            <i class="fas fa-cart-plus"></i>
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -163,9 +167,11 @@
                                     <span>{{ $product->price }} €</span>
                                 </div>
                                 <div class="shopping-cart">
-                                    <button class="btn" type="button">
-                                        <i class="fas fa-cart-plus"></i>
-                                    </button>
+                                    <form method="GET" action="{{ route('addItemToCart', $product->id) }}">
+                                        <button class="btn" type="submit">
+                                            <i class="fas fa-cart-plus"></i>
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                         </div>

@@ -3,7 +3,7 @@
 @section('content')
     <div class="container sumarization my-5 px-5 pt-2 pb-4">
         <div class="row d-flex justify-content-center">
-            @if($products)
+            @isset($products)
             <div class="progress-holder col-10 mt-5">
                 <div class="progress">
                     <div id="progress-bar-1" class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
@@ -81,7 +81,7 @@
                 <div class="d-flex justify-content-center mt-auto">
                     <h3>Nemáte žiadne produkty v košíku.</h3>
                 </div>
-            @endif
+            @endisset
         </div>
     </div>
 
