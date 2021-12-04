@@ -6,6 +6,8 @@ class ShoppingCart
 {
 //    use HasFactory;
 
+//    public $userId;
+//    public $orderId;
     public $items = null;
     public $totalPrice = 0;
     public $totalQuantity = 0;

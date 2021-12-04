@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-4 text-center">
-                <h5>Kontaktuje nás</h5>
+                <h5>Kontaktujte nás</h5>
                 <ul>
                     <li><a href="#">+421 123 456 789</a></li>
                     <li><a href="#">info@sellphone.sk</a></li>

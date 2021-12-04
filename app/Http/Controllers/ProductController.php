@@ -156,12 +156,13 @@ class ProductController extends Controller
 
     public function addItemToCart(Request $request, $id)
     {
-        $oldShoppingCart = 1;
-        $times = null;
+        $oldShoppingCart = null;
+        $times = 1;
         if ($request->session()->has('shoppingCart')) {
             $oldShoppingCart = $request->session()->get('shoppingCart');
         }
         $shoppingCart = new ShoppingCart($oldShoppingCart);
+//        dd($shoppingCart);
         $product = Product::with('productImages', 'specifications', 'parameters')->find($id);
 
         if ($request->cart_count != null){
@@ -273,6 +274,8 @@ class ProductController extends Controller
         if ($request->session()->has('shoppingCart')) {
 //            dd($request->request->all());
             Order::create($request->request->all());
+//            $r = $request->session()->get('shoppingCard');
+//            dd($r);
             return view('orderConfirmation')
                 ->with('totalPrice', $request->session()->get('shoppingCart')->totalPrice)
                 ->with('orderId', $order_id);
