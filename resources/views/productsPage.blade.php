@@ -262,9 +262,9 @@
                                 </a>
                             </div>
                         @endforeach
-                        <div class="d-flex justify-content-end">
-                            {{  $products->withQueryString()->links() }}
-                        </div>
+{{--                        <div class="d-flex justify-content-end">--}}
+{{--                            {{  $products->withQueryString()->links() }}--}}
+{{--                        </div>--}}
                     </div>
                 </div>
             </div>

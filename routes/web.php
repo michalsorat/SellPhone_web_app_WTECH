@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\testController;
 use Illuminate\Support\Facades\Auth;
@@ -39,19 +40,8 @@ Route::get('/get-shopping-cart-1/get-shopping-cart-2/get-shopping-cart-3', [Prod
 Route::post('/get-shopping-cart-1/get-shopping-cart-2/get-shopping-cart-3/order-confirmation', [ProductController::class, 'getOrderConfirmation'])->name('getOrderConfirmation');
 Route::get('/get-shopping-cart-1/get-shopping-cart-2/transport-type/{type}', [ProductController::class, 'getTransportType'])->name('transportType');
 
-Route::get('/summarization', function () {
-    return view('shoppingCartStep1');
-});
-Route::get('/shipping-payment', function () {
-    return view('shoppingCartStep2');
-});
-Route::get('/shipping-address', function () {
-    return view('CartStep3');
-});
-Route::get('/order-confirmation', function () {
-    return view('orderConfirmation');
-});
-
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::middleware(['auth', 'isAdmin'])->group(function() {
+    Route::resource('admin', AdminController::class);
+});

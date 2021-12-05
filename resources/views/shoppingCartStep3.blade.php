@@ -95,43 +95,43 @@
                                                 <div class="reg-param col-sm-6">
                                                     <div class="form-group">
                                                         <label for="reg-fn">Meno</label>
-                                                        <input class="form-control" type="text" id="reg-fn" name="name" value={{ $user->name }} required>
+                                                        <input class="form-control" type="text" id="reg-fn" name="name" value={{ $user->name }} readonly>
                                                     </div>
                                                 </div>
                                                 <div class="reg-param col-sm-6">
                                                     <div class="form-group">
                                                         <label for="reg-ln">Priezvisko</label>
-                                                        <input class="form-control" type="text" id="reg-ln" name="last_name" value={{ $user->last_name }} required>
+                                                        <input class="form-control" type="text" id="reg-ln" name="last_name" value={{ $user->last_name }} readonly>
                                                     </div>
                                                 </div>
                                                 <div class="reg-param col-12">
                                                     <div class="form-group">
                                                         <label for="reg-email">E-mailová adresa</label>
-                                                        <input class="form-control" type="email" id="reg-email" name="email" value={{ $user->email }} required>
+                                                        <input class="form-control" type="email" id="reg-email" name="email" value={{ $user->email }} readonly>
                                                     </div>
                                                 </div>
                                                 <div class="reg-param col-sm-6">
                                                     <div class="form-group">
                                                         <label for="reg-street">Ulica</label>
-                                                        <input class="form-control" type="text" id="reg-street" name="street" value={{ $user->street }} required>
+                                                        <input class="form-control" type="text" id="reg-street" name="street" value={{ $user->street }} readonly>
                                                     </div>
                                                 </div>
                                                 <div class="reg-param col-sm-6">
                                                     <div class="form-group">
                                                         <label for="reg-street-nr">Orientačné číslo</label>
-                                                        <input class="form-control" type="text" id="reg-street-nr" name="street_nr" value={{ $user->street_nr }} required>
+                                                        <input class="form-control" type="text" id="reg-street-nr" name="street_nr" value={{ $user->street_nr }} readonly>
                                                     </div>
                                                 </div>
                                                 <div class="reg-param col-sm-6">
                                                     <div class="form-group">
                                                         <label for="reg-city">Mesto</label>
-                                                        <input class="form-control" type="text" id="reg-city" name="city" value={{ $user->city }} required>
+                                                        <input class="form-control" type="text" id="reg-city" name="city" value={{ $user->city }} readonly>
                                                     </div>
                                                 </div>
                                                 <div class="reg-param col-sm-6">
                                                     <div class="form-group">
                                                         <label for="reg-psc">PSČ</label>
-                                                        <input class="form-control" type="text" id="reg-psc" name="psc" value={{ $user->psc }} required>
+                                                        <input class="form-control" type="text" id="reg-psc" name="psc" value={{ $user->psc }} readonly>
                                                     </div>
                                                 </div>
                                             </div>

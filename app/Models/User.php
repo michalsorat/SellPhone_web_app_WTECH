@@ -18,6 +18,7 @@ class User extends Authenticatable
      * @var string[]
      */
     protected $fillable = [
+        'role',
         'name',
         'last_name',
         'email',
@@ -26,6 +27,10 @@ class User extends Authenticatable
         'street_nr',
         'city',
         'psc'
+    ];
+
+    protected $attributes = [
+        'role' => 'customer'
     ];
 
     public function shoppingCart()
