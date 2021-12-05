@@ -4,31 +4,6 @@ namespace App\Models;
 
 class ShoppingCart
 {
-////    use HasFactory;
-//    protected $fillable = [
-//        'order_id',
-//        'total_price',
-//        'total_quantity'
-////        'transport_type',
-////        'payment_type'
-//    ];
-//
-//    public function products()
-//    {
-//        return $this->hasMany(Product::class);
-//    }
-
-//    protected $shoppingCart;
-//    public static function restoreShoppingCart($oldShoppingCart) {
-//        $shoppingCart = new static();
-//        if ($oldShoppingCart) {
-//            $shoppingCart->items = $oldShoppingCart->items;
-//            $shoppingCart->totalQuantity = $oldShoppingCart->totalQuantity;
-//            $shoppingCart->totalPrice = $oldShoppingCart->totalPrice;
-//        }
-//        return $shoppingCart;
-//    }
-
     public $items = null;
     public $totalPrice = 0;
     public $totalQuantity = 0;

@@ -37,7 +37,6 @@ class LoginController extends Controller
 
     protected function authenticated(Request $request, $user)
     {
-        dd("test");
         $cartProducts = Order::firstWhere([['email', Auth::user()->email], ['status', 'pending']]);
 
         if ($cartProducts && !empty($cartProducts->products()->get()->toArray())) {

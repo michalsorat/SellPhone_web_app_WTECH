@@ -21,26 +21,6 @@
                 });
             }
         });
-
-        // $('#search-btn').on('click', function (e) {
-        //     e.preventDefault();
-        //
-        //     const name = document.getElementById('search-input').value;
-        //     console.log(name);
-        //     $.ajax({
-        //         type: 'GET',
-        //         url: '/productik/',
-        //         data: {
-        //             name : name
-        //         },
-        //         async: false,
-        //         dataType: 'json',
-        //         success: function (response) {
-        //             console.log(response);
-        //         }
-        //     });
-        // })
-        // const search_button = document.getElementById("search_btn");
     </script>
     <div class="col-md-4 col-3 d-flex justify-content-end align-self-center" id="nav-icons">
         @guest
@@ -74,15 +54,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-{{--        <form class="collapse navbar-collapse" id="navbarNav" action="{{ route('product.index') }}" method="GET">--}}
             <ul class="navbar-nav w-100 nav-justified">
-{{--                <li class="nav-item"><button class="nav-link btn" type="submit" name="category" value="apple">Apple</button></li>--}}
-{{--                <li class="nav-item"><button class="nav-link btn" type="submit" name="category" value="samsung">Samsung</button></li>--}}
-{{--                <li class="nav-item"><button class="nav-link btn" type="submit" name="category" value="huawei">Huawei</button></li>--}}
-{{--                <li class="nav-item"><button class="nav-link btn" type="submit" name="category" value="xiaomi">Xiaomi</button></li>--}}
-{{--                <li class="nav-item"><button class="nav-link btn" type="submit" name="category" value="oneplus">OnePlus</button></li>--}}
-{{--                <li class="nav-item"><button class="nav-link btn" type="submit" name="category" value="lg">LG</button></li>--}}
-{{--                <li class="nav-item"><button class="nav-link btn" type="submit" name="category" value="accessories">Príslušenstvo</button></li>--}}
                 <li class="nav-item"><a class="nav-link" href="{{ route('apple') }}">Apple</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('samsung') }}">Samsung</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('huawei') }}">Huawei</a></li>
@@ -91,7 +63,6 @@
                 <li class="nav-item"><a class="nav-link" href="{{ route('lg') }}">LG</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('accessories') }}">Príslušenstvo</a></li>
             </ul>
-{{--        </form>--}}
         </div>
         <div>
             <form class="d-sm-none d-flex">

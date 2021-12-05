@@ -169,24 +169,5 @@
 
             }
         });
-
-            // const name = document.getElementById('search-input').value;
-            // console.log(name);
-            // $.ajax({
-            //     type: 'GET',
-            //     url: '/productik/',
-            //     data: {
-            //         name : name
-            //     },
-            //     async: false,
-            //     dataType: 'json',
-            //     success: function (response) {
-            //         console.log(response);
-            //     }
-            // });
-
-        // $('input[type="checkbox"]').on('change', function() {
-        //     $('input[name="' + this.name + '"]').not(this).prop('checked', false);
-        // });
     </script>
 @endsection

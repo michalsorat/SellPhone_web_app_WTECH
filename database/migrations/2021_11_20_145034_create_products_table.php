@@ -26,8 +26,6 @@ class CreateProductsTable extends Migration
             $table->integer('available_amount');
             $table->timestamps();
         });
-
-//        DB::statement('ALTER TABLE products ADD FULLTEXT fulltext_index (name, category, short_description)');
     }
 
     /**

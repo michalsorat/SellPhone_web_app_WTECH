@@ -20,8 +20,6 @@ class Order extends Model
         'product_id',
         'quantity',
         'status'
-//        'transport_type',
-//        'payment_type'
     ];
 
     public function products()
