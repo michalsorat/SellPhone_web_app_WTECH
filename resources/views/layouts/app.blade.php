@@ -5,7 +5,11 @@
     </head>
     <body>
         <header>
-            @include('partials.navbar')
+            @if(\Illuminate\Support\Facades\Request::is('/admin'))
+                @include('partials.adminNavbar')
+            @else
+                @include('partials.customerNavbar')
+            @endif
         </header>
 
         <main>
