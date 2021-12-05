@@ -161,18 +161,14 @@ class ProductController extends Controller
         if ($request->session()->has('shoppingCart')) {
             $oldShoppingCart = $request->session()->get('shoppingCart');
         }
-        $shoppingCart = new ShoppingCart($oldShoppingCart);
-//        dd($shoppingCart);
-        $product = Product::with('productImages', 'specifications', 'parameters')->find($id);
 
+        $shoppingCart = new ShoppingCart($oldShoppingCart);
+        $product = Product::with('productImages', 'specifications', 'parameters')->find($id);
         if ($request->cart_count != null){
             $times = $request->cart_count;
         }
 
-//        dd($times);
-
         $shoppingCart->add($product, $product->id, $times);
-//        dd($shoppingCart);
         $request->session()->put('shoppingCart', $shoppingCart);
 
         return redirect()->back();
@@ -251,10 +247,6 @@ class ProductController extends Controller
 
     public function getTransportType(Request $request, $type) {
         $price = 0;
-//        $validated = $request->validate(
-//            [ 'cats' => Input::get('cats') ],
-//            [ 'cats' => 'min:1' ]
-//        );
         if ($type == 'delivery'){
             $price = 3.99;
         }
@@ -272,10 +264,11 @@ class ProductController extends Controller
     public function getOrderConfirmation(Request $request) {
         $order_id = substr(str_shuffle("123456789"), 0, 6);
         if ($request->session()->has('shoppingCart')) {
-//            dd($request->request->all());
-            Order::create($request->request->all());
-//            $r = $request->session()->get('shoppingCard');
-//            dd($r);
+            $cart = $request->session()->get('shoppingCart');
+            foreach ($cart->items as $item) {
+                $order_arr = array_merge($request->all(), ['product_id' => $item['item']['id']], ['quantity' => $item['quantity']], ['status' => 'created']);
+                Order::create($order_arr);
+            }
             return view('orderConfirmation')
                 ->with('totalPrice', $request->session()->get('shoppingCart')->totalPrice)
                 ->with('orderId', $order_id);

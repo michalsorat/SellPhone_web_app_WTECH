@@ -46,7 +46,7 @@
                             <td> 3,99€</td>
                         </tr>
                         <tr class="align-middle alert border-bottom">
-                            <td><input type="checkbox" id="personal-collect" class="transport-check" name="transport[]"></td>
+                            <td><input type="checkbox" id="personal-collect" class="transport-check" name="transport[]" checked></td>
                             <td class="text-center"><i class="fas fa-hand-holding-usd"></i></td>
                             <td>
                                 <div>
@@ -63,7 +63,7 @@
                         <h5>Spôsob platby</h5>
                         <tbody>
                         <tr class="align-middle alert border-bottom">
-                            <td><input type="checkbox" id="card" name="payment_method[]"></td>
+                            <td><input type="checkbox" id="card" name="payment_method[]" checked></td>
                             <td class="text-center"><i class="fab fa-cc-visa"></i></td>
                             <td>
                                 <div>
@@ -127,7 +127,7 @@
                                 <li><p>Spôsob doručenia:<span id="transport-type"></span></p></li>
                                 <li><p>Spôsob platby:<span id="payment-method"></span></p></li>
                                 <li><p>Cena celkom:<span id="price-total">{{ $totalPrice }} €</span></p></li>
-                                <li><a href="{{route('getShoppingCart3')}}" class="btn btn-dark btn">Pokračovať v objednávke</a></li>
+                                <li><a href="{{route('getShoppingCart3')}}" class="conditional-btn btn btn-dark btn">Pokračovať v objednávke</a></li>
                             </ul>
                         </div>
                     </div>

@@ -17,6 +17,9 @@ class Order extends Model
         'street_nr',
         'city',
         'psc',
+        'product_id',
+        'quantity',
+        'status'
 //        'transport_type',
 //        'payment_type'
     ];
