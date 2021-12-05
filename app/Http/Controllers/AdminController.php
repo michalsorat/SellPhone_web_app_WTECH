@@ -11,9 +11,8 @@ class AdminController extends Controller
     {
         $products = Product::all();
 
-        return view('productsPage')
-            ->with('products', $products)
-            ->with('category', 'all');
+        return view('adminProductsPage')
+            ->with('products', $products);
     }
 
     public function create()
@@ -43,6 +42,7 @@ class AdminController extends Controller
 
     public function destroy($id)
     {
-        //
+        Product::destroy($id);
+        return redirect()->back();
     }
 }
