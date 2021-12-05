@@ -33,9 +33,9 @@ class User extends Authenticatable
         'role' => 'customer'
     ];
 
-    public function shoppingCart()
+    public function orders()
     {
-        return $this->hasOne(ShoppingCart::class);
+        return $this->hasMany(Order::class);
     }
 
     /**

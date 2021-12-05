@@ -5,10 +5,10 @@
     </head>
     <body>
         <header>
-            @if(\Illuminate\Support\Facades\Request::is('/'))
-                @include('partials.customerNavbar')
-            @else
+            @if(\Illuminate\Support\Facades\Request::is('admin'))
                 @include('partials.adminNavbar')
+            @else
+                @include('partials.customerNavbar')
             @endif
         </header>
 

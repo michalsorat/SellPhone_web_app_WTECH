@@ -151,8 +151,14 @@ class ProductController extends Controller
         }
         //neexistuje pending treba vytvorit
         else {
-            $order_arr = array_merge(Auth::user()->toArray(), ['status' => 'pending']);
-            $order =  Order::create($order_arr);
+            if (Auth::user()) {
+                $id = Auth::user()->id;
+            }
+            else  {
+                $id = 0;
+            }
+            $order_arr = array_merge(['user_id' => $id], Auth::user()->toArray(), ['status' => 'pending']);
+            $cartProducts =  Order::create($order_arr);
         }
         foreach ($shoppingCart->items as $item) {
             $order->products()->attach($item['item']['id'], ['product_quantity' => $item['quantity']]);
@@ -286,7 +292,7 @@ class ProductController extends Controller
         }
         //ak nieje prihlaseny
         else {
-            $order_arr = array_merge($request->all(), ['status' => 'created']);
+            $order_arr = array_merge(['user_id' => '0'], $request->all(), ['status' => 'created']);
             $order =  Order::create($order_arr);
             foreach ($shoppingCart->items as $item) {
                 $order->products()->attach($item['item']['id'], ['product_quantity' => $item['quantity']]);

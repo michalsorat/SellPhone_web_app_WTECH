@@ -49,8 +49,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav w-100 nav-justified">
-                <li class="nav-item"><a class="nav-link" href="{{ route('samsung') }}">Všetky produkty</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ route('samsung') }}">Pridať produkt</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('admin.index') }}">Všetky produkty</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('admin.index') }}">Pridať produkt</a></li>
             </ul>
         </div>
         <div>

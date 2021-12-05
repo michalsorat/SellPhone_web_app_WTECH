@@ -58,7 +58,13 @@ class LoginController extends Controller
         else if (Session::has('shoppingCart')) {
             $shoppingCart = Session::get('shoppingCart');
             if (!$cartProducts) {
-                $order_arr = array_merge(Auth::user()->toArray(), ['status' => 'pending']);
+                if (Auth::user()) {
+                    $id = Auth::user()->id;
+                }
+                else  {
+                    $id = 0;
+                }
+                $order_arr = array_merge(['user_id' => $id], Auth::user()->toArray(), ['status' => 'pending']);
                 $cartProducts =  Order::create($order_arr);
             }
             foreach ($shoppingCart->items as $item) {
