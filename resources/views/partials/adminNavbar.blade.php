@@ -6,10 +6,10 @@
         <form class="d-sm-flex d-none my-2 my-lg-3" action="{{ route('searchProduct') }}" method="GET">
             <input class="form-control" type="search" id="search-input" name="search_input" placeholder="Zadajte názov produktu" aria-label="Search" autocomplete="off">
             <span class="input-group-append">
-            <button class="btn btn-outline-secondary" id="search-btn" type="submit">
-                <i class="fa fa-search"></i>
-            </button>
-        </span>
+                <button class="btn btn-outline-secondary" id="search-btn" type="submit">
+                    <i class="fa fa-search"></i>
+                </button>
+            </span>
         </form>
     </div>
     <script type="text/javascript">
@@ -38,12 +38,6 @@
                 </button>
             </form>
         @endguest
-
-        <a class="btn" href="{{ route('getShoppingCart1') }}">
-            <i class="fas fa-shopping-cart">
-                <span class="translate-middle badge rounded-pill bg-danger">{{ Session::has('shoppingCart') ? Session::get('shoppingCart')->totalQuantity : '' }}</span>
-            </i>
-        </a>
     </div>
 </div>
 
@@ -55,7 +49,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav w-100 nav-justified">
-                <li class="nav-item"><a class="nav-link" href="{{ route('admin.index') }}">Všetky produkty</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('samsung') }}">Všetky produkty</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('samsung') }}">Pridať produkt</a></li>
             </ul>
         </div>
