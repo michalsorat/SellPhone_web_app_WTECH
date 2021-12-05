@@ -142,48 +142,61 @@ class ProductController extends Controller
             array_push($product_names, (json_decode($obj)->name));
         }
         return response()->json($product_names);
+    }
 
-//        return Problem::select('address')
-//            ->where('address', 'LIKE', "%{$request->get('query')}%")
-//            ->pluck('address');
+    public function synchronizeDatabase($shoppingCart) {
+        $order = Order::firstWhere([['email', Auth::user()->email], ['status', 'pending']]);
+        //uz existuje objednavka pending treba pridat produkt do nej
+        if ($order) {
+            $order->products()->detach();
+        }
+        //neexistuje pending treba vytvorit
+        else {
+            $order_arr = array_merge(Auth::user()->toArray(), ['status' => 'pending']);
+            $order =  Order::create($order_arr);
+        }
+        foreach ($shoppingCart->items as $item) {
+            $order->products()->attach($item['item']['id'], ['product_quantity' => $item['quantity']]);
+        }
     }
 
     public function addItemToCart(Request $request, $id)
     {
-//        if (auth()->check()) {
-//
-//        }
-//        else {
-            $oldShoppingCart = null;
-            $times = 1;
-            if ($request->session()->has('shoppingCart')) {
-                $oldShoppingCart = $request->session()->get('shoppingCart');
-            }
+        $oldShoppingCart = null;
+        $times = 1;
+        if ($request->session()->has('shoppingCart')) {
+            $oldShoppingCart = $request->session()->get('shoppingCart');
+        }
 
-            $shoppingCart = new ShoppingCart($oldShoppingCart);
-            $product = Product::with('productImages', 'specifications', 'parameters')->find($id);
-            if ($request->cart_count != null) {
-                $times = $request->cart_count;
-            }
+        $shoppingCart = new ShoppingCart($oldShoppingCart);
+        $product = Product::with('productImages', 'specifications', 'parameters')->find($id);
+        if ($request->cart_count != null) {
+            $times = $request->cart_count;
+        }
 
-            $shoppingCart->add($product, $product->id, $times);
-            $request->session()->put('shoppingCart', $shoppingCart);
-//        }
+        $shoppingCart->add($product, $product->id, $times);
+        $request->session()->put('shoppingCart', $shoppingCart);
+
+        if (auth()->check()) {
+            $this->synchronizeDatabase($shoppingCart);
+        }
 
         return redirect()->back();
     }
-
-//    public function removeItemFromCart(Request $request, $id)
-//    {
-//        $shoppingCart = $request->session()->get('shoppingCart');
-//        $shoppingCart[$id][]
-//    }
 
     public function removeItemFromCart(Request $request, $id) {
         $oldShoppingCart = $request->session()->get('shoppingCart');
         $shoppingCart = new ShoppingCart($oldShoppingCart);
         $shoppingCart->remove($id);
         $request->session()->put('shoppingCart', $shoppingCart);
+
+        if (auth()->check()) {
+            $this->synchronizeDatabase($shoppingCart);
+        }
+
+        if (empty($shoppingCart)) {
+
+        }
 
         return redirect()->back();
     }
@@ -194,6 +207,10 @@ class ProductController extends Controller
         $shoppingCart->addOne($id);
         $request->session()->put('shoppingCart', $shoppingCart);
 
+        if (auth()->check()) {
+            $this->synchronizeDatabase($shoppingCart);
+        }
+
         return redirect()->back();
     }
 
@@ -203,24 +220,23 @@ class ProductController extends Controller
         $shoppingCart->removeOne($id);
         $request->session()->put('shoppingCart', $shoppingCart);
 
+        if (auth()->check()) {
+            $this->synchronizeDatabase($shoppingCart);
+        }
+
         return redirect()->back();
     }
 
     public function getShoppingCart1(Request $request) {
-        if (auth()->check()) {
+        if (!$request->session()->has('shoppingCart')) {
+            return view('shoppingCartStep1');
+        }
+        $oldShoppingCart = $request->session()->get('shoppingCart');
+        $shoppingCart = new ShoppingCart($oldShoppingCart);
 
-        }
-        else {
-            if (!$request->session()->has('shoppingCart')) {
-                return view('shoppingCartStep1');
-            }
-            $oldShoppingCart = $request->session()->get('shoppingCart');
-            $shoppingCart = new ShoppingCart($oldShoppingCart);
-            // dd($shoppingCart->items);
-            return view('shoppingCartStep1')
-                ->with('products', $shoppingCart->items)
-                ->with('totalPrice', $shoppingCart->totalPrice);
-        }
+        return view('shoppingCartStep1')
+            ->with('products', $shoppingCart->items)
+            ->with('totalPrice', $shoppingCart->totalPrice);
     }
 
     public function getShoppingCart2(Request $request) {
@@ -229,7 +245,7 @@ class ProductController extends Controller
         }
         $oldShoppingCart = $request->session()->get('shoppingCart');
         $shoppingCart = new ShoppingCart($oldShoppingCart);
-//        dd($shoppingCart->items);
+
         return view('shoppingCartStep2')
             ->with('products', $shoppingCart->items)
             ->with('totalPrice', $shoppingCart->totalPrice);
@@ -242,7 +258,7 @@ class ProductController extends Controller
         $oldShoppingCart = $request->session()->get('shoppingCart');
         $shoppingCart = new ShoppingCart($oldShoppingCart);
         $user = Auth::user();
-//        dd($shoppingCart->items);
+
         return view('shoppingCartStep3')
             ->with('products', $shoppingCart->items)
             ->with('totalPrice', $shoppingCart->totalPrice)
@@ -251,7 +267,7 @@ class ProductController extends Controller
 
     public function getTransportType(Request $request, $type) {
         $price = 0;
-        if ($type == 'delivery'){
+        if ($type == 'delivery') {
             $price = 3.99;
         }
         else if ($type == 'cash-on-delivery') {
@@ -266,22 +282,25 @@ class ProductController extends Controller
     }
 
     public function getOrderConfirmation(Request $request) {
+        $shoppingCart = $request->session()->get('shoppingCart');
+        //ak je prihlaseny
+        //update pending->created
         if (auth()->check()) {
-
+            $order = Order::firstWhere([['email', Auth::user()->email], ['status', 'pending']]);
+            $order->update(['status' => 'created']);
         }
+        //ak nieje prihlaseny
         else {
-            if ($request->session()->has('shoppingCart')) {
-                $cart = $request->session()->get('shoppingCart');
-                $order_arr = array_merge($request->all(), ['status' => 'created']);
-                $order =  Order::create($order_arr);
-                foreach ($cart->items as $item) {
-                    $order->products()->attach($item['item']['id'], ['product_quantity' => $item['quantity']]);
-                }
-//                dd(Order::find(1)->products()->get()[0]->pivot->product_quantity);
-                return view('orderConfirmation')
-                    ->with('totalPrice', $request->session()->get('shoppingCart')->totalPrice)
-                    ->with('orderId', $order->id);
+            $order_arr = array_merge($request->all(), ['status' => 'created']);
+            $order =  Order::create($order_arr);
+            foreach ($shoppingCart->items as $item) {
+                $order->products()->attach($item['item']['id'], ['product_quantity' => $item['quantity']]);
             }
         }
+        $totalPrice = $shoppingCart->totalPrice;
+        $request->session()->forget('shoppingCart');
+        return view('orderConfirmation')
+            ->with('totalPrice', $totalPrice)
+            ->with('orderId', $order->id);
     }
 }

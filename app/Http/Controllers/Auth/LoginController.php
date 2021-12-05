@@ -37,25 +37,25 @@ class LoginController extends Controller
 
     protected function authenticated(Request $request, $user)
     {
-        if (Session::has('shoppingCart')) {
-            $cart = Session::get('shoppingCart');
+        $cartProducts = Order::firstWhere([['email', Auth::user()->email], ['status', 'pending']]);
+//        !empty($cartProducts->products()->get()->toArray())
+
+        if ($cartProducts) {
+            $cartProducts = $cartProducts->products()->get();
+            $shoppingCart = new ShoppingCart(null);
+            foreach ($cartProducts as $cartProduct) {
+                $shoppingCart->add($cartProduct, $cartProduct->id, $cartProduct->pivot->product_quantity);
+            }
+            Session::put('shoppingCart', $shoppingCart);
+        }
+        else if (Session::has('shoppingCart')) {
+            $shoppingCart = Session::get('shoppingCart');
             $order_arr = array_merge(Auth::user()->toArray(), ['status' => 'pending']);
             $order =  Order::create($order_arr);
-            foreach ($cart->items as $item) {
+            foreach ($shoppingCart->items as $item) {
                 $order->products()->attach($item['item']['id'], ['product_quantity' => $item['quantity']]);
             }
         }
-
-//        $cartProducts = Order::where('email', Auth::user()->email)->where('status', 'pending')->products()->get();
-        $cartProducts = Order::firstWhere([['email', Auth::user()->email], ['status', 'pending']])->products()->get();
-
-        dd($cartProducts);
-        $shoppingCart = new ShoppingCart(null);
-        foreach ($cartProducts as $cartProduct) {
-            $product = Product::with('productImages', 'specifications', 'parameters')->find($cartProduct['product_id']);
-            $shoppingCart->add($product, $product->id, $cartProduct['quantity']);
-        }
-        Session::put('shoppingCart', $shoppingCart);
     }
 
     /**
