@@ -108,9 +108,6 @@ class ProductController extends Controller
                             ->orWhere('price', 'LIKE', "%{$request->search_input}%")
                             ->paginate(16);
 
-//        $products = DB::select(DB::raw());
-//        $products = Product::whereRaw('MATCH (name, category, short_description AGAINST (?)', array($request->search_input))->get();
-
         if ($product != null) {
             if ($product->available_amount > 0) {
                 $availability = 'Skladom';
