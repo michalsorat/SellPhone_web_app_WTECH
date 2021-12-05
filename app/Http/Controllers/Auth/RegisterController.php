@@ -3,10 +3,15 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Order;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -57,6 +62,27 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'street-nr' => ['numeric'],
         ]);
+    }
+
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+
+        event(new Registered($user = $this->create($request->all())));
+
+        $this->guard()->login($user);
+
+        if (Session::has('shoppingCart')) {
+            $shoppingCart = Session::get('shoppingCart');
+            $order_arr = array_merge(Auth::user()->toArray(), ['status' => 'pending']);
+            $order = Order::create($order_arr);
+            foreach ($shoppingCart->items as $item) {
+                $order->products()->attach($item['item']['id'], ['product_quantity' => $item['quantity']]);
+            }
+        }
+
+        return $this->registered($request, $user)
+            ?: redirect($this->redirectPath());
     }
 
     /**
