@@ -15,7 +15,7 @@ class CreateParametersTable extends Migration
     {
         Schema::create('parameters', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('product_id');
+            $table->unsignedBigInteger('product_id');
             $table->float('screen_size');
             $table->string('screen_resolution');
             $table->string('screen_type');

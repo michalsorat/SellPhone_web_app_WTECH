@@ -27,8 +27,6 @@ class ProductController extends Controller
 
     public function index(Request $request)
     {
-//        dd($request->toArray());
-
         $category = Route::currentRouteName();
         $products = Product::with('productImages')
             ->where('category', $category)
@@ -82,8 +80,6 @@ class ProductController extends Controller
             })
             ->paginate(16);
 
-//        dd($products->toArray());
-
         return view('productsPage')
             ->with('products', $products)
             ->with('category', $category);
@@ -92,8 +88,6 @@ class ProductController extends Controller
     public function show($id)
     {
         $product = Product::with('productImages', 'specifications', 'parameters')->where('id', $id)->first();
-
-//        dd($product->toArray());
 
         if ($product->available_amount > 0) {
             $availability = 'Skladom';
@@ -156,20 +150,25 @@ class ProductController extends Controller
 
     public function addItemToCart(Request $request, $id)
     {
-        $oldShoppingCart = null;
-        $times = 1;
-        if ($request->session()->has('shoppingCart')) {
-            $oldShoppingCart = $request->session()->get('shoppingCart');
-        }
+//        if (auth()->check()) {
+//
+//        }
+//        else {
+            $oldShoppingCart = null;
+            $times = 1;
+            if ($request->session()->has('shoppingCart')) {
+                $oldShoppingCart = $request->session()->get('shoppingCart');
+            }
 
-        $shoppingCart = new ShoppingCart($oldShoppingCart);
-        $product = Product::with('productImages', 'specifications', 'parameters')->find($id);
-        if ($request->cart_count != null){
-            $times = $request->cart_count;
-        }
+            $shoppingCart = new ShoppingCart($oldShoppingCart);
+            $product = Product::with('productImages', 'specifications', 'parameters')->find($id);
+            if ($request->cart_count != null) {
+                $times = $request->cart_count;
+            }
 
-        $shoppingCart->add($product, $product->id, $times);
-        $request->session()->put('shoppingCart', $shoppingCart);
+            $shoppingCart->add($product, $product->id, $times);
+            $request->session()->put('shoppingCart', $shoppingCart);
+//        }
 
         return redirect()->back();
     }
@@ -208,15 +207,20 @@ class ProductController extends Controller
     }
 
     public function getShoppingCart1(Request $request) {
-        if (!$request->session()->has('shoppingCart')) {
-            return view('shoppingCartStep1');
+        if (auth()->check()) {
+
         }
-        $oldShoppingCart = $request->session()->get('shoppingCart');
-        $shoppingCart = new ShoppingCart($oldShoppingCart);
-//        dd($shoppingCart->items);
-        return view('shoppingCartStep1')
-            ->with('products', $shoppingCart->items)
-            ->with('totalPrice', $shoppingCart->totalPrice);
+        else {
+            if (!$request->session()->has('shoppingCart')) {
+                return view('shoppingCartStep1');
+            }
+            $oldShoppingCart = $request->session()->get('shoppingCart');
+            $shoppingCart = new ShoppingCart($oldShoppingCart);
+            // dd($shoppingCart->items);
+            return view('shoppingCartStep1')
+                ->with('products', $shoppingCart->items)
+                ->with('totalPrice', $shoppingCart->totalPrice);
+        }
     }
 
     public function getShoppingCart2(Request $request) {
@@ -262,16 +266,22 @@ class ProductController extends Controller
     }
 
     public function getOrderConfirmation(Request $request) {
-        $order_id = substr(str_shuffle("123456789"), 0, 6);
-        if ($request->session()->has('shoppingCart')) {
-            $cart = $request->session()->get('shoppingCart');
-            foreach ($cart->items as $item) {
-                $order_arr = array_merge($request->all(), ['product_id' => $item['item']['id']], ['quantity' => $item['quantity']], ['status' => 'created']);
-                Order::create($order_arr);
+        if (auth()->check()) {
+
+        }
+        else {
+            if ($request->session()->has('shoppingCart')) {
+                $cart = $request->session()->get('shoppingCart');
+                $order_arr = array_merge($request->all(), ['status' => 'created']);
+                $order =  Order::create($order_arr);
+                foreach ($cart->items as $item) {
+                    $order->products()->attach($item['item']['id'], ['product_quantity' => $item['quantity']]);
+                }
+//                dd(Order::find(1)->products()->get()[0]->pivot->product_quantity);
+                return view('orderConfirmation')
+                    ->with('totalPrice', $request->session()->get('shoppingCart')->totalPrice)
+                    ->with('orderId', $order->id);
             }
-            return view('orderConfirmation')
-                ->with('totalPrice', $request->session()->get('shoppingCart')->totalPrice)
-                ->with('orderId', $order_id);
         }
     }
 }

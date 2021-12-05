@@ -15,7 +15,7 @@ class CreateSpecificationsTable extends Migration
     {
         Schema::create('specifications', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('product_id');
+            $table->unsignedBigInteger('product_id');
             $table->string('name');
             $table->longText('description');
             $table->string('image_src');

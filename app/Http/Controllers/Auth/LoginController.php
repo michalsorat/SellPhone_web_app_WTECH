@@ -39,12 +39,17 @@ class LoginController extends Controller
     {
         if (Session::has('shoppingCart')) {
             $cart = Session::get('shoppingCart');
+            $order_arr = array_merge(Auth::user()->toArray(), ['status' => 'pending']);
+            $order =  Order::create($order_arr);
             foreach ($cart->items as $item) {
-                $order_arr = array_merge(Auth::user()->toArray(), ['product_id' => $item['item']['id']], ['quantity' => $item['quantity']], ['status' => 'pending']);
-                Order::create($order_arr);
+                $order->products()->attach($item['item']['id'], ['product_quantity' => $item['quantity']]);
             }
         }
-        $cartProducts = Order::where('email', Auth::user()->email)->where('status', 'pending')->get();
+
+//        $cartProducts = Order::where('email', Auth::user()->email)->where('status', 'pending')->products()->get();
+        $cartProducts = Order::firstWhere([['email', Auth::user()->email], ['status', 'pending']])->products()->get();
+
+        dd($cartProducts);
         $shoppingCart = new ShoppingCart(null);
         foreach ($cartProducts as $cartProduct) {
             $product = Product::with('productImages', 'specifications', 'parameters')->find($cartProduct['product_id']);

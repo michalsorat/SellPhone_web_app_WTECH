@@ -4,10 +4,31 @@ namespace App\Models;
 
 class ShoppingCart
 {
-//    use HasFactory;
+////    use HasFactory;
+//    protected $fillable = [
+//        'order_id',
+//        'total_price',
+//        'total_quantity'
+////        'transport_type',
+////        'payment_type'
+//    ];
+//
+//    public function products()
+//    {
+//        return $this->hasMany(Product::class);
+//    }
 
-//    public $userId;
-//    public $orderId;
+//    protected $shoppingCart;
+//    public static function restoreShoppingCart($oldShoppingCart) {
+//        $shoppingCart = new static();
+//        if ($oldShoppingCart) {
+//            $shoppingCart->items = $oldShoppingCart->items;
+//            $shoppingCart->totalQuantity = $oldShoppingCart->totalQuantity;
+//            $shoppingCart->totalPrice = $oldShoppingCart->totalPrice;
+//        }
+//        return $shoppingCart;
+//    }
+
     public $items = null;
     public $totalPrice = 0;
     public $totalQuantity = 0;
@@ -27,7 +48,7 @@ class ShoppingCart
                 $newItem = $this->items[$id];
             }
         }
-        $newItem['quantity']+= $times;
+        $newItem['quantity'] += $times;
         $newItem['price'] = $item->price * $newItem['quantity'];
         $this->items[$id] = $newItem;
         $this->totalPrice += ($item->price * $times);

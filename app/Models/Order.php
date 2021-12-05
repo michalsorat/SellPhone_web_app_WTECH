@@ -24,8 +24,10 @@ class Order extends Model
 //        'payment_type'
     ];
 
-    public function shoppingCart()
+    public function products()
     {
-        return $this->hasOne(ShoppingCart::class);
+        return $this->belongsToMany(Product::class, 'order_product', 'order_id', 'product_id')
+            ->withPivot(['product_quantity'])
+            ->withTimestamps();
     }
 }

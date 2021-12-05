@@ -22,8 +22,6 @@ class CreteOrdersTable extends Migration
             $table->integer('street_nr');
             $table->string('city');
             $table->string('psc');
-            $table->integer('product_id');
-            $table->integer('quantity');
             $table->string('status');
             $table->timestamps();
         });
