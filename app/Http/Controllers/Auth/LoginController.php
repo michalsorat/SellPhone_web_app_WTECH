@@ -37,10 +37,10 @@ class LoginController extends Controller
 
     protected function authenticated(Request $request, $user)
     {
+        dd("test");
         $cartProducts = Order::firstWhere([['email', Auth::user()->email], ['status', 'pending']]);
-//        !empty($cartProducts->products()->get()->toArray())
 
-        if ($cartProducts) {
+        if ($cartProducts && !empty($cartProducts->products()->get()->toArray())) {
             $cartProducts = $cartProducts->products()->get();
             $shoppingCart = new ShoppingCart(null);
             foreach ($cartProducts as $cartProduct) {
@@ -50,10 +50,12 @@ class LoginController extends Controller
         }
         else if (Session::has('shoppingCart')) {
             $shoppingCart = Session::get('shoppingCart');
-            $order_arr = array_merge(Auth::user()->toArray(), ['status' => 'pending']);
-            $order =  Order::create($order_arr);
+            if (!$cartProducts) {
+                $order_arr = array_merge(Auth::user()->toArray(), ['status' => 'pending']);
+                $cartProducts =  Order::create($order_arr);
+            }
             foreach ($shoppingCart->items as $item) {
-                $order->products()->attach($item['item']['id'], ['product_quantity' => $item['quantity']]);
+                $cartProducts->products()->attach($item['item']['id'], ['product_quantity' => $item['quantity']]);
             }
         }
     }
