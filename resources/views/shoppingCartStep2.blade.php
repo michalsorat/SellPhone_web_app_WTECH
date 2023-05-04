@@ -30,59 +30,63 @@
                 </div>
             </div>
 
-            <div class="row">
+            <form class="row" method="GET" action="{{ route('getShoppingCart3') }}">
                 <div class="table-wrap col-12 col-lg-6">
                     <table class="table-small table table-responsive table-borderless">
                         <h5>Spôsob dopravy</h5>
                         <tbody>
-                        <tr class="align-middle alert border-bottom">
-                            <td><input type="checkbox" id="delivery" class="transport-check" name="transport[]"></td>
-                            <td class="text-center"><i class="fas fa-shipping-fast"></i></td>
-                            <td>
-                                <div>
-                                    <p class="m-0 fw-bold">Doručenie na adresu</p>
-                                </div>
-                            </td>
-                            <td> 3,99€</td>
-                        </tr>
-                        <tr class="align-middle alert border-bottom">
-                            <td><input type="checkbox" id="personal-collect" class="transport-check" name="transport[]" checked></td>
-                            <td class="text-center"><i class="fas fa-hand-holding-usd"></i></td>
-                            <td>
-                                <div>
-                                    <p class="m-0 fw-bold">Osobný odber</p>
-                                </div>
-                            </td>
-                            <td> Zadarmo</td>
-                        </tr>
-                        </tr>
+                        @foreach($transports as $transport)
+                            <tr class="align-middle alert border-bottom">
+                                <td>
+                                    @if ($loop->first)
+                                        <input type="checkbox" id="personal-collect" class="transport-check" value="{{$transport->name}}" name="transport[]" checked>
+                                    @else
+                                        <input type="checkbox" id="delivery" class="transport-check" value="{{$transport->name}}" name="transport[]">
+                                    @endif
+                                </td>
+                                <td class="text-center"><i class="{{$transport->icon}}"></i></td>
+
+                                <td>
+                                    <div>
+                                        <p class="m-0 fw-bold">{{$transport->name}}</p>
+                                    </div>
+                                </td>
+                                @if($transport->price > 0)
+                                    <td>{{$transport->price}}&nbsp;€</td>
+                                @else
+                                    <td>Zadarmo</td>
+                                @endif
+                            </tr>
+                        @endforeach
                         </tbody>
                     </table>
 
                     <table class="table-small table table-responsive table-borderless">
                         <h5>Spôsob platby</h5>
                         <tbody>
-                        <tr class="align-middle alert border-bottom">
-                            <td><input type="checkbox" id="card" name="payment_method[]" checked></td>
-                            <td class="text-center"><i class="fab fa-cc-visa"></i></td>
-                            <td>
-                                <div>
-                                    <p class="m-0 fw-bold">Kartou online</p>
-                                </div>
-                            </td>
-                            <td> Zadarmo</td>
-                        </tr>
-                        <tr class="align-middle alert border-bottom">
-                            <td><input type="checkbox" id="cash-on-delivery" name="payment_method[]"></td>
-                            <td class="text-center"><i class="fas fa-wallet"></i></td>
-                            <td>
-                                <div>
-                                    <p class="m-0 fw-bold">Na dobierku</p>
-                                </div>
-                            </td>
-                            <td> 2,99€</td>
-                        </tr>
-                        </tr>
+                        @foreach($payments as $payment)
+                            <tr class="align-middle alert border-bottom">
+                                <td>
+                                    @if ($loop->first)
+                                        <input type="checkbox" id="card" value="{{$payment->name}}" name="payment_method[]" checked>
+                                    @else
+                                        <input type="checkbox" id="cash-on-delivery" value="{{$payment->name}}" name="payment_method[]">
+                                    @endif
+                                </td>
+                                <td class="text-center"><i class="{{$payment->icon}}"></i></td>
+
+                                <td>
+                                    <div>
+                                        <p class="m-0 fw-bold">{{$payment->name}}</p>
+                                    </div>
+                                </td>
+                                @if($payment->price > 0)
+                                    <td>{{$payment->price}}&nbsp;€</td>
+                                @else
+                                    <td>Zadarmo</td>
+                                @endif
+                            </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -127,12 +131,12 @@
                                 <li><p>Spôsob doručenia:<span id="transport-type"></span></p></li>
                                 <li><p>Spôsob platby:<span id="payment-method"></span></p></li>
                                 <li><p>Cena celkom:<span id="price-total">{{ $totalPrice }} €</span></p></li>
-                                <li><a href="{{route('getShoppingCart3')}}" class="conditional-btn btn btn-dark btn">Pokračovať v objednávke</a></li>
+                                <li><button type="submit" class="conditional-btn btn btn-dark btn">Pokračovať v objednávke</button></li>
                             </ul>
                         </div>
                     </div>
                 </div>
-            </div>
+            </form>
             @else
                 <div class="d-flex justify-content-center mt-auto">
                     <h3>Nemáte žiadne produkty v košíku.</h3>

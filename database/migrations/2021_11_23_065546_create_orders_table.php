@@ -24,6 +24,8 @@ class CreateOrdersTable extends Migration
             $table->string('city');
             $table->string('psc');
             $table->string('status');
+            $table->string('transport_name');
+            $table->string('payment_name');
             $table->timestamps();
         });
     }

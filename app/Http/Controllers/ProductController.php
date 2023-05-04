@@ -7,8 +7,10 @@ use App\Models\Product;
 use App\Models\ShoppingCart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
+use GuzzleHttp\Client;
 
 class ProductController extends Controller
 {
@@ -243,8 +245,18 @@ class ProductController extends Controller
         }
         $oldShoppingCart = $request->session()->get('shoppingCart');
         $shoppingCart = new ShoppingCart($oldShoppingCart);
+        $client = new Client(['base_uri' => 'http://localhost:3000']);
+        $response = $client->get('/transports');
+        $body = $response->getBody();
+        $transports = json_decode($body);
+
+        $response = $client->get('/payments');
+        $body = $response->getBody();
+        $payments = json_decode($body);
 
         return view('shoppingCartStep2')
+            ->with('transports', $transports)
+            ->with('payments', $payments)
             ->with('products', $shoppingCart->items)
             ->with('totalPrice', $shoppingCart->totalPrice);
     }
@@ -260,7 +272,9 @@ class ProductController extends Controller
         return view('shoppingCartStep3')
             ->with('products', $shoppingCart->items)
             ->with('totalPrice', $shoppingCart->totalPrice)
-            ->with('user', $user);
+            ->with('user', $user)
+            ->with('transport', $request->transport)
+            ->with('payment', $request->payment_method);
     }
 
     public function getTransportType(Request $request, $type) {
@@ -280,25 +294,32 @@ class ProductController extends Controller
     }
 
     public function getOrderConfirmation(Request $request) {
+        $userId = null;
+        if (auth()->check()) {
+            $userId = Auth::user()->id;
+        }
+        $order_arr = array_merge(['user_id' => $userId], $request->all(), ['status' => 'created']);
+        $variablesJson = array_merge(["variables" => $order_arr]);
+        $response = Http::post('http://localhost:8080/engine-rest/process-definition/key/payment-retrieval/start', $variablesJson);
         $shoppingCart = $request->session()->get('shoppingCart');
         //ak je prihlaseny
         //update pending->created
-        if (auth()->check()) {
-            $order = Order::firstWhere([['email', Auth::user()->email], ['status', 'pending']]);
-            $order->update(['status' => 'created']);
-        }
-        //ak nieje prihlaseny
-        else {
-            $order_arr = array_merge(['user_id' => '0'], $request->all(), ['status' => 'created']);
-            $order =  Order::create($order_arr);
-            foreach ($shoppingCart->items as $item) {
-                $order->products()->attach($item['item']['id'], ['product_quantity' => $item['quantity']]);
-            }
-        }
+//        if (auth()->check()) {
+//            $order = Order::firstWhere([['email', Auth::user()->email], ['status', 'pending']]);
+//            $order->update(['status' => 'created']);
+//        }
+//        //ak nieje prihlaseny
+//        else {
+//            $order_arr = array_merge(['user_id' => '0'], $request->all(), ['status' => 'created']);
+//            $order =  Order::create($order_arr);
+//            foreach ($shoppingCart->items as $item) {
+//                $order->products()->attach($item['item']['id'], ['product_quantity' => $item['quantity']]);
+//            }
+//        }
         $totalPrice = $shoppingCart->totalPrice;
         $request->session()->forget('shoppingCart');
         return view('orderConfirmation')
             ->with('totalPrice', $totalPrice)
-            ->with('orderId', $order->id);
+            ->with('orderId', 1);
     }
 }

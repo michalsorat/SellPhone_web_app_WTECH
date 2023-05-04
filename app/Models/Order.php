@@ -20,7 +20,9 @@ class Order extends Model
         'psc',
         'product_id',
         'quantity',
-        'status'
+        'status',
+        'transport_name',
+        'payment_name'
     ];
 
     public function products()
