@@ -136,8 +136,8 @@
                                                 </div>
                                             </div>
                                         @endguest
-                                        <input type="hidden" name="transport_name" value="{{ $payment }}">
-                                        <input type="hidden" name="payment_name" value="{{ $transport }}">
+                                        <input type="hidden" name="transport_name" value="{{ $transport }}">
+                                        <input type="hidden" name="payment_name" value="{{ $payment }}">
                                     </div>
                                 </div>
                             </div>

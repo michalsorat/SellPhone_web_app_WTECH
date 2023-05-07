@@ -298,9 +298,15 @@ class ProductController extends Controller
         if (auth()->check()) {
             $userId = Auth::user()->id;
         }
-        $order_arr = array_merge(['user_id' => $userId], $request->all(), ['status' => 'created']);
-        $variablesJson = array_merge(["variables" => $order_arr]);
-        $response = Http::post('http://localhost:8080/engine-rest/process-definition/key/payment-retrieval/start', $variablesJson);
+        $order_arr = array_merge(['user_id' => $userId], $request->except('_token'), ['status' => 'created']);
+
+        $variablesJson = array();
+        foreach ($order_arr as $key => $value) {
+            $jsonItem = array_merge(["value" => $value]);
+            $variablesJson = array_merge($variablesJson, [$key => $jsonItem]);
+        }
+        $variablesJson = array_merge(["variables" => $variablesJson]);
+        $response = Http::post('http://localhost:8080/engine-rest/process-definition/key/payment-retrieval/start', json_encode($variablesJson));
         $shoppingCart = $request->session()->get('shoppingCart');
         //ak je prihlaseny
         //update pending->created
