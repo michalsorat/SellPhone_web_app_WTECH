@@ -39,9 +39,9 @@
                             <tr class="align-middle alert border-bottom">
                                 <td>
                                     @if ($loop->first)
-                                        <input type="checkbox" id="personal-collect" class="transport-check" value="{{$transport->name}}" name="transport[]" checked>
+                                        <input type="checkbox" id="personal-collect" class="transport-check" value="{{$transport->name}}" name="transport" checked>
                                     @else
-                                        <input type="checkbox" id="delivery" class="transport-check" value="{{$transport->name}}" name="transport[]">
+                                        <input type="checkbox" id="delivery" class="transport-check" value="{{$transport->name}}" name="transport">
                                     @endif
                                 </td>
                                 <td class="text-center"><i class="{{$transport->icon}}"></i></td>
@@ -68,9 +68,9 @@
                             <tr class="align-middle alert border-bottom">
                                 <td>
                                     @if ($loop->first)
-                                        <input type="checkbox" id="card" value="{{$payment->name}}" name="payment_method[]" checked>
+                                        <input type="checkbox" id="card" value="{{$payment->name}}" name="payment_method" checked>
                                     @else
-                                        <input type="checkbox" id="cash-on-delivery" value="{{$payment->name}}" name="payment_method[]">
+                                        <input type="checkbox" id="cash-on-delivery" value="{{$payment->name}}" name="payment_method">
                                     @endif
                                 </td>
                                 <td class="text-center"><i class="{{$payment->icon}}"></i></td>
