@@ -306,7 +306,7 @@ class ProductController extends Controller
             $variablesJson = array_merge($variablesJson, [$key => $jsonItem]);
         }
         $variablesJson = array_merge(["variables" => $variablesJson]);
-        $response = Http::post('http://localhost:8080/engine-rest/process-definition/key/payment-retrieval/start', json_encode($variablesJson));
+        $response = Http::post('http://localhost:8080/engine-rest/process-definition/key/payment-retrieval/start', $variablesJson);
         $shoppingCart = $request->session()->get('shoppingCart');
         //ak je prihlaseny
         //update pending->created
