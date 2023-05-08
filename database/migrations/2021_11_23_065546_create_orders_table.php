@@ -15,17 +15,17 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->string('name');
-            $table->string('last_name');
-            $table->string('email');
-            $table->string('street');
-            $table->integer('street_nr');
-            $table->string('city');
-            $table->string('psc');
-            $table->string('status');
-            $table->string('transport_name');
-            $table->string('payment_name');
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->string('name')->nullable();
+            $table->string('last_name')->nullable();
+            $table->string('email')->nullable();
+            $table->string('street')->nullable();
+            $table->integer('street_nr')->nullable();
+            $table->string('city')->nullable();
+            $table->string('psc')->nullable();
+            $table->string('status')->nullable();
+            $table->string('transport_name')->nullable();
+            $table->string('payment_name')->nullable();
             $table->timestamps();
         });
     }
