@@ -301,7 +301,7 @@ class ProductController extends Controller
         $order_arr = array_merge(['user_id' => $userId], $request->except('_token'), ['status' => 'created']);
 
 //        Kafka
-        Http::post('http://localhost:3001/trigger-kafka-process', $order_arr);
+        Http::post('http://localhost:3000/trigger-kafka-process', $order_arr);
 
 //        Camunda
 //        $variablesJson = array();
