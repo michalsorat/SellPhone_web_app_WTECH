@@ -300,14 +300,20 @@ class ProductController extends Controller
         }
         $order_arr = array_merge(['user_id' => $userId], $request->except('_token'), ['status' => 'created']);
 
-        $variablesJson = array();
-        foreach ($order_arr as $key => $value) {
-            $jsonItem = array_merge(["value" => $value]);
-            $variablesJson = array_merge($variablesJson, [$key => $jsonItem]);
-        }
-        $variablesJson = array_merge(["variables" => $variablesJson]);
-        $response = Http::post('http://localhost:8080/engine-rest/process-definition/key/place-order/start', $variablesJson);
+//        Kafka
+        Http::post('http://localhost:3001/trigger-kafka-process', $order_arr);
+
+//        Camunda
+//        $variablesJson = array();
+//        foreach ($order_arr as $key => $value) {
+//            $jsonItem = array_merge(["value" => $value]);
+//            $variablesJson = array_merge($variablesJson, [$key => $jsonItem]);
+//        }
+//        $variablesJson = array_merge(["variables" => $variablesJson]);
+//        Http::post('http://localhost:8080/engine-rest/process-definition/key/place-order/start', (array)json_encode($variablesJson));
+
         $shoppingCart = $request->session()->get('shoppingCart');
+
         //ak je prihlaseny
         //update pending->created
 //        if (auth()->check()) {
